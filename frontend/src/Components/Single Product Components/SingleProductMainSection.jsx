@@ -242,7 +242,7 @@ const SingleProductMainSection = ({singleProduct, id}) => {
 
 
 const Wrapper = styled.section`
-  margin: 5rem auto;
+  margin: 10rem auto;
   /* box-shadow: 0px 0px 1px 0px black; */
   background-color: white;
   padding: 1rem 2rem;

@@ -6,7 +6,7 @@ const Spinner = () => {
    
 
   return (
-    <Wrapper className='container'>
+    <Wrapper className=''>
         <FaSpinner className='icon' />
     </Wrapper>
   )
@@ -14,7 +14,7 @@ const Spinner = () => {
 const Wrapper = styled.div`
 display: flex;
 flex-direction: column;
-/* width: 60rem; */
+width: 100%;
 align-items: center;
 justify-content: center;
 margin: 20rem auto;

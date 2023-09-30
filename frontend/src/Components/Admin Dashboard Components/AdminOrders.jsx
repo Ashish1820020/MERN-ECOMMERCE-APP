@@ -72,6 +72,11 @@ const Wrapper = styled.div`
   flex-direction: column;
   min-height: 20rem;
   gap: .5rem;
+
+  .icon{
+    height: 4rem;
+    width: 4rem;
+  }
   table{ 
     border-collapse: collapse;
   }

@@ -35,15 +35,13 @@ const responsive = {
 
 
 const ProductSlider = ({featureProducts, text}) => {
-
-  const [selectedColor, setSelectedColor] = useState("");
   
   return (
     <Wrapper className='carousel-slider'>
       <h3>{text}</h3>
       <Carousel 
         // partialVisible={true}
-        // autoPlay={true}
+        autoPlay={true}
         responsive={responsive}
         swipeable={true}
         draggable={true}
@@ -58,7 +56,7 @@ const ProductSlider = ({featureProducts, text}) => {
         itemClass="carousel-item-padding-40-px">
         {
           featureProducts.map((currentElem) => {
-            return <ProductCard key={currentElem._id} {...{...currentElem, image: currentElem.images[0], selectedColor, setSelectedColor}}/>
+            return <ProductCard key={currentElem._id} {...{...currentElem, image: currentElem.images[0]}}/>
           })
         }
       </Carousel>

@@ -88,7 +88,7 @@ const App = () => {
   //   });
   //  }, []);
 
-  addEventListener('contextmenu', (e) => e.preventDefault())
+  // addEventListener('contextmenu', (e) => e.preventDefault())
 
 
 

@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import axios from 'axios'; 
 import { isLoading, isError, updateFeaturedProducts, updateTopRatedProducts} from '../Store/Slices/ProductsSlice'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import styled from 'styled-components';
 import FeatureProducts from "../Components/Home Page Components/FeatureProducts";
 import TopRatedProducts from "../Components/Home Page Components/TopRatedProducts";
@@ -9,6 +9,7 @@ import BannerSection from "../Components/Home Page Components/BannerSection";
 import Services from "../Components/Home Page Components/Services";
 import Trusted from "../Components/Home Page Components/Trusted";
 import { useCookies } from "react-cookie";
+import Spinner from "../Components/Utility Components/Spinner";
 
 
 const localUserAccessToken = () => {
@@ -21,6 +22,9 @@ const Home = () => {
   
   const[cookie, setCookies] = useCookies(["token"]);
   const dispatch = useDispatch();
+
+  
+  const { isProductLoading } = useSelector(state => state.product); 
 
 
   // For the featured Products products
@@ -37,21 +41,17 @@ const Home = () => {
       dispatch(isError()); 
     }
   }
-
-  useEffect(() => {
-    setCookies("token", localUserAccessToken());
-    getFeaturedProducts();
-  }, []);
-
-
-
+  
+  
+  
   const getTopRatedProducts = async () => {
     dispatch(isLoading());
-
+    
     await axios.get(`${import.meta.env.VITE_ROOT_API}/products/productlist?rating=4`)
     .then((res) => {
       const data = res.data;
       // console.log(data);
+      
       dispatch(updateTopRatedProducts(data.result)); 
     })
     .catch((err) => {
@@ -59,8 +59,10 @@ const Home = () => {
       dispatch(isError());
     })
   }
-
+  
   useEffect(()=>{
+    setCookies("token", localUserAccessToken());
+    getFeaturedProducts();
     getTopRatedProducts()
   }, [])
 
@@ -72,10 +74,16 @@ const Home = () => {
       <BannerSection text='Anand Stores' />
       <Services />
 
-      <div className="container">
-        <FeatureProducts />
-        <TopRatedProducts />
-      </div>
+      {
+        isProductLoading? 
+          <Spinner />
+          :
+          <div className="container">
+            <FeatureProducts />
+            <TopRatedProducts />
+          </div>
+      }
+
       <Trusted /> 
     </Wrapper>
   

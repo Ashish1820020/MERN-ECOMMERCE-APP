@@ -1,12 +1,9 @@
-import React,{useEffect, useRef, useState} from 'react'
-import { NavLink } from 'react-router-dom';
+import React, {useEffect, useRef, useState} from 'react'
+import { NavLink, useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 import Navbar from './Navbar';
 import { useDispatch, useSelector } from 'react-redux';
 import SearchBar from './SearchBar';
-import FormatPrice from '../helper/FormatPrice';
-import Spinner from './Spinner'
-import { clearProductList } from '../../Store/Slices/ProductsSlice';
 import SearchSuggestions from './SearchSuggestions';
 
 
@@ -18,13 +15,12 @@ const Header = () => {
   const [searchBarActive, setSearchBarActive] = useState(false);
   const [searchText, setSearchText] = useState("");
   const [isResultLoading, setIsResultLoading] = useState(false);
+  const location = useLocation();
 
 
   const { products } = useSelector(state => state.product);
-  const dispatch = useDispatch();
   const refOne = useRef(null)
 
-  // console.log(suggestionBar);
 
   const handleOutsideClick = (e) => {
     if(refOne && !refOne?.current?.contains(e.target)){
@@ -40,29 +36,35 @@ const Header = () => {
   
   return (
     <MainHeader>
-        <div className="header-inside-section">
+      <div className="header-inside-section">
 
 
-          <div className="header-left-section">
-            <NavLink to='/'> <img className='logo' src="../../images/logos.png" alt="logo"/> </NavLink>
-          </div>
-
-
-          <div className={searchBarActive? "search-bar show" : "search-bar hide"} ref={refOne}>
-           <SearchBar {...{searchText, setSearchText, setSuggestionBar, setIsResultLoading}} />
-           {
-            suggestionBar?
-              <SearchSuggestions {...{ products, searchText, isResultLoading, setSuggestionBar }} />
-            :
-              null
-           }
-          </div>
-
-
-          <Navbar {...{icon, setIcon, searchBarActive, setSearchBarActive}}/>
-
-
+        <div className="header-left-section">
+          <NavLink to='/'> <img className='logo' src="../../images/logos.png" alt="logo"/> </NavLink>
         </div>
+
+
+        {
+          location.pathname.includes('/password/reset')?
+            <></>
+          :
+            <>
+              <div className={searchBarActive? "search-bar show" : "search-bar hide"} ref={refOne}>
+                <SearchBar {...{searchText, setSearchText, setSuggestionBar, setIsResultLoading}} />
+                {
+                suggestionBar?
+                  <SearchSuggestions {...{ products, searchText, isResultLoading, setSuggestionBar }} />
+                :
+                  null
+                }
+              </div>
+      
+              <Navbar {...{icon, setIcon, searchBarActive, setSearchBarActive}}/>
+            </>
+        }
+
+
+      </div>
     </MainHeader>
   )
 }

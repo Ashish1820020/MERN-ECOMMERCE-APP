@@ -71,77 +71,74 @@ const Navbar = ({icon, setIcon, searchBarActive, setSearchBarActive}) => {
       setAvatar("https://res.cloudinary.com/muttakinhasib/image/upload/v1611336104/avatar/user_qcrqny.svg");  
     }
   })
+  
+  return (
+    <Nav className='navbar'>
 
-  if(location.pathname.includes('/password/reset')) return <></>
-  else{
-    return (
-      <Nav className='navbar'>
+      <ul className='navbar-list'>
+        <li  className='navbar-list-item hide'><NavLink to='/' onClick={() => setIcon(false)}>HOME</NavLink></li>
+        <li  className='navbar-list-item hide'><NavLink to='/products' onClick={() => setIcon(false)}>PRODUCTS</NavLink></li>
+            
 
-        <ul className='navbar-list'>
-          <li  className='navbar-list-item hide'><NavLink to='/' onClick={() => setIcon(false)}>HOME</NavLink></li>
-          <li  className='navbar-list-item hide'><NavLink to='/products' onClick={() => setIcon(false)}>PRODUCTS</NavLink></li>
-              
-
-          <li className='navbar-list-item mobile-search-icon' onClick={() => setSearchBarActive(!searchBarActive)}>
-            {
-              searchBarActive?
-                <CgClose style={{fontSize: '2.5rem'}}/>
-              :
-                <BsSearch style={{fontSize: '2rem'}}/>
-            }
-          </li>
-
-          <li className='navbar-list-item'>
-            <NavLink className='cart-wishlist-icon-container' to='/wishlist'>
-              <AiOutlineHeart className='cart-wishlist-icon'/>
-              <span className='cart-wishlist-icon-float'>{  wishlist.totalItems }</span>
-            </NavLink>
-          </li>
-
-          {isLoggedIn?
-
-            <li className='profile-image-container navbar-list-item' 
-              onMouseEnter={() => setDropDown(true)} 
-              onMouseLeave={() => setDropDown(false)}
-              onClick={() => setDropDown(!dropdown)}>
-              <figure className='img navbar-link'>
-                <img src={avatar} alt="user" />
-              </figure>
-              <DropDown {...{setDropDown, updateCartDataToDb, dropdown, dashboardType, userData}} />
-            </li>
-          :
-            <li className='navbar-list-item'><NavLink to='/loginsignup' onClick={()=>setIcon(false)}>LOG IN</NavLink></li>
+        <li className='navbar-list-item mobile-search-icon' onClick={() => setSearchBarActive(!searchBarActive)}>
+          {
+            searchBarActive?
+              <CgClose style={{fontSize: '2.5rem'}}/>
+            :
+              <BsSearch style={{fontSize: '2rem'}}/>
           }
+        </li>
 
-          <li className='navbar-list-item hide'>
-            <NavLink className='cart-wishlist-icon-container' to='/cart'>
-              <FiShoppingCart className='cart-wishlist-icon'/>
-              <span className='cart-wishlist-icon-float'>{ totalItems }</span>
-            </NavLink>
+        <li className='navbar-list-item'>
+          <NavLink className='cart-wishlist-icon-container' to='/wishlist'>
+            <AiOutlineHeart className='cart-wishlist-icon'/>
+            <span className='cart-wishlist-icon-float'>{  wishlist.totalItems }</span>
+          </NavLink>
+        </li>
+
+        {isLoggedIn?
+
+          <li className='profile-image-container navbar-list-item' 
+            onMouseEnter={() => setDropDown(true)} 
+            onMouseLeave={() => setDropDown(false)}
+            onClick={() => setDropDown(!dropdown)}>
+            <figure className='img navbar-link'>
+              <img src={avatar} alt="user" />
+            </figure>
+            <DropDown {...{setDropDown, updateCartDataToDb, dropdown, dashboardType, userData}} />
           </li>
-        </ul>
+        :
+          <li className='navbar-list-item'><NavLink to='/loginsignup' onClick={()=>setIcon(false)}>LOG IN</NavLink></li>
+        }
 
-        <div className={icon? 'mobile-navbar-list mobile-navlist-active' : 'mobile-navbar-list'}>
-          <div>
-            <CgClose name='close-outline' className='icon' onClick={()=>setIcon(false)}/>
-          </div>
-          <div>
-            <ul>
-              <li  className='navbar-list-item'><NavLink to='/' onClick={() => setIcon(false)}>HOME</NavLink></li>
-              <li  className='navbar-list-item'><NavLink to='/products' onClick={() => setIcon(false)}>PRODUCTS</NavLink></li>
-              <li  className='navbar-list-item'><NavLink to='/about' onClick={() => setIcon(false)}>ABOUT</NavLink></li>
-              <li  className='navbar-list-item'><NavLink to='/contact' onClick={() => setIcon(false)}>CONTACT</NavLink></li>
-              <li  className='navbar-list-item'><NavLink to='/cart' onClick={() => setIcon(false)}>CART</NavLink></li>
-            </ul>
-          </div>
-        </div>
+        <li className='navbar-list-item hide'>
+          <NavLink className='cart-wishlist-icon-container' to='/cart'>
+            <FiShoppingCart className='cart-wishlist-icon'/>
+            <span className='cart-wishlist-icon-float'>{ totalItems }</span>
+          </NavLink>
+        </li>
+      </ul>
 
-        <div className="mobile-navbar-btn">
-            <CgMenu name='menu-outline' className='mobile-nav-icon' onClick={()=>setIcon(!icon)} />
+      <div className={icon? 'mobile-navbar-list mobile-navlist-active' : 'mobile-navbar-list'}>
+        <div>
+          <CgClose name='close-outline' className='icon' onClick={()=>setIcon(false)}/>
         </div>
-      </Nav>
-    )
-  }
+        <div>
+          <ul>
+            <li  className='navbar-list-item'><NavLink to='/' onClick={() => setIcon(false)}>HOME</NavLink></li>
+            <li  className='navbar-list-item'><NavLink to='/products' onClick={() => setIcon(false)}>PRODUCTS</NavLink></li>
+            <li  className='navbar-list-item'><NavLink to='/about' onClick={() => setIcon(false)}>ABOUT</NavLink></li>
+            <li  className='navbar-list-item'><NavLink to='/contact' onClick={() => setIcon(false)}>CONTACT</NavLink></li>
+            <li  className='navbar-list-item'><NavLink to='/cart' onClick={() => setIcon(false)}>CART</NavLink></li>
+          </ul>
+        </div>
+      </div>
+
+      <div className="mobile-navbar-btn">
+          <CgMenu name='menu-outline' className='mobile-nav-icon' onClick={()=>setIcon(!icon)} />
+      </div>
+    </Nav>
+  )
 }
 
 
@@ -158,7 +155,7 @@ const Nav = styled.nav`
     gap: 2.8rem; //4.8
     .navbar-list-item:first-child,
     .navbar-list-item:nth-child(2),
-    .navbar-list-item:nth-child(5){
+    .navbar-list-item:nth-child(2){
       border-bottom: 3px solid rgba(40,116,240,255);
       &:hover{
         border-bottom: 3px solid white;
@@ -166,8 +163,12 @@ const Nav = styled.nav`
     }
   }
   .navbar-list-item{
-    /* padding: .5rem 1rem; */
     margin: 0rem 1rem;
+  }
+
+  
+  .navbar-list-item:has(figure){
+    border-bottom: none;
   }
   .navbar-list-item > a {
     &:link,
@@ -184,10 +185,14 @@ const Nav = styled.nav`
 
 
   .profile-image-container{
-    margin-bottom: 1rem;
   }
   .profile-image-container{
+    margin-bottom: 1rem;
+    border: none;
     position: relative;
+    &:hover{
+      border: none;
+    }
     .img{
       height: 3rem;
       width: 3rem;

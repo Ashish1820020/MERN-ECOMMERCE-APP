@@ -21,7 +21,6 @@ const Wishlist = () => {
     localStorage.setItem("wishlistProducts", JSON.stringify(wishlistProducts));
   }, [wishlistProducts]);
 
-  console.log(wishlistProducts);
 
   return (
     <Wrapper className='container'>
@@ -53,7 +52,7 @@ const Wishlist = () => {
 }
 
 const Wrapper = styled.div`
-margin: 3rem auto 10rem;
+  /* margin: 10rem auto; */
 
   .card{
     margin: 0;
@@ -74,10 +73,11 @@ margin: 3rem auto 10rem;
     border-radius: 10px;
     box-shadow: 0 0px 2px 0px rgba(0, 0, 0, 0.5);
   }
+
   h2{
+    margin: 1.5rem auto 5rem;
     text-align: center;
     border-bottom: 2px solid black;
-    margin-bottom:  5rem;
   }
   .items-container{
       display: flex;

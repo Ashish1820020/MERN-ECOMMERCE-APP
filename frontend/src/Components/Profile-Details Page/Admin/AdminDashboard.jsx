@@ -142,10 +142,11 @@ const Wrapper = styled.div`
     visibility: hidden;
   }
 
-  .icon{
+  /* .icon{
     height: 2.2rem;
     width: 2.2rem;
-  }
+  } */
+
   .icon-container{
     .icon{
       box-shadow: 0px 1px 0px 1px #ccc;
@@ -153,7 +154,7 @@ const Wrapper = styled.div`
   }
   h1{
     margin: 0 auto;
-    border-bottom: 1px solid black;
+    /* border-bottom: 1px solid black; */
   }
 
   .main-section{

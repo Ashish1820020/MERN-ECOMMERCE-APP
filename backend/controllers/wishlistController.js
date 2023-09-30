@@ -1,16 +1,6 @@
-const UserData = require("../models/userdataModel");
 const WishlistData = require("../models/WishlistModel");
-const { ObjectId } = require("mongodb");
 const catchAsyncError = require('../middleware/catchAsyncError');
 const ErrorHandler = require("../utile/ErrorHandler");
-
-
-const getDiscountedPrice = (price, discount)=>{
-    console.log(price, discount);
-    console.log(price - Math.ceil(((price*discount)/100)));
-    return (price - Math.ceil(((price*discount)/100)))
-  }
-  
 
 
 // <----ADD wishlist TO CART---->

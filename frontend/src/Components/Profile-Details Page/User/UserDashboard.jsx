@@ -84,7 +84,7 @@ const Wrapper = styled.div`
 
   h1 {
     margin: 0 auto;
-    border-bottom: 1px solid black;
+    /* border-bottom: 1px solid black; */
   }
 
 

@@ -27,7 +27,7 @@ const getAllOrders = catchAsyncError(async (req, res, next) => {
       res.status(201).json({ success: true, allOrders });
       
   } catch (error) {
-      console.log(error);
+      // console.log(error);
       res.status(401).json({ success: false, msg: "Error Occurred", error });    
   }
 });
@@ -101,13 +101,13 @@ const updateSingleOrder = catchAsyncError(async (req, res, next) => {
       // }
 
   } catch (error) {
-      console.log(error);
+      // console.log(error);
       res.status(401).json({ success: false, msg: "Error Occurred", error });    
   }
 });
 
   async function updateStock(id, quantity) {
-    console.log(id, quantity);
+    // console.log(id, quantity);
     const product = await Product.findById(id);
 
     product.stock -= quantity;

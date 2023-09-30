@@ -22,7 +22,7 @@ const Cart = () => {
 
 
   return (
-    <Wrapper className="container">
+    <Wrapper className="container margin-10">
 
       <div className="cart flex">
       {
@@ -48,6 +48,7 @@ const Cart = () => {
 };
 
 const Wrapper = styled.section`
+  margin: 10rem auto 5rem;
   .cart{
     max-width: 1300px;
     margin: 4rem auto;

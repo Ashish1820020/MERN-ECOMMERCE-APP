@@ -1,8 +1,9 @@
 import axios from 'axios';
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { addOrders, setIsError } from '../../Store/Slices/OrderSlice';
+import { addOrders, setIsError, setIsLoading } from '../../Store/Slices/OrderSlice';
 import styled from "styled-components";
+import Spinner from '../Utility Components/Spinner';
 
 const UserOrders = () => {
   const dispatch = useDispatch();
@@ -10,6 +11,7 @@ const UserOrders = () => {
 
   const getUserOrders = async () => {
 
+    dispatch(setIsLoading());
     try{
       const res = await axios.get(`${import.meta.env.VITE_ROOT_API}/orders/user-orders`);
       const data = await res.data;
@@ -29,8 +31,10 @@ const UserOrders = () => {
   }, []);
   
   
-  if(!isLoading){
-    
+  if(isLoading){
+    return <Spinner/>
+  }
+  else{
     return (
       <Wrapper>
         <table>

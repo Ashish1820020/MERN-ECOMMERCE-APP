@@ -41,7 +41,7 @@ const CheckoutPage = () => {
             // console.log(data);
             setClientToken(data?.clientToken);
         } catch (error) {
-            console.log(error);
+            // console.log(error);
         }
     };
 

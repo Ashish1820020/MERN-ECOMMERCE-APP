@@ -179,7 +179,6 @@ li {
       margin: 0 auto;
       height: 190px;
       div{
-        /* height: 80px; */
         h3{
           font-size: 1.6rem;
           color: black;
@@ -271,12 +270,6 @@ li {
   border-radius: unset
 }
     
-
-
-
-
-
-
 
 
 button{

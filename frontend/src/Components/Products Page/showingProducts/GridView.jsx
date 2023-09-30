@@ -9,9 +9,7 @@ const GridView = ({filteredProducts}) => {
       {
         filteredProducts.map((currentElem) => {
           return (
-            // <NavLink className="link" key={currentElem._id} to={`/singleproduct/${currentElem._id}`}>
-              <ProductCard key={currentElem._id}  {...currentElem}/>
-            // </NavLink>
+              <ProductCard key={currentElem._id} {...{...currentElem, image: currentElem.images[0]}} />
           )
         })
       }

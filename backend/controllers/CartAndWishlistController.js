@@ -7,8 +7,8 @@ const ErrorHandler = require("../utile/ErrorHandler");
 
 
 const getDiscountedPrice = (price, discount)=>{
-    console.log(price, discount);
-    console.log(price - Math.ceil(((price*discount)/100)));
+    // console.log(price, discount);
+    // console.log(price - Math.ceil(((price*discount)/100)));
     return (price - Math.ceil(((price*discount)/100)))
   }
   
@@ -155,7 +155,7 @@ const getCartAndWishlistData = catchAsyncError(async (req, res, next) => {
         const userCart = await CartData.findOne({user: userId});
         const userWishlist = await WishlistData.findOne({user: userId});
 
-        console.log(userWishlist);
+        // console.log(userWishlist);
         
         if(userCart){
             queryObj.userCart = userCart.products;
@@ -172,7 +172,7 @@ const getCartAndWishlistData = catchAsyncError(async (req, res, next) => {
         return res.status(200).json({success: true, msg: "Got cart and Wishlist" , ...queryObj});
         
     } catch (error) {
-        console.log(error);
+        // console.log(error);
         return next(new ErrorHandler("Internal Error Occurred", 500));
     }
 });
@@ -224,10 +224,6 @@ const updateProduct = catchAsyncError(async (req, res, next) => {
                 }
             });
         }
-
-        console.log('====================================');
-        console.log(userId);
-        console.log('====================================');
         
         
         const currentUserCart = await CartData.findOne({user: userId});
@@ -252,7 +248,7 @@ const updateProduct = catchAsyncError(async (req, res, next) => {
         res.status(200).json({success: true, msg: "Products updated to the Cart and wishlist Successfully"});
         
     }catch (error){
-        console.log(error);
+        // console.log(error);
         return next(new ErrorHandler("Internal Error Occurred", 500));
     }
 });

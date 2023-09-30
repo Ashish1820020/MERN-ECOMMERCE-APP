@@ -69,7 +69,7 @@ const logIn = catchAsyncError(async (req, res, next) => {
         sendToken(user, 200, res);
         
     } catch (error) {
-        console.log(error);
+        // console.log(error);
         return next(new ErrorHandler("Internal Server Error!", 500));
     }
 });
@@ -110,7 +110,7 @@ const forgotPassword = catchAsyncError(async (req, res, next) => {
         "host"
       )}/password/reset/${resetToken}`;
 
-    console.log(resetPasswordUrl);
+    // console.log(resetPasswordUrl);
   
     const message = `Your password reset token is :- \n\n ${resetPasswordUrl} \n\nIf you have not requested this email then, please ignore it.`;
   
@@ -195,7 +195,7 @@ const addAddress = catchAsyncError(async (req, res) => {
         res.status(201).json({success: true, userData: user})
             
     } catch (error) {
-        console.log(error);
+        // console.log(error);
         res.status(401).json({success: false})
     }
 });
@@ -255,7 +255,7 @@ const updateProfile = catchAsyncError(async (req, res) => {
         res.status(201).json({ success: true, msg: "User Data id Updated successfully", userData });
 
     } catch (error) {
-        console.log(error);
+        // console.log(error);
         res.status(401).json({ success: false, msg: "Error Occurred", error });    
     }
 });
@@ -270,7 +270,7 @@ const getAllUsers = catchAsyncError(async (req, res) => {
         res.status(201).json({ success: true, allUserData });
 
     } catch (error) {
-        console.log(error);
+        // console.log(error);
         res.status(401).json({ success: false, msg: "Error Occurred", error });    
     }
 });
@@ -286,7 +286,7 @@ const deleteUser = catchAsyncError(async (req, res) => {
         res.status(201).json({ success: true, updatedUsers });
 
     } catch (error) {
-        console.log(error);
+        // console.log(error);
         res.status(401).json({ success: false, msg: "Error Occurred", error });    
     }
 });
@@ -297,12 +297,12 @@ const testController = (req, res) => {
 }
 
 const userAuth = (req, res, next) => {
-    console.log("user");
+    // console.log("user");
     res.status(200).json({ok: "true"});
 }
 
 const adminAuth = (req, res, next) => {
-    console.log("admin");
+    // console.log("admin");
     res.status(200).json({ok: "true"});
 }
 

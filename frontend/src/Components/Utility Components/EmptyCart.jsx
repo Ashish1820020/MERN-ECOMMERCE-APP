@@ -20,6 +20,9 @@ const Wrapper = styled.section`
     width: 80%;
     padding: 2rem;
     margin: 0 auto;
+    h2{
+        margin: 0 auto 4rem;
+    }
 
     .empty-cart-inside{
         display: flex;
@@ -32,15 +35,14 @@ const Wrapper = styled.section`
         }
         img{
             width: 100%;
+            height: 100%;
             margin: 0 auto;
         }
         h3{
             margin: 0rem 0 1rem 0;
-            /* font-size: 3rem; */
         }
         p{
             margin: .5rem 0;
-            /* font-size: 2.2rem; */
         }
     }
     button{

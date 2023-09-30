@@ -1,0 +1,91 @@
+import axios from 'axios';
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux';
+import { addOrders, setIsError } from '../../Store/Slices/OrderSlice';
+import styled from "styled-components";
+
+const UserOrders = () => {
+  const dispatch = useDispatch();
+  const {isLoading, orderData} = useSelector(state => state.order);
+
+  const getUserOrders = async () => {
+
+    try{
+      const res = await axios.get(`${import.meta.env.VITE_ROOT_API}/orders/user-orders`);
+      const data = await res.data;
+      // console.log(data);
+      dispatch(addOrders(data.userOrders)); 
+    }
+    catch(error){
+      // console.log(error);
+      dispatch(setIsError());  
+    }
+  }
+  
+  
+  
+  useEffect(()=>{
+    getUserOrders()
+  }, []);
+  
+  
+  if(!isLoading){
+    
+    return (
+      <Wrapper>
+        <table>
+
+          <tbody>
+            {
+              orderData.map(element => {
+                return element.orderedItems.map((order, index)=>{
+                  return(
+                    <tr key={index} >
+                      <td><figure><img src={order.image} alt="" /></figure></td>
+                      <td>{order.name}</td>
+                      <td>{order.amount}</td>
+                      <td style={{color: element.orderStatus === "Delivered"? "green" : "red", fontWeight: "bolder"}}>{element.orderStatus}</td>  
+                    </tr>
+                  )
+                })
+              })
+            }
+          </tbody>
+        </table>
+       {
+        
+       }
+      </Wrapper>
+    )
+  }
+}
+
+const Wrapper = styled.div`
+   display: flex;
+  flex-direction: column;
+  min-height: 10rem;
+  gap: .5rem;
+  table{ 
+    border-collapse: collapse;
+  }
+  figure{
+      height: 4rem;
+      img{
+        object-fit: contain;
+        height: 100%;
+      }
+    }
+  
+  tbody > tr {
+    box-shadow: 0 0 2px 0 black;
+    padding: 2rem .5rem;
+    height: 12rem;
+    background-color: white;
+    
+    &:hover{
+      background-color: #eaeded;
+    }
+  }
+`
+
+export default UserOrders;

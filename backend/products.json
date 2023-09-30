@@ -1,0 +1,579 @@
+[
+
+{
+    "name": "Apple iPhone SE(3rd Gen)",
+    "category": "mobile",
+    "company": "apple", 
+    "price": 49900,
+    "rating": 4.3,
+    "colors": ["#FF0000", "#000000", "#ffffff"],
+    "description": "The iPhone SE has a powerful A15 Bionic chip that helps load apps in a flash. It boosts your battery life by working together with an enhanced battery and iOS. With its battery, you can enjoy up to 15 hours of video playback. This iPhone offers enhanced drop performance so it stays protected against accidental nicks and scratches. It also offers resistance to tea and coffee spills as well as dust. It ensures water resistance. Thanks to its durable design and tough glass in the front and back, this iPhone stays protected during accidental tumbles. You can choose from Warm or Cool Photographic Styles to set the look that you love in all the photos that you take. You can also admire all the photos that you capture on the iPhone's brilliant 11.94 cm (4.7) display. And, with the Smart HDR 4 feature, the iPhone SE can make automatic photo adjustments that will make each part of the photos (faces, places, etc.,) look dazzling. The iPhone SE comes with a Touch ID feature that is a fast, simple, and secure way to unlock it and sign in to apps with a simple touch of your finger. The iPhone SE is designed with innovations that safeguard your privacy while also reducing the impact on the planet. It makes use of recycled materials and ensures that your data is only yours to share.",
+    "bulletHighlights":[
+        "128 GB ROM",
+        "11.94 cm (4.7 inch) Retina HD Display",
+        "12MP Rear Camera | 7MP Front Camera",
+        "A15 Bionic Chip, 6 Core Processor Processor"
+    ],
+    "images": [
+        "https://m.media-amazon.com/images/I/61-MT8AQAPL._SX522_.jpg",
+        "https://m.media-amazon.com/images/I/51Pn96PRolL._SX522_.jpg",
+        "https://m.media-amazon.com/images/I/71KVDqFbdHL._SX522_.jpg",
+        "https://m.media-amazon.com/images/I/81pblbClz9L._SX522_.jpg"
+    ]
+},
+{
+    "name": "Apple iPhone 14 Pro Max",
+    "category": "mobile",
+    "company": "apple", 
+    "price": 139999,
+    "rating": 4.5,
+    "colors": ["#7293ed", "#ffffff", "#ebdff2", "#FF0000"],
+    "description": "The iPhone 14 pro max has a powerful A15 Bionic chip that helps load apps in a flash. It boosts your battery life by working together with an enhanced battery and iOS. With its battery, you can enjoy up to 15 hours of video playback. This iPhone offers 17.00 cm (6.7-inch) Super Retina XDR display featuring Always-On and ProMotion Dynamic Island, a magical new way to interact with iPhone 48MP Main camera for up to 4x greater resolution Cinematic mode now in 4K Dolby Vision up to 30 fps Action mode for smooth, steady, handheld videos All-day battery life and up to 29 hours of video playback Vital safety technology — Crash Detection can detect a severe car crash and call for help A16 Bionic, the ultimate smartphone chip. Super fast 5G cellular Industry-leading durability features with Ceramic Shield and water resistance iOS 16 offers even more ways to personalize, communicate and share",
+    "discount": 9,
+    "bulletHighlights":[
+        "128 GB ROM",
+        "17.02 cm (6.7 inch) Super Retina XDR Display",
+        "48MP + 12MP + 12MP | 12MP Front Camera",
+        "A16 Bionic Chip, 6 Core Processor Processor"
+    ],
+    "images": [
+        "https://m.media-amazon.com/images/I/610pghkO81L._SX522_.jpg",
+        "https://m.media-amazon.com/images/I/61im796yRUL._SX522_.jpg",
+        "https://m.media-amazon.com/images/I/711yt5-rPLL._SX522_.jpg",
+        "https://m.media-amazon.com/images/I/91wGCiIAniL._SX522_.jpg"
+    ],
+    "featured": true
+},
+{
+    "name": "Apple iPhone 14",
+    "category": "mobile",
+    "company": "apple", 
+    "price": 79999,
+    "rating": 4.5,
+    "colors": ["#7293ed", "#ffffff", "#000000", "#ebdff2", "#FF0000", "#FFFF00"],
+    "description": "The  iPhone 14 has a powerful A15 Bionic chip that helps load apps in a flash. It boosts your battery life by working together with an enhanced battery and iOS. With its battery, you can enjoy up to 15 hours of video playback. It has advanced camera system for better photos in any light. 15.40 cm (6.1-inch) Super Retina XDR display. iOS 16 offers even more ways to personalize, communicate and share. Cinematic mode now in 4K Dolby Vision up to 30 fps. Action mode for smooth, steady, handheld videos. Vital safety technology — Crash Detection calls for help when you can’t All-day battery life and up to 20 hours of video playback Industry-leading durability features with Ceramic Shield and water resistance A15 Bionic chip with 5-core GPU for lightning-fast performance. Super fast 5G cellular",
+    "discount": 11,
+    "bulletHighlights":[
+        "128 GB ROM",
+        "15.49 cm (6.1 inch) Super Retina XDR Display",
+        "12MP + 12MP | 12MP Front Camera",
+        "A15 Bionic Chip, 6 Core Processor Processor"
+    ],
+    "images": [
+        "https://m.media-amazon.com/images/I/61bK6PMOC3L._SX679_.jpg",
+        "https://m.media-amazon.com/images/I/51Sn5X2gfaL._SX679_.jpg",
+        "https://m.media-amazon.com/images/I/71RFKttvm9L._SX679_.jpg",
+        "https://m.media-amazon.com/images/I/81LtCGVH+dL._SX679_.jpg"
+    ]
+},
+
+
+
+{
+    "name": "Nokia C32 with 50MP Dual Rear AI Camera",
+    "category": "mobile",
+    "company": "nokia", 
+    "price": 10499,
+    "rating": 4.3,
+    "colors": ["#808080", "#3EB489", "#FFC0CB"],
+    "description": "The Nokia c32 has a powerful A15 chip that helps load apps in a flash. It boosts your battery life by working together with an enhanced battery and iOS. With its battery, you can enjoy up to 15 hours of video playback. We don’t always know where the day will take us. But, with a 3-day battery life,¹ the Nokia C32 is ready to go on that journey with you. And when the sun sets, its rear dual camera is on hand to capture more light and deliver stunning Night mode shots. Through it all, its luxurious glass back and beautiful accent details are a treat for the eye and for the palm of your hand.",
+    "bulletHighlights":[
+        "4 GB RAM | 128 GB ROM",
+        "16.56 cm (6.52 inch) Display",
+        "50MP Rear Camera",
+        "5000 mAh Battery"
+    ],
+    "discount": 14,
+    "images": [
+        "https://m.media-amazon.com/images/I/31KojTCxn7L._AC_SY879_.jpg",
+        "https://m.media-amazon.com/images/I/21vQEZqDDIL._AC_SY879_.jpg",
+        "https://m.media-amazon.com/images/I/21NbV9bFC8L._AC_SY879_.jpg",
+        "https://m.media-amazon.com/images/I/215QPKtqkFL._AC_SY879_.jpg"
+    ]
+},
+{
+    "name": "Nokia G21 Android Smartphone",
+    "category": "mobile",
+    "company": "nokia", 
+    "price": 13199,
+    "rating": 4.2,
+    "description": "Video call, text, play games, or watch movies with the Nokia G21 smartphone that packs a range of exciting features. Equipped with a 50 MP triple camera set up and low-light sensors, this phone allows you to click stunning photos. And, with up to 3 days of battery life and 18 W fast charging feature, you can enjoy your life throughout the weekend. Moreover, the impressive 16.51 cm (6.5) display and 90 Hz refresh rate lets you experience stutter-free and sharp visuals. Also, it comes with an upgraded Android OS capacity for up to 2 years of OS updates so that you can get a remarkable user experience.",
+    "bulletHighlights":[
+        "6 GB RAM | 128 GB ROM",
+        "16.51 cm (6.5 inch) HD+ Display",
+        "50MP + 2MP + 2MP | 8MP Front Camera",
+        "5050 mAh Lithium Polymer Battery",
+        "Unisoc T606 Processor"
+    ],
+    "images": [
+        "https://m.media-amazon.com/images/I/71rnnHb6rXL._SX679_.jpg",
+        "https://m.media-amazon.com/images/I/71Yg2QbKe7L._SX679_.jpg",
+        "https://m.media-amazon.com/images/I/71Yg2QbKe7L._SX679_.jpg",
+        "https://m.media-amazon.com/images/I/61mEvRVoQgL._SX679_.jpg"
+    ]
+},
+
+{
+    "name": "Nokia 105 Single SIM",
+    "category": "mobile",
+    "company": "nokia",
+    "price": 1299,
+    "rating": 3.5,
+    "bulletHighlights":[
+        "4 MB RAM | 4 MB ROM",
+        "4.5 cm (1.77 inch) Quarter QVGA Display",
+        "800 mAh Lithium Ion Battery",
+        "SC6531E Processor",
+        "0MP Front Camera"
+        ],
+    "description": "Nokia 105 (2023) mobile was launched on 19th May 2023. The phone comes with a 1.80-inch display. The Nokia 105 (2023) runs Series 30+ and is powered by a 1000mAh removable battery. Nokia 105 (2023) is based on Series 30+. The Nokia 105 (2023) measures 14.45 x 49.40 x 115.07mm (height x width x thickness) and weighs 78.70 grams. It was launched in Charcoal, Cyan, and Red colors. Connectivity options on the Nokia 105 (2023) include Micro-USB and FM radio.",
+    "discount": 15,
+    "images": [
+        "https://m.media-amazon.com/images/I/31-hWNXDxiL._AC_SY879_.jpg",
+        "https://m.media-amazon.com/images/I/31hRDTdHROL._AC_SY879_.jpg",
+        "https://m.media-amazon.com/images/I/21Mp0a+iK0L._AC_SY879_.jpg",
+        "https://m.media-amazon.com/images/I/21aUNDgxQML._AC_SY879_.jpg"
+    ]
+},
+
+{
+    "name": "NOKIA 125 DS",
+    "price": 1103,
+    "category": "mobile",
+    "company": "nokia",
+    "rating": 4,
+    "colors": ["#000000", "#808080", "#000080", "#d94343"],
+    "bulletHighlights":[
+        "4 MB RAM | 4 MB ROM",
+        "6.1 cm (2.4 inch) Display",
+        "1020 mAh Lithium-ion Battery",
+        "MediaTek Processor"
+        ],
+    "description": "Nokia 125 makes life easy. You’ve got comfort and usability covered with big ergonomic buttons and an all-new longer design. With its tough polycarbonate shell, this phone is built to last. The 2.4” (6.09 cm) screen lets you see more and score more playing classic Snake Xenzia and other great try-and-buy games. And when you need an escape, relax to the rhythm of the wireless FM radio. No need to worry about battery life – after just one charge you can talk from sunrise to sunset. Isn’t it nice when things are simple?",
+    "images": [
+        "https://m.media-amazon.com/images/I/41Z7ZIURd7L._AC_SY879_.jpg",
+        "https://m.media-amazon.com/images/I/21EXEDrpWVL._AC_SY879_.jpg",
+        "https://m.media-amazon.com/images/I/21fsgXPMGAL._AC_SY879_.jpg",
+        "https://m.media-amazon.com/images/I/31Cviljo9HL._AC_SY879_.jpg"
+    ]
+},
+
+{
+    "name": "Samsung Galaxy S20 FE 5G",
+    "category": "mobile",
+    "company": "samsung",
+    "price": 31999,
+    "rating": 4.2,
+    "warranty": "1.5 years",
+    "colors": ["#000080", "#CDD0D0", "#00FF00"],
+    "description": "5G Ready powered by Qualcomm Snapdragon 865 Octa-Core processor, 8GB RAM, 128GB internal memory expandable up to 1TB, Android 11.0 operating system and dual SIM. Triple Rear Camera Setup - 12MP (Dual Pixel) OIS F1.8 Wide Rear Camera + 8MP OIS Tele Camera + 12MP Ultra Wide | 30X Space Zoom, Single Take & Night Mode | 32MP F2.2 Front Punch Hole Camera. 6.5-inch(16.40 centimeters) Infinity-O Super AMOLED Display with 120Hz Refresh rate, 1080 x 2400 (FHD+) Resolution. 4500 mAh battery (Non -removable) with Super Fast Charging, FAst Wireless Charging & Finger Print sensor. IP68 Rated, MicroSD Card Slot (Expandable upto 1 TB), Dual Nano Sim, Hybrid Sim Slot, 5G+5G Dual stand by. Disclaimer: N28 band for Stand alone 5G network is not compatible",
+    "bulletHighlights":[
+        "8 GB RAM | 128 GB ROM",
+        "16.51 cm (6.5 inch) Display",
+        "12MP Rear Camera",
+        "4500 mAh Battery"
+        ],
+    "discount": 20,
+    "images": [
+        "https://m.media-amazon.com/images/I/41ezRvTwcaL._AC_SY879_.jpg",
+        "https://m.media-amazon.com/images/I/31w1DJIrFgL._AC_SY879_.jpg",
+        "https://m.media-amazon.com/images/I/41ankmEMJ2L._AC_SY879_.jpg",
+        "https://m.media-amazon.com/images/I/31+182it6FL._AC_SY879_.jpg"
+    ]
+},
+    
+{
+    "name": "OnePlus Nord CE 2 Lite 5G",
+    "category": "mobile",
+    "company": "oneplus",
+    "price": 17999,
+    "rating": 4.6,
+    "colors": ["#2B5B82", "#808080", "#000080"],
+    "description": "OnePlus Nord CE 2 5G mobile comes with a 90 Hz refresh rate 6.40-inch touchscreen display offering a resolution of 1080x2400 pixels at a pixel density of 409 pixels per inch (ppi) and an aspect ratio of 20:9. The display sports Gorilla Glass for protection. OnePlus Nord CE 2 5G is powered by an octa-core MediaTek Dimensity 900 processor. It comes with 6GB, 8GB of RAM. The OnePlus Nord CE 2 5G runs Android 11 and is powered by a 4500mAh battery. The OnePlus Nord CE 2 5G supports Super VOOC fast charging. As far as the cameras are concerned, the OnePlus Nord CE 2 5G on the rear packs a triple camera setup featuring a 64-megapixel (f/1.7) primary camera; an 8-megapixel (f/2.2) camera, and a 2-megapixel (f/2.4) camera. The rear camera setup has autofocus. It has a single front camera setup for selfies, featuring a 16-megapixel sensor with an f/2.4 aperture. The OnePlus Nord CE 2 5G runs OxygenOS 11 is based on Android 11 and packs 128GB of inbuilt storage that can be expanded via microSD card (up to 1024GB) with a dedicated slot. The OnePlus Nord CE 2 5G is a dual-SIM (GSM and GSM) mobile that accepts Nano-SIM and Nano-SIM cards. The OnePlus Nord CE 2 5G measures 160.60 x 73.20 x 7.80mm (height x width x thickness) and weighs 173.00 grams. It was launched in Bahama Blue and Grey Mirror colors. The OnePlus Nord CE 2 5G runs OxygenOS 11 is based on Android 11 and packs 128GB of inbuilt storage that can be expanded via microSD card (up to 1024GB) with a dedicated slot. The OnePlus Nord CE 2 5G is a dual-SIM (GSM and GSM) mobile that accepts Nano-SIM and Nano-SIM cards. The OnePlus Nord CE 2 5G measures 160.60 x 73.20 x 7.80mm (height x width x thickness) and weighs 173.00 grams. It was launched in Bahama Blue and Grey Mirror colors.",
+    "bulletHighlights":[
+        "6 GB RAM | 128 GB ROM",
+        "16.74 cm (6.59 inch) Display",
+        "64MP Rear Camera",
+        "5000 mAh Battery"
+        ],
+    "discount": 8,
+    "images": [
+        "https://m.media-amazon.com/images/I/41mDAtPMDKL._AC_SY879_.jpg",
+        "https://m.media-amazon.com/images/I/31rNbMstEtL._AC_SY879_.jpg",
+        "https://m.media-amazon.com/images/I/315lXXJPuOL._AC_SY879_.jpg",
+        "https://m.media-amazon.com/images/I/51lgiaJQbxL._AC_SY879_.jpg"
+    ]
+},
+    
+{
+    "name": "Realme 11 Pro 5G",
+    "category": "mobile",
+    "company": "realme",
+    "price": 25680,
+    "rating": 4,
+    "colors": ["#b0b454", "#CDD0D0", "#000000"],
+    "description": "Realme 11 Pro mobile was launched on 10th May 2023. The phone comes with a 6.70-inch touchscreen display offering a resolution of 2400x1080 pixels (FHD+). Realme 11 Pro is powered by an octa-core MediaTek Dimensity 7050 processor. It comes with 8GB, 12GB of RAM. The Realme 11 Pro runs Android 13 and is powered by a 5000mAh non-removable battery. The Realme 11 Pro supports proprietary fast charging. As far as the cameras are concerned, the Realme 11 Pro on the rear packs a dual camera setup featuring a 100-megapixel primary camera, and a 2-megapixel camera. It has a single front camera setup for selfies, featuring a 16-megapixel sensor. The Realme 11 Pro runs Realme UI 4.0 is based on Android 13 and packs 128GB, 256GB of inbuilt storage that can be expanded via microSD card. The Realme 11 Pro is a dual-SIM mobile that accepts Nano-SIM and Nano-SIM cards. The Realme 11 Pro measures 161.60 x 73.90 x 8.70mm (height x width x thickness) and weighs 185.00 grams. It was launched in Astral Black, Oasis Green, and Sunrise Beige colours. Connectivity options on the Realme 11 Pro include Wi-Fi, GPS, Bluetooth v5.20, NFC, and USB Type-C. Sensors on the phone include accelerometer, ambient light sensor, compass/ magnetometer, gyroscope, proximity sensor, and in-display fingerprint sensor.",
+    "bulletHighlights":[
+        "8 GB RAM | 128 GB ROM",
+        "17.02 cm (6.7 inch) Full HD+ Display",
+        "100MP (OIS) + 2MP | 16MP Front Camera",
+        "5000 mAh Battery",
+        "Dimensity 7050 Processor"
+        ],
+    "images":[
+        "https://m.media-amazon.com/images/I/51QJjZ7FkLL._AC_SY879_.jpg",
+        "https://m.media-amazon.com/images/I/51JMTLpBxzL._AC_SY879_.jpg",
+        "https://m.media-amazon.com/images/I/51uAOX5Ot7L._AC_SY879_.jpg",
+        "https://m.media-amazon.com/images/I/416dUT7mm+L._AC_SY879_.jpg"
+        ]
+},
+        
+{
+    "name": "Google Pixel 7a with 5G",
+    "category": "mobile",
+    "company": "google",
+    "price": 43999,
+    "rating": 4.5,
+    "warranty": "2 years",
+    "colors": [],
+    "description": "Google Pixel 7a with 5G experience the simplicity and seamless transitions with the Google Pixel 7a, which is loaded with a variety of incredible features. The Tensor G2 processor, designed by Google, boosts the Pixel 7a's speed, effectiveness, and security. It's the same chip that's in Pixel 7 and Pixel 7 Pro. Furthermore, With a dual rear camera system and Google Tensor G2's advanced image processing, Pixel 7a lets you create perfect photos every time. It's easy to take amazing pictures in low light, or fix your blurry photos and remove distractions with a few taps in Google Photos. Moreover, the Pixel 7a camera includes Super Res Zoom, so that you can get up close without an extra telephoto lens.",
+     "bulletHighlights":[
+        "8 GB RAM | 128 GB ROM",
+       " 15.49 cm (6.1 inch) Full HD+ Display",
+        "64MP (OIS) + 13MP | 13MP Front Camera",
+        "4300 mAh Battery",
+        "Tensor G2 Processor"
+        ],
+    "discount": 20,
+    "images": [
+        "https://m.media-amazon.com/images/I/411wOTpPu5L._AC_SY879_.jpg",
+        "https://m.media-amazon.com/images/I/41-WHjYGauL._AC_SY879_.jpg",
+        "https://m.media-amazon.com/images/I/51qFduvrxnL._AC_SY879_.jpg",
+        "https://m.media-amazon.com/images/I/41FDhbJ8jfL._AC_SY879_.jpg"
+    ]
+},
+
+{
+    "name": "Lenovo IdeaPad Slim 3 Intel Core i5 11th Gen",
+    "category": "laptop",
+    "company": "lenovo",
+    "price": 49000,
+    "rating": 3.9,
+    "colors": [ "#000000", "#CDD0D0", "#22D3EF"],
+    "description": "The precise design of this Lenovo laptop ensures hassle-free daily use. Get a laptop with an 11th Generation Intel Core i5 Processor so it can genuinely handle all of your expectations and more. Additionally, it features an Intel Xe Graphics card, which enables thrilling gaming experiences. Furthermore, you can complete all of your responsibilities with Lenovo's Rapid Charge Technology without stopping to plug in, and when you do, you can charge your smartphone from 0 to 80% in around 30 minutes. Display: 15.6 FHD (1920x1080)| TN Technology | 250Nits Brightness Anti Glare || Memory and Storage: 8GB RAM DDR4-3200, Upgradable Up to 16GB | 512 GB SSD. OS and Software: Windows 11 Home 64 | Office Home and Student 2021 | Xbox GamePass Ultimate 3-month subscription. Battery Life: 45Wh | Upto 6 Hours | Rapid Charge (Up to 80% in 1 Hour) | Design: 4 side narrow bezel | 1.99 cm Thick and 1.65 kg Light | Narrow Bezel. Camera (Built-in): 720p with Privacy Shutter | Fixed Focus | Integrated Dual Array Microphone || Audio: 2x 1.5W Stereo Speakers | HD Audio | Dolby Audio. Ports: 1x USB-C 3.2 Gen 1 (Data transfer only) | 1x USB-A 3.2 Gen 1 | 1x USB-A 2.0 | 1x Headphone/Mic combo jack | 1x HDMI 1.4b | 1x 4-in-1 media reader (MMC, SD, SDHC, SDXC). Active subscription needed;continues until cancelled-game catalog varies. Needs Windows11 & app to play PC games; xbox website>pc game plan. Discounts exclude titles within 30 days of launch; based on Microsoft Store price. See xbox website>GamesPass.",
+    "bulletHighlights":[
+        "NVIDIA GeForce GTX 1650",
+        " 15.6 Inch Full HD, IPS, 250 nits, Anti-glare, 45% NTSC, Refresh Rate: 60 Hz",
+        "Light Laptop without Optical Disk Drive"
+        ],
+    "discount": 20,
+    "stock": 13,
+    "images": [
+        "https://m.media-amazon.com/images/I/41rNqqV-w2L._AC_SY879_.jpg",
+        "https://m.media-amazon.com/images/I/41a+EWxqNhL._AC_SY879_.jpg",
+        "https://m.media-amazon.com/images/I/41Flh8dduPL._AC_SY879_.jpg"
+    ]
+},
+
+{
+    "name": "Lenovo V15 Intel Celeron",
+    "category": "laptop",
+    "company": "lenovo",
+    "price": 38540,
+    "rating": 4.2,
+    "colors": [ "#000000", "#CDD0D0", "#22D3EF"],
+    "description": "Designed for the modern workplace, the Lenovo V15 Gen 2 (15, Intel) laptop gets it right. Suited for mobile productivity, it yields great performance in the office or at home.The V15 Gen 2 laptop’s display has an impressive 88% screen-to-body ratio, thanks to its four-sided narrow bezels. Its 39.6cms (15.6) FHD (1920 x 1080) antiglare display is available at up to 300 nits, for a bright viewing experience. The V15 Gen 2 laptop features Trusted Platform Module (TPM) 2.0 firmware, to encrypt critical business data. Its physical webcam shutter protects your privacy. The laptop is also easy to deploy and use, with multiple USB and HDMI ports for easy connectivity. If you have a fixed budget but still need to support more mobile workers, consider this 15.6 entry-level laptop. It comes with fast charging, Dolby Audio, an Integrated graphics card, and a narrower frame around the display which reduces the overall footprint of the device. Choose from M.2 SSD, HDD or dual drive storage technologies.",
+    "bulletHighlights":[
+        "Stylish & Portable Thin and Light Laptop",
+        "15.6 inch Full HD",
+        "Light Laptop without Optical Disk Drive"
+    ],
+    "stock": 5,
+    "discount": 10,
+    "images": [
+        "https://m.media-amazon.com/images/I/31uLEZHhMDL._AC_SY879_.jpg"
+    ]
+},
+
+{
+    "name": "Realme Book with Intel Core i3 11th gen",
+    "category": "laptop",
+    "company": "realme",
+    "price": 54000,
+    "rating": 4.0,
+    "description": "realme Book(Slim) 2K Display Core i3 11th Gen - (8 GB/256 GB SSD/Windows 10 Home) RMNB1001 Thin and Light Laptop (14 inch, Blue, 1.38 kg). MS Office is not included with this realme laptop. It can be purchased separately. The Windows 11 upgrade rollout plan is scheduled to begin in late 2021 and will continue into 2022. The specific timing will vary as per the device.. The specific timing will vary as per the device. realme Book(Slim) 2K Display Core i3 11th Gen - (8 GB/256 GB SSD/Windows 10 Home) RMNB1001 Thin and Light Laptop (14 inch, Gray, 1.38 kg, With MS Office)",
+    "bulletHighlights":[
+        "Stylish & Portable Thin and Light Laptop",
+        "14 inch 2K QHD, IPS LCD Display ( 400nits peak brightness, 100% sRGB,3:2 aspect ratio, Full Vision Display)",
+        "Finger Print Sensor for Faster System Access",
+        "Light Laptop without Optical Disk Drive"
+    ],
+    "discount": 30,
+    "images": [
+        "https://m.media-amazon.com/images/I/511EdA4iq7L._AC_SY879_.jpg",
+        "https://m.media-amazon.com/images/I/31UwVr1AkYL._AC_SY879_.jpg",
+        "https://m.media-amazon.com/images/I/21W5bIuWG0L._AC_SY879_.jpg",
+        "https://m.media-amazon.com/images/I/21kvFehHr7L._AC_SY879_.jpg"
+    ]
+},
+
+{
+    "name": "Asus TUF Gaming Laptop",
+    "category": "laptop",
+    "company": "asus",
+    "price": 108140,
+    "rating": 4.3,
+    "colors": ["#27292B", "#000000"],
+    "description": "The excellent TUF Gaming F15 laptop, which is packed with innovative technologies, provides fantastic gaming performance and a wonderful user interface. The GeForce GTX 1650 GPU and 10th Gen Intel Core H-Series CPU on this laptop provides seamless gaming and faultless multitasking. Additionally, HDMI 2.0b, USB Type-C, and compatibility for multiple displays enable efficient multitasking. The superfast Intel Wi-Fi 6 with Gig+ (802.11ax) built into this laptop also allows you to comfortably game at LAN speeds wherever suitable connections are available. Moreover, this laptop's 7.1 channel surround sound system offers theater-quality acoustics so you can tune in and jam to your favorite tunes.",
+    "bulletHighlights":[
+        "NVIDIA GeForce GTX 1650",
+        "15.6 inch Full HD, 144 Hz, IPS, Anti-Glare, Brightness 250 nits, 45% NTSC",
+        "Light Laptop without Optical Disk Drive"
+    ],
+    "discount": 29,
+    "images": [
+        "https://m.media-amazon.com/images/I/31gw+ZZfekL._AC_SY879_.jpg",
+        "https://m.media-amazon.com/images/I/41LDfnScXZS._AC_SY879_.jpg",
+        "https://m.media-amazon.com/images/I/31j6tEXoE1S._AC_SY879_.jpg",
+        "https://m.media-amazon.com/images/I/41zEY42v1tL._AC_SY879_.jpg"
+    ],
+    "stock": 15,
+    "featured": true
+},
+
+{
+    "name": "Apple MacBook Air With M2 Chip",
+    "category": "laptop",
+    "company": "apple",
+    "price": 107910,
+    "rating": 4.6,
+    "colors": ["#CDD0D0", "#FDB813", "#808080"],
+    "description": "STRIKINGLY THIN DESIGN – The redesigned MacBook Air is more portable than ever and weighs just 1.24 kg (2.7 pounds). It’s the ultra-capable laptop that lets you work, play or create just about anything. SUPERCHARGED BY M2 – Get more done faster with a next-generation 8-core CPU, up to 10-core GPU and up to 24GB of unified memory. BIG, BEAUTIFUL DISPLAY – The 34.46-centimetre (13.6-inch) Liquid Retina display features over 500 nits of brightness, P3 wide color and support for one billion colors for vibrant images and incredible detail. UP TO 18 HOURS OF BATTERY LIFE – Go all day and into the night, thanks to the power-efficient performance of the Apple M2 chip. Advanced camera and audio – Look sharp and sound great with a 1080p FaceTime HD camera, three-mic array and four-speaker sound system with Spatial Audio. VERSATILE CONNECTIVITY – MacBook Air features a MagSafe charging port, two Thunderbolt ports and a headphone jack.",
+    "bulletHighlights":[
+        "Stylish & Portable Thin and Light Laptop",
+        "13.6 Inch Liquid Retina Display, LED-backlit display with IPS technology, 500 nits brightness, Wide colour (P3), True Tone technology",
+        "Light Laptop without Optical Disk Drive"
+    ],
+    "discount": 20,
+    "images": [
+        "https://m.media-amazon.com/images/I/719C6bJv8jL._SX679_.jpg",
+        "https://m.media-amazon.com/images/I/61XPhYGQOQL._SX679_.jpg",
+        "https://m.media-amazon.com/images/I/610TpF8jQyL._SX679_.jpg",
+        "https://m.media-amazon.com/images/I/61P2ia5kurL._SX679_.jpg"
+    ],
+    "stock": 10
+},
+
+{
+    "name": "Apple 2021 iMac with 4.5K Retina Display",
+    "category": "computer",
+    "company": "apple",
+    "price": 129900,
+    "rating": 4.7,
+    "colors": ["#CDD0D0", "#00FF00"],
+    "description": "Apple M1 chip, 8-core CPU with 4 performance cores and 4 efficiency cores 8-core GPU. 60.96 cm (24-inch) 4.5K Retina display, 4480x2520 resolution at 218 pixels per inch with support for 1 billion colours. 500 nits brightness, Wide colour (P3), True Tone technology, Actual diagonal screen size is 59.69 cm (23.5 inches). Apple M1 chip, 8-core CPU with 4 performance cores and 4 efficiency cores 8-core GPU. Two Thunderbolt / USB 4 ports with support for: DisplayPort, Thunderbolt 3 (up to 40Gb/s), USB 4 (up to 40Gb/s), USB 3.1 Gen 2 (up to 10Gb/s), Thunderbolt 2, HDMI, DVI and VGA supported using adapters (sold separately), 3.5mm headphone jack, Gigabit Ethernet, Two USB 3 ports (up to 10Gb/s).",
+    "bulletHighlights":[
+        "Light Laptop without Optical Disk Drive",
+        "1TB SSD",
+        "Mac OS Operating System",
+        "16.2 inch Liquid Retina XDR display, Native resolution at 254 pixels per inch, Up to 1,000 nits sustained (full-screen) brightness, 1,600 nits peak brightness, 10,00,000:1 contrast ratio"
+    ],
+    "discount": 6,
+    "stock": 12,
+    "images": [
+        "https://m.media-amazon.com/images/I/61LNnZPoKPS._SX679_.jpg",
+        "https://m.media-amazon.com/images/I/41fiktPZpCS._SX679_.jpg",
+        "https://www.amazon.in/Apple-Retina-Display-24-inch-8%E2%80%91core/dp/B0932LNQ5L/ref=sr_1_1_sspa?crid=Q3KNIIKE90O8&keywords=imac+2021&qid=1688529190&sprefix=imac+2021%2Caps%2C353&sr=8-1-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1",
+        "https://m.media-amazon.com/images/I/71Cb-5r2aMS._SX679_.jpg"
+    ]
+},
+
+{
+    "name": "Dell Vostro 3420 Laptop",
+    "category": "laptop",
+    "company": "dell",
+    "price": 41490,
+    "rating": 3.9,
+    "warranty": "1 years (3 years can be extended)",
+    "colors": ["#CDD0D0", "#000000"],
+    "description": "Processor: Intel Core i3-1215U 12th Generation (up to 4.40 GHz, 10MB 6 Cores) // RAM & Storage: 8 GB, 1 x 8 GB, DDR4, 2666 MHz, (2 DIMM Slots, Expandable upto 16GB) & 512GB SSD. Software: Win 11 Home + Office H&S 2021, 15 Months McAfee antivirus subscription. Graphics & Keyboard: Integrated Onboard Graphics & Standard Keyboard // Display: 14.0 FHD WVA AG Narrow Border 250 nits. Ports: 1 USB 3.2 Gen 1 Type-C port with DisplayPort 1.4, 1 USB 3.2 Gen 1 port, 1 USB 2.0 port, 1 Headset jack, 1 HDMI 1.4 port*,1 Flip-Down RJ-45 port 10/100/1000 Mbps, 1 SD 3.0 card slot. Features- TÜV Rheinland certified Dell ComfortView to reduce Harmful blue light: 15 Months McAfee antivirus subscription: Waves Maxx Audio tuned speakers and microphones optimize audio: Hardware-based TPM 2.0 security chip",
+    "bulletHighlights":[
+        "Stylish & Portable Thin and Light Laptop",
+        "14 Inch Full HD, WVA AG Narrow Border 250 nits",
+        "A15 Bionic Chip, 6 Core Processor Processor",
+        "512 GB SSD",
+        "8 GB DD RAM"
+    ],
+    "discount": 20,
+    "images": [
+        "https://m.media-amazon.com/images/I/41W2DCM6fYL._AC_SY879_.jpg",
+        "https://m.media-amazon.com/images/I/51jnUhZ1vTL._AC_SY879_.jpg",
+        "https://m.media-amazon.com/images/I/51jBf4l59IL._AC_SY879_.jpg"
+    ]
+},
+
+{
+    "name": "Dell New 14 Latitude 3420- i3 11th Gen",
+    "category": "laptop",
+    "company": "dell",
+    "price": 48444,
+    "rating": 4.1,
+    "warranty": "1 years (2 years can be extended)",
+    "colors": ["#CDD0D0", "#ffffff"],
+    "description": "Processor -i3-1115G4. Memory and Storage -8GB /256GB SSD. Operating System - Ubuntu. 14 inch HD",
+    "bulletHighlights":[
+        "Pre-installed Genuine Windows 10 OS",
+        "Light Laptop without Optical Disk Drive",
+        "14 inch HD LED Backlit Anti-glare Display",
+        "512 GB SSD",
+        "8 GB DD RAM"
+    ],
+    "discount": 30,
+    "images": [
+        "https://m.media-amazon.com/images/I/419zs+-R0OL._AC_SY879_.jpg",
+        "https://m.media-amazon.com/images/I/21HJJHQqTML._AC_SY879_.jpg",
+        "https://m.media-amazon.com/images/I/41remJOOhXL._AC_SY879_.jpg",
+        "https://m.media-amazon.com/images/I/31b9p8jfyGL._AC_SY879_.jpg"
+    ]
+},
+
+
+{
+    "name": "Samsung Galaxy Watch4 Classic LTE",
+    "category": "watch",
+    "company": "samsung",
+    "price": 42999,
+    "rating": 3.9,
+    "colors": ["#ffffff", "#828ea1"],
+    "description": "Only compatible with Android Smartphones (Runs on Wear OS Powered by Samsung). Bioelectrical Impedance Analysis Sensor for Body Composition Analysis, Optical Heart Rate Sensor. Health Monitoring features such as Advanced Sleep Analysis & Women's Health. Enhanced Fitness tracking lets you track 90+ workouts; Enriched App availability and connectivity with Wear OS, Powered by Samsung. Included Components: ‎Galaxy Watch::Watch Strap::Wireless Charger::Quick Start Quide; Connectivity Technology: Usb; Item Type Name: Smart Watch",
+    "bulletHighlights":[
+        "Pre-installed Genuine Android 10",
+        "Only compatible with Android Smartphones",
+        "512 GB Storage",
+        "2 GB RAM"
+    ],
+    "discount": 58,
+    "images": [
+        "https://m.media-amazon.com/images/I/61ftRB6KycL._SX450_.jpg",
+        "https://m.media-amazon.com/images/I/8174tj2Bs8L._SY450_.jpg",
+        "https://m.media-amazon.com/images/I/61mkpp+F95L._SY450_.jpg",
+        "https://m.media-amazon.com/images/I/61yjr+vhbaL._SY450_.jpg"
+    ]
+},
+
+{
+    "name": "Samsung Galaxy Watch5 Pro",
+    "category": "watch",
+    "company": "samsung",
+    "price": 49399,
+    "rating": 4.2,
+    "colors": ["#ffffff", "#828ea1", "#FFFF00", "#ffffff"],
+    "description": "Titanium, 45 mm, Compatible with Android only. Sleep Tracking: Know your sleep with our new and improved sleep tracking technology. Plan your bedtime, detect snoring, understand and track your sleep. Body composition Analysis (BIA Measurement): Monitor everything from body fat percentage (BIA) to skeletal muscle weight. All the feedback you need to track your progress. Optical Heart Rate Sensor: Monitor your heart rate and track your cardiovascular health. Fitness Tracking: Every step counts. Your watch will automatically detect physical activity — counting your steps, calories, and even your routines. (supports over 90 exercises). Meet the Sapphire crystal display.Water-resistant, with a harder front display made with premium Sapphire Crystal that's 1.6 times stronger against scratches.",
+    "bulletHighlights":[
+        "Pre-installed Genuine Android 10",
+        "512 GB Storage",
+        "6 GB RAM",
+        "Retina display with 1000 nit brightness"
+    ],
+    "discount": 11,
+    "images": [
+        "https://m.media-amazon.com/images/I/61Su0aM8NoL._SX355_.jpg",
+        "https://m.media-amazon.com/images/I/61Sl+xoVHoL._SX355_.jpg",
+        "https://m.media-amazon.com/images/I/61bRLjUL9vL._SX355_.jpg",
+        "https://m.media-amazon.com/images/I/71aj77Jdp9L._SY355_.jpg"
+    ],
+    "featured": true
+},
+
+{
+    "name": "Samsung Galaxy Watch5",
+    "category": "watch",
+    "company": "samsung",
+    "price": 30999,
+    "rating": 4.2,
+    "colors": ["#ffffff", "#ffffff", "#FFFF00", "#828ea1"],
+    "description":  "Titanium, 45 mm, Compatible with Android only. Sleep Tracking: Know your sleep with our new and improved sleep tracking technology. Plan your bedtime, detect snoring, understand and track your sleep. Body composition Analysis (BIA Measurement): Monitor everything from body fat percentage (BIA) to skeletal muscle weight. All the feedback you need to track your progress. Optical Heart Rate Sensor: Monitor your heart rate and track your cardiovascular health. Fitness Tracking: Every step counts. Your watch will automatically detect physical activity — counting your steps, calories, and even your routines. (supports over 90 exercises). Meet the Sapphire crystal display.Water-resistant, with a harder front display made with premium Sapphire Crystal that's 1.6 times stronger against scratches.",
+    "bulletHighlights":[
+        "Pre-installed Genuine Android 9",
+        "256 GB Storage",
+        "4 GB RAM",
+        "Retina display with 800 nit brightness",
+        "All Sports Features &Tracker, Bluetooth"
+    ],
+    "stock": 6,
+    "images": [
+        "https://m.media-amazon.com/images/I/61ftRB6KycL._SX355_.jpg",
+        "https://m.media-amazon.com/images/I/61mkpp+F95L._SY355_.jpg",
+        "https://m.media-amazon.com/images/I/610rvcXNg3L._SY355_.jpg",
+        "https://m.media-amazon.com/images/I/61yjr+vhbaL._SY355_.jpg"
+    ]
+},
+{
+    "name": "Apple Watch Ultra",
+    "category": "watch",
+    "company": "apple",
+    "price": 85000,
+    "rating": 4.8,
+    "colors":  ["#ffffff", "#ffffff", "#FFFF00", "#FFC0CB", "#FDB813"],
+    "description": "Apple Watch Ultra [GPS + Cellular 49 mm] smart watch w/Rugged Titanium Case & Orange Alpine Loop - Small. Fitness Tracker, Precision GPS, Action Button, Extra-Long BatteryLife, Brighter Retina Display",
+    "bulletHighlights":[
+        "With Call Function", 
+        "Touchscreen",
+        "Fitness & Outdoor",
+        "Battery Runtime: Upto 36 hrs",
+        "Built in ECG App, Temp sensor, Blood oxygen, Fall Detectors "
+    ],
+    "images": [
+        "https://m.media-amazon.com/images/I/51XGrwhczrL._AC_SY879_.jpg",
+        "https://m.media-amazon.com/images/I/41hlFQ5XGgL._AC_SY879_.jpg",
+        "https://m.media-amazon.com/images/I/51tc3BQp1tL._AC_SY879_.jpg",
+        "https://m.media-amazon.com/images/I/41nnjFRcCTL._AC_SY879_.jpg"
+    ]
+},
+{
+    "name": "Apple Watch Series 8 Watch",
+    "category": "watch",
+    "company": "apple",
+    "price": 65490,
+    "rating": 4.8,
+    "stock": 10,
+    "colors": ["#ffffff", "#000000", "#FFFF00", "#FFC0CB", "#FDB813", "#000080"],
+    "description": "Midnight Aluminum Case with Midnight Sport Band. Fitness Tracker, Blood Oxygen & ECG Apps, Always-On Retina Display, Water Resistant. Your essential companion for a healthy life is now even more powerful. Advanced sensors provide insights to help you better understand your health. New safety features can get you help when you need it. The bright, Always-On Retina display is easy to read, even when your wrist is down. Available in a range of sizes and materials, with dozens of straps to choose from and watch faces with complications tailored to whatever you’re into. Crash Detection and Fall Detection can automatically connect you with emergency services in the event of a severe car crash or a hard fall. And Emergency SOS provides urgent assistance with the press of a button.  Temperature sensing is a breakthrough feature that provides deep insights into women’s health. Keep an eye on your blood oxygen. Take an ECG anytime. Get notifications if you have an irregular rhythm. And see how much time you spent in REM, Core or Deep sleep with sleep stages. t works seamlessly with your Apple devices and services. Unlock your Mac automatically. Find your devices with a tap. Apple Watch requires an iPhone 8 or later with the latest iOS version.",
+    "bulletHighlights":[
+        "With Call Function", 
+        "support of ios 8 and later versions",
+        "INNOVATIVE SAFETY FEATURES",
+        "Battery Runtime: Upto 36 hrs",
+        "Built in ECG App, Temp sensor, Blood oxygen, Fall Detectors"
+    ],
+    "images": [
+        "https://m.media-amazon.com/images/I/71ulah9iIwL._SY450_.jpg",
+        "https://m.media-amazon.com/images/I/61nZpsQlr5L._SY450_.jpg",
+        "https://m.media-amazon.com/images/I/71JKTm03BhL._SY450_.jpg",
+        "https://m.media-amazon.com/images/I/71avFTzTowL._SY450_.jpg"
+    ]
+},
+{
+    "name": "Apple Watch SE (2nd Gen) Watch",
+    "category": "watch",
+    "company": "apple",
+    "price": 29200,
+    "rating": 4.6,
+    "colors": ["#ffffff", "#000000", "#FFFF00", "#FFC0CB", "#FDB813"],
+    "description":"Midnight Aluminum Case & Midnight Sport Band. Fitness & Sleep Tracker, Crash Detection, Heart Rate Monitor, Retina Display, Water Resistant. All the essentials to help you monitor your fitness, keep connected, track your health and stay safe. Now up to 20% faster, with features like Crash Detection and enhanced workout metrics, it’s a better value than ever. Water resistant to 50 metres. Three finishes. And a redesigned, colour-matched back case made with a new production process that reduces its carbon emissions by over 80%. Get help when you need it with Crash Detection, Fall Detection and Emergency SOS. Get deep insights into your health, including notifications if you have an irregular rhythm or an unusually high or low heart rate.  It works seamlessly with your Apple devices and services. Unlock your Mac automatically. Find your devices with a tap. Apple Watch requires an iPhone 8 or later with the latest iOS version. Available in a range of sizes and colours, with dozens of straps to choose from and watch faces with complications tailored to whatever you’re into. It works seamlessly with your Apple devices and services. Unlock your Mac automatically. Find your devices with a tap. Apple Watch requires an iPhone 8 or later with the latest iOS version.",
+    "bulletHighlights":[
+        "With Call Function", 
+        "support of ios 8 and later versions",
+        "HEALTH AND SAFETY FEATURES ",
+        "Battery Runtime: Upto 18 hrs",
+        "Built in ECG App, Temp sensor, Blood oxygen, Fall Detectors"
+    ],
+    "stock": 15,
+    "images": [
+        "https://m.media-amazon.com/images/I/71LfnkRgZ4L._SY450_.jpg",
+        "https://m.media-amazon.com/images/I/61ripYHNMfL._SY450_.jpg",
+        "https://m.media-amazon.com/images/I/618-v7C84VL._SY450_.jpg",
+        "https://m.media-amazon.com/images/I/71+MHQpPw2L._SY450_.jpg"
+    ]
+}
+]

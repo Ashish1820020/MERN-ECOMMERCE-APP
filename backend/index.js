@@ -1,5 +1,5 @@
-require("dotenv").config();
-const express = require("express");
+
+const express = require('express');
 const app = express();
 
 const bodyParser = require('body-parser');
@@ -8,6 +8,9 @@ const cors = require('cors');
 const errorMiddleware = require("./middleware/errorMiddleware");
 
 
+if (process.env.NODE_ENV !== "PRODUCTION") {
+    require("dotenv").config({ path: "backend/.env" });
+  }
 
 
 // MIDDLEWARES

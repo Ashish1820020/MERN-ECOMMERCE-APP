@@ -5,12 +5,6 @@ import styled from 'styled-components';
 const MyImage = ({img}) => {
 
   const [currImage, setCurrImage] = useState(img[0]);
-
-  // console.log(currImage);
-  
-  useEffect(() => {
-    // setCurrImage(img[0]);
-  }, [])
   
 
   return (
@@ -59,7 +53,6 @@ const Wrapper = styled.section`
 /* image-left SECTION */
   .image-left{
     display: flex;
-    /* flex-direction: column; */
     width: 100%;
     height: 20%;
 

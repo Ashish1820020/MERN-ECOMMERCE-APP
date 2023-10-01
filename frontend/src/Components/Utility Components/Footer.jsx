@@ -1,172 +1,164 @@
-import React from 'react'
-import styled from 'styled-components'
-import {FaDiscord, FaInstagram, FaYoutube} from 'react-icons/fa'
-import { FiMail } from 'react-icons/fi'
-import { MdOutlineLocationOn } from 'react-icons/md'
-import { Button } from '../../styles/Button'
-import { NavLink } from 'react-router-dom'
+import React from "react";
+import styled from "styled-components";
+import { FaDiscord, FaInstagram, FaYoutube } from "react-icons/fa";
+import { FiMail } from "react-icons/fi";
+import { MdOutlineLocationOn } from "react-icons/md";
+import { Button } from "../../styles/Button";
+import { NavLink } from "react-router-dom";
 
 const Footer = () => {
   return (
     <Wrapper>
-
-        {/* Floating Section */}
-        
-
-
-        {/* Main Footer Section */}
-        <footer>
-
-        {/* <div className="contact-short">
-          <div className="flex">
-            <div>
-              <h2>Ready to get started?</h2>
-              <h2>Talk to us today</h2>
-            </div>
-            <div>
-              <Button className="btn hireme-btn">
-                <NavLink to='/'>Get Started</NavLink>
-              </Button>
-            </div>
-          </div>
-        </div> */}
-
-          
-          <div className="footer-main"> 
-            <div className="footer-left">
-              <figure>
-                <img src="../../images/logos.png" alt="" />
-              </figure>
-              <p>Anand Stores Quality is Superior to price</p>
-              <ul>
-                <li><FaDiscord className='icon'/></li>
-                <li><FaInstagram  className='icon'/></li>
-                <li><FaYoutube  className='icon'/></li>
-              </ul>
-            </div>
-
-            <div className="footer-mid">
-              <h2>Pages</h2>
-              <ul>
-                <li><NavLink className='navbar-link' to='/about'>ABOUT</NavLink></li>
-                <li><NavLink className='navbar-link' to='/contact'>CONTACT</NavLink></li>
-              </ul>
-            </div>
-
-            
-
-            <div className="footer-right">
-              <h2>Talk To Us</h2>
-              <p>Got Questions? Call us</p>
-              <h3>+123 456 7890</h3>
-              <ul>
-                <li><FiMail className='icon'/><span>ashish@support.com</span></li>
-                <li><MdOutlineLocationOn className='icon'/><span>Bardhaman, West Bengal 713101</span></li>
-              </ul>
-            </div>
-
+      <footer>
+        <div className="footer-main">
+          <div className="footer-left">
+            <figure>
+              <img src="../../images/logos.png" alt="" />
+            </figure>
+            <p>Anand Stores Quality is Superior to price</p>
+            <ul>
+              <li>
+                <FaDiscord className="icon" />
+              </li>
+              <li>
+                <FaInstagram className="icon" />
+              </li>
+              <li>
+                <FaYoutube className="icon" />
+              </li>
+            </ul>
           </div>
 
-          <hr />
-          <div className='footer-bottom'>
-            <p>@{new Date().getFullYear()} Anand group of companies. All Rights Reserved</p>
-            <div>
-              <p>PRIVACY POLICY</p>
-              <p>TERMS & CONDITIONS</p>
-            </div>
+          <div className="footer-mid">
+            <h2>Pages</h2>
+            <ul>
+              <li>
+                <NavLink className="navbar-link" to="/about">
+                  ABOUT
+                </NavLink>
+              </li>
+              <li>
+                <NavLink className="navbar-link" to="/contact">
+                  CONTACT
+                </NavLink>
+              </li>
+            </ul>
           </div>
 
-        </footer>
+          <div className="footer-right">
+            <h2>Talk To Us</h2>
+            <p>Got Questions? Call us</p>
+            <h3>+123 456 7890</h3>
+            <ul>
+              <li>
+                <FiMail className="icon" />
+                <span>ashish@support.com</span>
+              </li>
+              <li>
+                <MdOutlineLocationOn className="icon" />
+                <span>Bardhaman, West Bengal 713101</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <hr />
+        <div className="footer-bottom">
+          <p>
+            @{new Date().getFullYear()} Anand group of companies. All Rights
+            Reserved
+          </p>
+          <div>
+            <p>PRIVACY POLICY</p>
+            <p>TERMS & CONDITIONS</p>
+          </div>
+        </div>
+      </footer>
     </Wrapper>
-
-
-    
-  )
-}
-
+  );
+};
 
 const Wrapper = styled.section`
   border: 1px solid black;
   background-color: #0a1435;
 
-  p, a, h2, span, h3, ul{
-    font-family: 'Work Sans', sans-serif;
+  p,
+  a,
+  h2,
+  span,
+  h3,
+  ul {
+    font-family: "Work Sans", sans-serif;
     color: white;
   }
-  h2{
+  h2 {
     margin-bottom: 0;
     font-size: 2.2rem;
-    /* color: black; */
     font-weight: 800;
   }
-  h3{
+  h3 {
     font-size: 1.8rem;
     font-weight: 700;
   }
-  p{
-   font-size: 1.6rem;
-  }
-
-  a{
-    
+  p {
+    font-size: 1.6rem;
   }
 
   footer {
     padding: 8rem 0 2rem 0;
   }
 
+  li > a {
+    font-size: 1.6rem;
+  }
 
-  li > a{
-      font-size: 1.6rem;
-    }
-
-  .footer-main{
+  .footer-main {
     display: flex;
     justify-content: space-between;
     width: 60%;
     margin: 0 auto;
   }
 
-  hr{
+  hr {
     margin: 3rem 0;
   }
 
-  .footer-bottom{
+  .footer-bottom {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
-    div{
+    div {
       margin-top: 2rem;
       display: flex;
       flex-direction: column;
       align-items: center;
     }
   }
-  
-  .footer-left{
+
+  .footer-left {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
     width: 40%;
-    figure{
+    figure {
       width: 50%;
-      img{
+      img {
         width: 14rem;
       }
     }
-    p{
+    p {
       width: 66%;
     }
 
-    ul{
+    ul {
       display: flex;
-      .icon{
+      .icon {
         position: relative;
         font-size: 2.4rem;
-        margin-right: .6rem;
-        padding: .5rem;
+        margin-right: 0.6rem;
+        padding: 0.5rem;
         box-shadow: 0 0 1px 1.5px #ffffff;
         border-radius: 50%;
         cursor: pointer;
@@ -174,146 +166,134 @@ const Wrapper = styled.section`
     }
   }
 
-
-
-
-
-
-  .footer-mid{
+  .footer-mid {
     display: flex;
     flex-direction: column;
     width: 26%;
-    h2{
+    h2 {
       margin-bottom: 0;
     }
-    ul{
+    ul {
       display: flex;
       flex-direction: column;
       margin-top: 1rem;
-      li{
+      li {
         margin-left: 2rem;
         list-style: circle;
-        margin-top: .5rem;
-        &:hover{
+        margin-top: 0.5rem;
+        &:hover {
           text-decoration: underline;
         }
       }
-      li::marker{
+      li::marker {
         color: white;
       }
     }
   }
 
-
-  .footer-right{
+  .footer-right {
     width: 40%;
-    p{
+    p {
       margin-top: 1rem;
     }
-    ul{
+    ul {
       margin-top: 1rem;
     }
-    li{
+    li {
       display: flex;
       align-items: flex-start;
       margin-top: 1rem;
       gap: 1rem;
-      .icon{
+      .icon {
         height: 2rem;
         width: 2.4rem;
         color: white;
       }
-      span{
+      span {
         font-size: 1.6rem;
       }
     }
   }
 
-
-
-
-
-
-
   @media (max-width: 1440px) {
-    .footer-main{
+    .footer-main {
       width: 80%;
-    } 
-    .footer-left{
-      ul > li > .icon{
+    }
+    .footer-left {
+      ul > li > .icon {
         height: 3rem;
         width: 3rem;
       }
     }
-    .footer-right{
-      ul > li > .icon{
+    .footer-right {
+      ul > li > .icon {
         height: 3rem;
         width: 3rem;
       }
     }
   }
   @media (max-width: 950px) {
-    .footer-main{
+    .footer-main {
       width: 90%;
     }
-    .footer-left{
-      ul > li > .icon{
+    .footer-left {
+      ul > li > .icon {
         height: 2.6rem;
         width: 2.6rem;
       }
     }
-    .footer-right{
-      ul > li >span{
+    .footer-right {
+      ul > li > span {
         font-size: 1.4rem;
       }
     }
   }
   @media (max-width: 770px) {
-    .footer-main{
+    .footer-main {
       flex-wrap: wrap;
       width: 70%;
     }
-    p{
+    p {
       font-size: 1.4rem;
     }
-    .footer-left{
+    .footer-left {
       width: 67%;
     }
-    .footer-mid{
-     width: 30%;
+    .footer-mid {
+      width: 30%;
     }
-    .footer-right{
+    .footer-right {
       width: 60%;
       margin-top: 4rem;
     }
   }
   @media (max-width: 550px) {
-    footer{
+    footer {
       padding: 8rem 0;
     }
-    .footer-main{
+    .footer-main {
       flex-wrap: wrap;
       width: 90%;
     }
-    
-    .footer-left{
+
+    .footer-left {
       width: 80%;
     }
-    .footer-mid{
+    .footer-mid {
       margin-top: 4rem;
       width: 80%;
     }
-    .footer-right{
+    .footer-right {
       width: 80%;
-     margin-top: 4rem;
+      margin-top: 4rem;
     }
-    li > a{
+    li > a {
       font-size: 1%.2;
     }
   }
   @media (max-width: 350px) {
-    .footer-bottom{
-      p{
+    .footer-bottom {
+      p {
         font-size: 1rem;
       }
     }

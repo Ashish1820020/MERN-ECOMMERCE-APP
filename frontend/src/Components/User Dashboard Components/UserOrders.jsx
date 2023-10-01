@@ -13,13 +13,11 @@ const UserOrders = () => {
 
     dispatch(setIsLoading());
     try{
-      const res = await axios.get(`${import.meta.env.VITE_ROOT_API}/orders/user-orders`);
+      const res = await axios.get(`/api/v1/orders/user-orders`);
       const data = await res.data;
-      // console.log(data);
       dispatch(addOrders(data.userOrders)); 
     }
     catch(error){
-      // console.log(error);
       dispatch(setIsError());  
     }
   }
@@ -39,6 +37,7 @@ const UserOrders = () => {
       <Wrapper>
         <table>
 
+
           <tbody>
             {
               orderData.map(element => {
@@ -55,10 +54,9 @@ const UserOrders = () => {
               })
             }
           </tbody>
+
+
         </table>
-       {
-        
-       }
       </Wrapper>
     )
   }

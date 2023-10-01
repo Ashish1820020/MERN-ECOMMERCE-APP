@@ -1,10 +1,9 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { setAllUsers, isError } from '../../Store/Slices/AuthSlice'
+import { setAllUsers } from '../../Store/Slices/AuthSlice'
 import { toast } from 'react-toastify';
 import styled from 'styled-components';
 import axios from 'axios';
-import { useCookies } from 'react-cookie';
 import { MdDelete } from 'react-icons/md';
 
 const ShowUsers = () => {
@@ -16,7 +15,7 @@ const ShowUsers = () => {
   const handleClick = async (id) => {
     const promptValue = window.confirm("Do you really want to delete this user?");
     if(promptValue){
-      await axios.delete(`${import.meta.env.VITE_ROOT_API}/auth/deleteuser/${id}`)
+      await axios.delete(`/api/v1/auth/deleteuser/${id}`)
       .then((res) => {
           toast.success(res.data.msg);
           dispatch(setAllUsers(res.data.updatedUsers));
@@ -37,35 +36,35 @@ const ShowUsers = () => {
       <hr/>
       {
         isLoading === false?
-            <table>
-              <thead>
-                <tr className='table-header'>
-                  <td>ID</td>
-                  <td> Name</td>
-                  <td>Phone No</td>
-                  <td>Email</td>
-                  <td>Action</td>
-                </tr>
-              </thead>
-              <tbody>
-                {
-                  allUsers.map((user, index) => {
-                    if(user.role === 0){
-                      ++count;
-                      return (
-                        <tr key={index+1}>
-                          <td>{count}</td>
-                          <td>{user.name}</td>
-                          <td>{user.phoneNumber}</td>
-                          <td>{user.email}</td>
-                          <td><MdDelete className='icon-small' onClick={() => handleClick(user._id)}/></td>
-                        </tr>
-                      )
-                    }
-                  })
-                }
-              </tbody>
-            </table>
+          <table>
+            <thead>
+              <tr className='table-header'>
+                <td>ID</td>
+                <td> Name</td>
+                <td>Phone No</td>
+                <td>Email</td>
+                <td>Action</td>
+              </tr>
+            </thead>
+            <tbody>
+              {
+                allUsers.map((user, index) => {
+                  if(user.role === 0){
+                    ++count;
+                    return (
+                      <tr key={index+1}>
+                        <td>{count}</td>
+                        <td>{user.name}</td>
+                        <td>{user.phoneNumber}</td>
+                        <td>{user.email}</td>
+                        <td><MdDelete className='icon-small' onClick={() => handleClick(user._id)}/></td>
+                      </tr>
+                    )
+                  }
+                })
+              }
+            </tbody>
+          </table>
         :
           <div></div>
       }

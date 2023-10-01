@@ -1,48 +1,44 @@
-import React from 'react';
-import { useCookies } from 'react-cookie';
-import { useSelector } from 'react-redux';
-import {  NavLink } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
-import { MdDashboardCustomize } from 'react-icons/md'
-import { FiSettings } from 'react-icons/fi'
-import { TbLogout } from 'react-icons/tb'
-import styled from 'styled-components';
-import { AiOutlineDashboard } from 'react-icons/ai';
+import React from "react";
+import { NavLink } from "react-router-dom";
+import { MdDashboardCustomize } from "react-icons/md";
+import { TbLogout } from "react-icons/tb";
+import styled from "styled-components";
+import { AiOutlineDashboard } from "react-icons/ai";
 
-
-
-
-
-
-const DropDown = ({setDropDown, updateCartDataToDb, dropdown, dashboardType, userData}) => {
-
-
-
-
-  
-
+const DropDown = ({
+  setDropDown,
+  updateCartDataToDb,
+  dropdown,
+  dashboardType,
+  userData,
+}) => {
   return (
-      <Wrapper className = {dropdown? 'dropdown-active' : "" }>
-        <div className = 'dropdown-container'>
-          <li>
-            <NavLink to={`/dashboard/${dashboardType}`} onClick={() => setDropDown(false)}>
-               <MdDashboardCustomize className='icon' />
-            </NavLink>
-          </li>
-          {
-            userData.role === 1?
-            <NavLink to={`/dashboard/user`} onClick={() => setDropDown(false)}>
-              <li><AiOutlineDashboard className='icon'/></li>
-            </NavLink>
-            :
-            ""
-          }
-          <li onClick={() => updateCartDataToDb()}><TbLogout className='icon'/></li>
-        </div>
-      </Wrapper>
-  )
-}
-
+    <Wrapper className={dropdown ? "dropdown-active" : ""}>
+      <div className="dropdown-container">
+        <li>
+          <NavLink
+            to={`/dashboard/${dashboardType}`}
+            onClick={() => setDropDown(false)}
+          >
+            <MdDashboardCustomize className="icon" />
+          </NavLink>
+        </li>
+        {userData.role === 1 ? (
+          <NavLink to={`/dashboard/user`} onClick={() => setDropDown(false)}>
+            <li>
+              <AiOutlineDashboard className="icon" />
+            </li>
+          </NavLink>
+        ) : (
+          ""
+        )}
+        <li onClick={() => updateCartDataToDb()}>
+          <TbLogout className="icon" />
+        </li>
+      </div>
+    </Wrapper>
+  );
+};
 
 const Wrapper = styled.ul`
   position: absolute;
@@ -51,15 +47,15 @@ const Wrapper = styled.ul`
   display: none;
   top: -100rem;
   padding-top: 2rem;
-  .dropdown-container{
+  .dropdown-container {
     display: flex;
     flex-direction: column;
-    gap: .4rem;
+    gap: 0.4rem;
     justify-content: center;
-    border-radius: .3rem;
+    border-radius: 0.3rem;
   }
 
-  .icon{
+  .icon {
     height: 3.5rem;
     width: 3.5rem;
     color: #757575;
@@ -68,11 +64,10 @@ const Wrapper = styled.ul`
     border: 1px solid black;
     border-radius: 50%;
     padding: 0.5rem;
-    &:hover{
+    &:hover {
       background-color: #d4d2d2;
     }
   }
 `;
-
 
 export default DropDown;

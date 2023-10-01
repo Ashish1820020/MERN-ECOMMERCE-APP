@@ -9,7 +9,8 @@ const OthersSection = () => {
     const othersArray = products.filter((currElem) => {
       return currElem.category === ( "64f04d2d23463d4058758238" || "64f04d2423463d4058758235 ") || currElem.category === "64b8a5ce3b7b35925d79add5";
     });
-    console.log(othersArray);
+    
+    
     if(isLoading) return <div>.........Loading</div>
     else return <ProductSlider featureProducts={othersArray}/>
 }

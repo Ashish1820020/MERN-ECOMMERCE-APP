@@ -11,7 +11,7 @@ const Form = ({header}) => {
   const dispatch =  useDispatch();
 
   
-  // -------STATES--------
+  // <----STATES---->
   const [state, setState] = useState({name: '', category: '', company: '', price: 0, rating: '', warranty: '', description: '', discount: 0, stock: 0, featured: ''});
   const [colors, setColors] = useState({  color1: "#000000", color2: "#000000", color3: "#000000", color4: "#000000" });
   const [bulletPoints, setBulletPoints] = useState({ point1: "", point2: "", point3: "", point4: "" });
@@ -40,18 +40,18 @@ const Form = ({header}) => {
     const distinctImages = controlDistinct(Object.values(images));
 
     let value = {...state, colors: distinctColor, bulletHighlights: distinctBulletPoints, images: distinctImages};
-    console.log(value);
-    await axios.post(`${import.meta.env.VITE_ROOT_API}/products/addproduct`, value)
+    
+    await axios.post(`/api/v1/products/addproduct`, value)
     .then((res) => {
         toast.success(res.data.msg);
         console.log(res.data.newProduct);
-
         dispatch(addNewProduct(res.data.newProduct))
     })
     .catch((err) => {
         toast.error(err.response?.data.msg);
         console.log(err);
     });
+
   };
 
 
@@ -335,7 +335,6 @@ const Wrapper = styled.div`
    .colors {
     width: 100%;
     height: 3rem;
-    /* margin: 0 auto; */
     padding: 0%;
   }
   }

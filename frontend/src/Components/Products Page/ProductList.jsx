@@ -38,10 +38,10 @@ const ProductList = () => {
         }
 
         queries = queries.substring(0, queries.length-1)
-        UPDATED_API = `${import.meta.env.VITE_ROOT_API}/products/productlist?${queries}&${pageQuery}`
+        UPDATED_API = `/api/v1/products/productlist?${queries}&${pageQuery}`
     }
     else{
-        UPDATED_API = `${import.meta.env.VITE_ROOT_API}/products/productlist?${pageQuery}`
+        UPDATED_API = `/api/v1/products/productlist?${pageQuery}`
     }
 
     try{
@@ -50,12 +50,12 @@ const ProductList = () => {
       dispatch(updateFilteredProducts(data)); 
     }
     catch(error){
-      // console.log(error);
       dispatch(isError());  
     }
   }
   useEffect(() => {
     getFilteredProducts(filters, gridView, currentPage, sortingType);
+    window.scrollTo({top: 0});
   }, [gridView, currentPage, filters, sortingType]);
 
   const handlePageClick = (e) => {

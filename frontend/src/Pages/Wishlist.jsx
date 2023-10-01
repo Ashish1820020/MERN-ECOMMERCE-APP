@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import styled from 'styled-components';
-import ProductCard from '../Components/Utility Components/ProductCard';
 import EmptyCart from '../Components/Utility Components/EmptyCart';
 import { addToCart } from '../Store/Slices/CartSlice';
 import { clearWishlist, removeFromWishlist } from '../Store/Slices/WishlistSlice';
@@ -30,19 +29,19 @@ const Wishlist = () => {
           <EmptyCart text={'Wishlist'}/>
         :
           <>
-              <h2>Wishlist</h2>
-              <div className="items-container">
-                {
-                  wishlistProducts.map((elem, index) => {
-                    // console.log(elem);
-                    return (
-                      <div className='wishlist-card' key={elem._id+index}>
-                        <WishlistProductCard {...{...elem}}/>
-                        <button onClick={() => handleToCart(elem)}>Move to Cart</button>
-                      </div>
-                    )
-                  })
-                }
+            <h2>Wishlist</h2>
+            <div className="items-container">
+              {
+                wishlistProducts.map((elem, index) => {
+                  // console.log(elem);
+                  return (
+                    <div className='wishlist-card' key={elem._id+index}>
+                      <WishlistProductCard {...{...elem}}/>
+                      <button onClick={() => handleToCart(elem)}>Move to Cart</button>
+                    </div>
+                  )
+                })
+              }
             </div>
             <button className='btn-warning' onClick={() => dispatch(clearWishlist())}>Clear Wishlist</button>
           </>
@@ -52,7 +51,6 @@ const Wishlist = () => {
 }
 
 const Wrapper = styled.div`
-  /* margin: 10rem auto; */
 
   .card{
     margin: 0;
@@ -75,17 +73,18 @@ const Wrapper = styled.div`
   }
 
   h2{
-    margin: 1.5rem auto 5rem;
+    margin: .5rem auto 2rem;
     text-align: center;
-    border-bottom: 2px solid black;
   }
   .items-container{
       display: flex;
       flex-wrap: wrap;
   }
+
   .figure-container{
       position: relative;
   }
+
   button{
     background-color: rgba(40,116,240,255);
     color: white;

@@ -13,19 +13,17 @@ const SingleOrderComponent = () => {
 
   const {id} = useParams();
   const dispatch = useDispatch();
-  const {isSingleLoading, singleOrderData, status} = useSelector(state => state.order);
+  const { singleOrderData, status } = useSelector(state => state.order);
   
   const getSingleData = async (id) => {
     dispatch(setIsSingleLoading());
     try {
-        const { data } = await axios.get(`${import.meta.env.VITE_ROOT_API}/orders/singleorder/${id}`);
-        // console.log(data);
+        const { data } = await axios.get(`/api/v1/orders/singleorder/${id}`);
         toast.success(data.msg)
         dispatch(addSingleOrderData(data.singleOrderData));
       } catch (error) {
         toast.err(error.response.data.msg);
         dispatch(setIsError());
-        // console.log(error);
     }
   };
 
@@ -38,8 +36,7 @@ const SingleOrderComponent = () => {
   const handleSubmit = async () => {
     dispatch(setIsSingleLoading());
     try {
-        const { data } = await axios.put(`${import.meta.env.VITE_ROOT_API}/orders/updateorder/${id}`, {status});
-        // console.log(data);
+        const { data } = await axios.put(`/api/v1/orders/updateorder/${id}`, {status});
         toast.success(data.msg);
         dispatch(addSingleOrderData(data.order));
     } catch (error) {
@@ -55,62 +52,62 @@ const SingleOrderComponent = () => {
   }else{
     const {address} = singleOrderData;
     return (
-        <Wrapper>
-          <div className="single-order-card">
-            <h3>Shipping Info</h3>
-            <div className="single-order-card-inside">
-              <p>Name: <span>{address?.name}</span></p>
-              <p>Phone: <span>{address?.phoneNo}</span></p>
-              <p>Address: <span> {address?.locality}, {address?.landmark}, {address?.address}, {address?.district}, {address?.country}- {address?.pinCode}</span></p>
-            </div>
+      <Wrapper>
+        <div className="single-order-card">
+          <h3>Shipping Info</h3>
+          <div className="single-order-card-inside">
+            <p>Name: <span>{address?.name}</span></p>
+            <p>Phone: <span>{address?.phoneNo}</span></p>
+            <p>Address: <span> {address?.locality}, {address?.landmark}, {address?.address}, {address?.district}, {address?.country}- {address?.pinCode}</span></p>
           </div>
+        </div>
 
-          <div className="single-order-card">
-            <h3>Payment</h3>
-            <div className="single-order-card-inside" style={{color: "white"}}>
-              <h4 style={{color: "green", fontWeight: "bolder", fontSize: "2rem"}}>{singleOrderData.paymentInfo.COD? "" : "PAID"}</h4>
-              <p>Amount: <span><FormatPrice price={singleOrderData.totalPrice} /></span></p>
-            </div>
+        <div className="single-order-card">
+          <h3>Payment</h3>
+          <div className="single-order-card-inside" style={{color: "white"}}>
+            <h4 style={{color: "green", fontWeight: "bolder", fontSize: "2rem"}}>{singleOrderData.paymentInfo.COD? "" : "PAID"}</h4>
+            <p>Amount: <span><FormatPrice price={singleOrderData.totalPrice} /></span></p>
           </div>
+        </div>
 
-          <div className="single-order-card">
-            <h3>Order Status</h3>
-            <div className="single-order-card-inside flex-row">
-              <h4 style={{color: status === "Delivered"? "green" : "red", fontWeight: "bolder", fontSize: "2rem" }}>{singleOrderData.orderStatus}</h4>
-              <div className='input'>
-                <select name="" value={status} onChange={e => dispatch(setStatus(e.target.value))}>
-                  <option value={"Not Process"}>Not Process</option>
-                  <option value={"Processing"}>Processing</option>
-                  <option value={"Shipped"}>Shipped</option>
-                  <option value={"Delivered"}>Delivered</option>
-                  <option value={"Cancel"}>Cancel</option>
-                </select>
-                <button onClick={handleSubmit}>Process</button>
-              </div>
+        <div className="single-order-card">
+          <h3>Order Status</h3>
+          <div className="single-order-card-inside flex-row">
+            <h4 style={{color: status === "Delivered"? "green" : "red", fontWeight: "bolder", fontSize: "2rem" }}>{singleOrderData.orderStatus}</h4>
+            <div className='input'>
+              <select name="" value={status} onChange={e => dispatch(setStatus(e.target.value))}>
+                <option value={"Not Process"}>Not Process</option>
+                <option value={"Processing"}>Processing</option>
+                <option value={"Shipped"}>Shipped</option>
+                <option value={"Delivered"}>Delivered</option>
+                <option value={"Cancel"}>Cancel</option>
+              </select>
+              <button onClick={handleSubmit}>Process</button>
             </div>
           </div>
+        </div>
 
-          <div className="single-order-card">
-            <h3>Order Items</h3>
-            <div className="single-order-card-inside">
-              <table>
-                <tbody>
-                    {
-                      singleOrderData.orderedItems.map((element, index) => {
-                        return (
-                          <tr className="order-card flex-row" key={index}>
-                            <td className="order-card-item"><figure><img src={element.image} alt="" /></figure></td>
-                            <td className="order-card-item">{element.name}</td>
-                            <td className="order-card-item">{element.count} * {element.price} = {element.count*element.price}</td>
-                          </tr>
-                        )
-                      })
-                    }
-                </tbody>
-              </table>
-            </div>
+        <div className="single-order-card">
+          <h3>Order Items</h3>
+          <div className="single-order-card-inside">
+            <table>
+              <tbody>
+                  {
+                    singleOrderData.orderedItems.map((element, index) => {
+                      return (
+                        <tr className="order-card flex-row" key={index}>
+                          <td className="order-card-item"><figure><img src={element.image} alt="" /></figure></td>
+                          <td className="order-card-item">{element.name}</td>
+                          <td className="order-card-item">{element.count} * {element.price} = {element.count*element.price}</td>
+                        </tr>
+                      )
+                    })
+                  }
+              </tbody>
+            </table>
           </div>
-        </Wrapper>
+        </div>
+      </Wrapper>
     )
   }
 };
@@ -161,7 +158,6 @@ const Wrapper = styled.div`
     }
 
   .order-card-item{
-    /* font-size: 1.5rem; */
     span{
       height: 1rem;
       width: 5rem;
@@ -185,10 +181,7 @@ const Wrapper = styled.div`
     padding: 2rem;
     h3{
       font-size: 2.5rem;
-    } 
-    /* button{
-      padding: .6rem 0;
-    } */
+    }
 }
   @media (max-width: 560px) {
     padding: 0rem;
@@ -219,4 +212,4 @@ const Wrapper = styled.div`
   }
 `;
 
-export default SingleOrderComponent
+export default SingleOrderComponent;

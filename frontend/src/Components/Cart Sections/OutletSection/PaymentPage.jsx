@@ -8,6 +8,8 @@ import { toast } from 'react-toastify';
 import styled from 'styled-components';
 
 const PaymentPage = ({clientToken, deliveryAddress}) => {
+
+
     const { cartProducts } = useSelector(state => state.cart);
     const { userData } = useSelector(state => state.auth);
     const [instance, setInstance] = useState("");
@@ -21,14 +23,13 @@ const PaymentPage = ({clientToken, deliveryAddress}) => {
           setLoading(true);
           const { nonce } = await instance.requestPaymentMethod();
           const body = {nonce, cartProducts, id: userData._id, deliveryAddress};
-          const { data } = await axios.post(`${import.meta.env.VITE_ROOT_API}/payment/braintree/payment`, body);
+          const { data } = await axios.post(`/api/v1/payment/braintree/payment`, body);
           setLoading(false);
           localStorage.removeItem("cartProducts");
           dispatch(clearCart());
           navigate("/dashboard/user/orders");
           toast.success("Payment Completed Successfully");
         } catch (error) {
-          // console.log(error);
           setLoading(false);
         }
       };
@@ -39,13 +40,12 @@ const PaymentPage = ({clientToken, deliveryAddress}) => {
       <DropIn options={{authorization: clientToken}} onInstance={(instance) => setInstance(instance)} />
       <button
         style={{"float": "right"}}
-        // 
         className="btn btn-primary"
         onClick={handlePayment}
         disabled={loading || !instance}
-    >
+      >
         {loading ? "Processing ...." : "Make Payment"}
-    </button>
+      </button>
 
     </Wrapper>
   )
@@ -58,13 +58,14 @@ margin: auto;
 @media (max-width: 770px) {
   width: 75%;
 }
+
 @media (max-width: 550px) {
   width: 90%;
 }
+
 @media (max-width: 420px) {
   width: 100%;
 }
-  
-`
+`;
 
-export default PaymentPage
+export default PaymentPage;

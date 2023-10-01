@@ -34,7 +34,7 @@ const Signup = () => {
     myForm.append("confirmPassword", confirmPassword);
     myForm.append("avatar", avatar);
 
-    await axios.post(`${import.meta.env.VITE_ROOT_API}/auth/signup`, myForm)
+    await axios.post(`/api/v1/auth/signup`, myForm)
     .then((res)=>{
       // console.log(res);
       toast.success(res.data.msg);
@@ -111,17 +111,17 @@ const Wrapper = styled.div`
     width: 100%;
 
     .update-profile-input {
-        display: flex;
-        width: 100%;
-        align-items: center;
-        box-shadow: 0px 0px 1px 0px black;
-        margin: 0 auto;
-        padding: 0 1rem;
-        .icon{
-          height: 2.5rem;
-          width: 2.5rem;
-        }
+      display: flex;
+      width: 100%;
+      align-items: center;
+      box-shadow: 0px 0px 1px 0px black;
+      margin: 0 auto;
+      padding: 0 1rem;
+      .icon{
+        height: 2.5rem;
+        width: 2.5rem;
       }
+    }
 
     .update-profile-input > input {
       color: #5959ec;
@@ -152,9 +152,6 @@ const Wrapper = styled.div`
   form{
     gap: 1rem;
   }
-
-
-
 
   #update-profile-image > img {
     width: 3vmax;

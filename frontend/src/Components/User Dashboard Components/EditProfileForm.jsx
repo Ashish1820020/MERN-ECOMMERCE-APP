@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import {AiOutlineMobile} from 'react-icons/ai'
-import {MdOutlineFace6} from 'react-icons/md'
-import {CgPassword} from 'react-icons/cg'
+import { AiOutlineMobile } from "react-icons/ai";
+import { MdOutlineFace6 } from "react-icons/md";
+import { CgPassword } from "react-icons/cg";
 import { useDispatch, useSelector } from "react-redux";
 import { useCookies } from "react-cookie";
 import axios from "axios";
@@ -10,14 +10,9 @@ import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import { addUserData, updateUserData } from "../../Store/Slices/AuthSlice";
 
-
-
-
-
 const UpdateProfile = () => {
-
   const dispatch = useDispatch();
-  const {userData} = useSelector(state => state.auth);
+  const { userData } = useSelector((state) => state.auth);
   const navigate = useNavigate();
 
   // STATES
@@ -26,7 +21,6 @@ const UpdateProfile = () => {
   const [mobile, setMobile] = useState("");
   const [avatar, setAvatar] = useState();
   const [avatarPreview, setAvatarPreview] = useState(userData.avatar);
-
 
   const updateProfileSubmit = async (e) => {
     e.preventDefault();
@@ -39,46 +33,44 @@ const UpdateProfile = () => {
     myForm.append("phoneNumber", mobile);
     myForm.append("avatar", avatar);
 
-    // console.log(myForm);
-      await axios.patch(`${import.meta.env.VITE_ROOT_API}/auth/updateprofile`, myForm)
-      .then((res)=>{
+    await axios
+      .patch(`/api/v1/auth/updateprofile`, myForm)
+      .then((res) => {
         toast.success(res.data.msg);
         dispatch(updateUserData(res.data.userData));
         navigate("/");
       })
-       .catch((err) => {
-        // console.log(err);
+      .catch((err) => {
         toast.error(err.response?.data.msg);
       });
   };
 
-  // HANDLING THE CHANGE OF IMAGE 
+  // HANDLING THE CHANGE OF IMAGE
   const updateProfileDataChange = (e) => {
     setAvatar(e.target.files[0]);
     setAvatarPreview(URL.createObjectURL(e.target.files[0]));
   };
 
   useEffect(() => {
-    if (userData &&userData?.avatar) {
+    if (userData && userData?.avatar) {
       setAvatarPreview(userData.avatar);
-    }else{
-      setAvatarPreview("https://res.cloudinary.com/muttakinhasib/image/upload/v1611336104/avatar/user_qcrqny.svg"); 
+    } else {
+      setAvatarPreview(
+        "https://res.cloudinary.com/muttakinhasib/image/upload/v1611336104/avatar/user_qcrqny.svg"
+      );
     }
   }, []);
 
-
-
-
-
-
-  return ( 
+  return (
     <Fragment>
-      {/* <MetaData title="Update Profile" /> */}
       <div className="update-profile-container flex-column">
         <h2 className="update-profile-heading">Update Profile</h2>
 
-        <form className="update-profile-form flex-column" encType="multipart/form-data" onSubmit={updateProfileSubmit}>
-          
+        <form
+          className="update-profile-form flex-column"
+          encType="multipart/form-data"
+          onSubmit={updateProfileSubmit}
+        >
           <div className="update-profile-input">
             <MdOutlineFace6 />
             <input
@@ -90,7 +82,7 @@ const UpdateProfile = () => {
               onChange={(e) => setName(e.target.value)}
             />
           </div>
-          
+
           <div className="update-profile-input">
             <AiOutlineMobile />
             <input
@@ -126,7 +118,7 @@ const UpdateProfile = () => {
             />
           </div>
 
-          <input type="submit" value="Update" className="updateProfileBtn"/>
+          <input type="submit" value="Update" className="updateProfileBtn" />
         </form>
       </div>
     </Fragment>
@@ -180,7 +172,7 @@ const Fragment = styled.div`
     height: 20%;
     align-items: center;
   }
-  
+
   .update-profile-form > div > input {
     color: #5959ec;
     padding: 1vmax 4vmax;
@@ -193,7 +185,7 @@ const Fragment = styled.div`
     font: 300 0.9vmax cursive;
     outline: none;
   }
-  #image-input{
+  #image-input {
     width: 50%;
     height: 5rem;
   }
@@ -257,7 +249,7 @@ const Fragment = styled.div`
     .update-profile-container {
       width: 50dvw;
     }
-    .update-profile-form{
+    .update-profile-form {
       padding: 0;
       width: 70%;
     }
@@ -266,7 +258,7 @@ const Fragment = styled.div`
     .update-profile-container {
       width: 70dvw;
     }
-    .update-profile-form{
+    .update-profile-form {
       padding: 0;
       width: 70%;
     }
@@ -275,7 +267,7 @@ const Fragment = styled.div`
     .update-profile-container {
       width: 60dvw;
     }
-    .update-profile-form{
+    .update-profile-form {
       padding: 0;
       width: 70%;
     }
@@ -284,7 +276,7 @@ const Fragment = styled.div`
     .update-profile-container {
       width: 75dvw;
     }
-    .update-profile-form{
+    .update-profile-form {
       padding: 0;
       width: 70%;
     }
@@ -295,7 +287,7 @@ const Fragment = styled.div`
     }
   }
   @media screen and (max-width: 450px) {
-    .update-profile-form>div{
+    .update-profile-form > div {
       /* flex-direction: column; */
     }
   }

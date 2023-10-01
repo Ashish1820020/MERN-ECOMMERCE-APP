@@ -18,7 +18,7 @@ const ShowAllProducts = () => {
   const getAllProducts = async () => {
     dispatch(isLoading());
 
-    await axios.get(`${import.meta.env.VITE_ROOT_API}/products/productlist`)
+    await axios.get(`/api/v1/products/productlist`)
     .then((res) => {
       const data = res.data;
       dispatch(updateProductList(data.result)); 

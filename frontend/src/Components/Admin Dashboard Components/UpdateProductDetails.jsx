@@ -58,14 +58,13 @@ const UpdateProductDetails = ({ header }) => {
     dispatch(isSingleLoading());
 
     const res = await axios
-      .get(`${import.meta.env.VITE_ROOT_API}/products/productlist/${id}`)
+      .get(`/api/v1/products/productlist/${id}`)
       .then((res) => {
         const singleProduct = res.data;
         dispatch(updateSingleProductData(singleProduct.product));
         return singleProduct.product;
       })
       .catch((err) => {
-        // console.log(err);
         dispatch(isError());
       });
     return res;
@@ -160,17 +159,15 @@ const UpdateProductDetails = ({ header }) => {
       
     setIsUpdateLoading(true);
     
-    await axios.put(`${import.meta.env.VITE_ROOT_API}/products/updateproduct`, formData)
+    await axios.put(`/api/v1/products/updateproduct`, formData)
     .then((res) => {
       toast.success(res.data.msg);
       dispatch(updateProductList(res.data.data));
-      // console.log(res);
       navigate("/dashboard/admin/showallproducts");
     })
     .catch((err) => {
       setIsUpdateLoading(false);
       toast.error(err.response?.data.msg);
-      // console.log(err);
     });
   };
 
@@ -192,7 +189,6 @@ const UpdateProductDetails = ({ header }) => {
       })
       setImages(uploaded);
       setPreviewImages(imageArray)
-      // console.log(uploaded);
     }
   };
 
@@ -205,16 +201,14 @@ const UpdateProductDetails = ({ header }) => {
     );
 
     if (promptValue) {
-      await axios.delete(`${import.meta.env.VITE_ROOT_API}/products/deleteproduct/${id}`)
+      await axios.delete(`/api/v1/products/deleteproduct/${id}`)
       .then((res) => {
-        // console.log(res.data);
         toast.success(res.data.msg);
         dispatch(deleteProduct({ id }));
         navigate("/dashboard/admin/showallproducts")
       })
       .catch((err) => {
         toast.error(err.response?.data.msg);
-        // console.log(err);
       });
     }
   };
@@ -509,7 +503,6 @@ const Wrapper = styled.div`
     box-shadow: none;
     width: 10rem;
     height: 5rem;
-    /* margin: 0 auto; */
     padding: 0%;
   }
 
@@ -523,11 +516,9 @@ const Wrapper = styled.div`
     width: 1.5rem;
   }
   .buttons {
-    /* width: 80rem; */
     display: flex;
     gap: 3rem;
     button {
-      /* padding: 1rem 2rem; */
       font-size: 1rem;
       color: white;
     }
@@ -588,8 +579,6 @@ const Wrapper = styled.div`
 
   #update-profile-image {
     display: flex;
-    /* border: 1px solid rgba(98, 84, 243, 0.5); */
-    /* box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px; */
   }
   #update-profile-image > input {
     border: none;

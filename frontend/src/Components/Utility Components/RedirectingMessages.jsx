@@ -1,31 +1,32 @@
-import React, { useEffect, useState } from 'react'
-import Spinner from './Spinner';
-import { useLocation, useNavigate } from 'react-router-dom';
-import styled from 'styled-components';
+import React, { useEffect, useState } from "react";
+import Spinner from "./Spinner";
+import { useLocation, useNavigate } from "react-router-dom";
+import styled from "styled-components";
 
-const RedirectingMessages = ({path= "/"}) => {
+const RedirectingMessages = ({ path = "/" }) => {
   const [time, setTime] = useState(5);
   const navigate = useNavigate();
   const location = useLocation();
 
-  useEffect(()=>{
+  useEffect(() => {
     const interval = setInterval(() => {
-          setTime(prev=> --prev);
-      }, 1000);
+      setTime((prev) => --prev);
+    }, 1000);
 
-      if(time===0) navigate(`/`,{
+    if (time === 0)
+      navigate(`/`, {
         state: location.pathname,
       });
-      return () => clearInterval(interval);
-  },[time, navigate, location, path]);
+    return () => clearInterval(interval);
+  }, [time, navigate, location, path]);
 
   return (
-       <Wrapper>
-        <h2>Redirection in {time} seconds</h2>
-        <Spinner />
+    <Wrapper>
+      <h2>Redirection in {time} seconds</h2>
+      <Spinner />
     </Wrapper>
-  )
-}
+  );
+};
 
 const Wrapper = styled.div`
   display: flex;
@@ -35,9 +36,9 @@ const Wrapper = styled.div`
   margin: 20rem auto;
   gap: 5rem;
 
-  h2{
-      font-size: 30px;
+  h2 {
+    font-size: 30px;
   }
 `;
 
-export default RedirectingMessages
+export default RedirectingMessages;

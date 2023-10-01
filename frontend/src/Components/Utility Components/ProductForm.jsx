@@ -66,7 +66,7 @@ const ProductForm = ({ header }) => {
 
         setIsLoading(true);
 
-        await axios.post(`${import.meta.env.VITE_ROOT_API}/products/addproduct`, formData)
+        await axios.post(`/api/v1/products/addproduct`, formData)
         .then((res) => {
             toast.success(res.data.msg);
             navigate('/dashboard/admin/showallproducts')
@@ -96,8 +96,7 @@ const ProductForm = ({ header }) => {
             imageArray.push(URL.createObjectURL(image))
         })
         setImages(uploaded);
-        setPreviewImages(imageArray)
-        // console.log(imageArray);
+        setPreviewImages(imageArray);
         }
     };
 
@@ -231,9 +230,9 @@ const ProductForm = ({ header }) => {
                 <button className="add" onClick={handleColorsAdd}>add</button>
                 <div className="w-50 flex-row" style={{ marginLeft: '2rem'}}>
                     {
-                        colorsArray.map((col) => {
-                            return <div className="color" key={col}><button style={{backgroundColor: `${col}`,height:'3rem', width: '3rem', fontSize:'1em'}}></button></div>
-                        })
+                      colorsArray.map((col) => {
+                          return <div className="color" key={col}><button style={{backgroundColor: `${col}`,height:'3rem', width: '3rem', fontSize:'1em'}}></button></div>
+                      })
                     }
                 </div>
             </div>
@@ -309,13 +308,13 @@ const ProductForm = ({ header }) => {
                 <div className="w-50 flex-row" >
                     <div className="w-50 flex-column" style={{ marginLeft: '2rem'}}>
                         {
-                            bulletPointsArray.map((point, index) => {
-                                return (
-                                    <div className="color" key={index}>
-                                        <p style={{color: 'green'}}>{index}: {point}</p>
-                                    </div>
-                                )
-                            })
+                          bulletPointsArray.map((point, index) => {
+                              return (
+                                <div className="color" key={index}>
+                                    <p style={{color: 'green'}}>{index}: {point}</p>
+                                </div>
+                              )
+                          })
                         }
                     </div>
                 </div>

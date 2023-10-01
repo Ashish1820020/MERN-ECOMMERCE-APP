@@ -17,7 +17,7 @@ const AdminOrders = () => {
   const getOrders = async () => {
     dispatch(setIsLoading());
     try {
-      const { data } = await axios.get(`${import.meta.env.VITE_ROOT_API}/orders/all-orders`);
+      const { data } = await axios.get(`/api/v1/orders/all-orders`);
       // console.log(data);
       dispatch(addAllOrders(data.allOrders));
     } catch (error) {

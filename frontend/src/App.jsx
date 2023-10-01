@@ -1,6 +1,5 @@
-import React from "react";
-import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
-import WebFont from 'webfontloader';
+import React, { useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Cart from "./Pages/Cart";
 import Home from "./Pages/HomePage";
@@ -12,7 +11,7 @@ import LogInPage from "./Pages/LogInSignUpPage";
 import Products from "./Pages/ProductsPage";
 import SingleProduct from "./Pages/SingleProductPage";
 
-import { GlobalStyle } from './GlobalStyle'
+import { GlobalStyle } from "./GlobalStyle";
 import { ThemeProvider } from "styled-components";
 
 import Header from "./Components/Utility Components/Header";
@@ -46,10 +45,9 @@ import AdminPanel from "./Components/Admin Dashboard Components/AdminPanel";
 import ResetPassword from "./Components/Login-Signup components/ResetPassword";
 import Wishlist from "./Pages/Wishlist";
 import Done from "./Components/Login-Signup components/Done";
-
+import ScrollToTop from "./Components/ScrollToTop";
 
 const App = () => {
-
   const theme = {
     colors: {
       heading: "rgb(24 24 29)",
@@ -75,90 +73,95 @@ const App = () => {
       smallLaptop: "1350",
     },
   };
-  
 
   axios.defaults.withCredentials = true;
 
+  // addEventListener("contextmenu", (e) => e.preventDefault());
 
-  // useEffect(() => {
-  //   WebFont.load({
-  //     google: {
-  //       families: [ 'Droid Sans', 'Chilanka']
-  //     }
-  //   });
-  //  }, []);
+  return (
+    <ThemeProvider theme={theme}>
+      <ToastContainer
+        position="top-center"
+        autoClose={2000}
+        hideProgressBar={false}
+        closeOnClick={true}
+        pauseOnHover={false}
+        draggable={false}
+        progress={undefined}
+        theme="light"
+      />
 
-  // addEventListener('contextmenu', (e) => e.preventDefault())
+      <Router>
+        <ScrollToTop />
+        <GlobalStyle />
+        <Header />
 
+        <div className="main-content-holder">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/products" element={<Products />} />
+            <Route path="/singleProduct/:id" element={<SingleProduct />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/wishlist" element={<Wishlist />} />
 
+            <Route path="/cart/checkout" element={<CheckoutPage />} />
+            <Route path="/cart/checkout/addaddress" element={<Shipping />} />
+            <Route path="*" element={<ErrorPage />} />
 
-  return(
-    <ThemeProvider theme={theme}> 
-    <ToastContainer position= "top-center" autoClose= {2000} hideProgressBar= {false} 
-    closeOnClick= {true} pauseOnHover= {false} draggable= {false}  progress= {undefined} theme= "light" />
-   
-   
-   <Router>
-      <GlobalStyle />
-      <Header />
+            <Route path="/loginsignup" element={<LogInPage />}>
+              <Route index element={<Login />} />
+              <Route path="login" element={<Login />} />
+              <Route path="signup" element={<Signup />} />
+            </Route>
+            <Route
+              path="/password/forgotpassword"
+              element={<ForgotPassword />}
+            />
+            <Route
+              exact
+              path="/password/reset/:token"
+              element={<ResetPassword />}
+            />
+            <Route exact path="/password/reset/done" element={<Done />} />
 
-      <div className="main-content-holder">
-
-        <Routes>
-          <Route path="/" element={<Home/>}/>
-          <Route path="/about" element={<About/>}/>
-          <Route path="/contact" element={<Contact />}/>
-          <Route path="/products" element={<Products/>}/>
-          <Route path="/singleProduct/:id" element={<SingleProduct/>}/>
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/wishlist" element={<Wishlist />} />
-
-          <Route path="/cart/checkout" element={<CheckoutPage/>}/>
-          <Route path="/cart/checkout/addaddress" element={<Shipping/>} />
-          <Route path="*" element={<ErrorPage/>}/>
-
-          <Route path="/loginsignup" element={<LogInPage/>}>
-            <Route index element={<Login />}/>
-            <Route path="login" element={<Login />}/>
-            <Route path="signup" element={<Signup />}/>
-          </Route>
-          <Route path="/password/forgotpassword" element={<ForgotPassword />}/>
-          <Route exact path="/password/reset/:token" element={<ResetPassword />} />
-          <Route exact path= "/password/reset/done" element={<Done />} />
-            
-          {/* DASHBOARD --> USER */}
-          <Route path="/dashboard" element={<UserCheck />}>
-            <Route path="user" element={<UserDashboard />}>
-              <Route index element={<UserProfile />} />
-              <Route path="profile" element={<UserProfile />}/>
+            {/* DASHBOARD --> USER */}
+            <Route path="/dashboard" element={<UserCheck />}>
+              <Route path="user" element={<UserDashboard />}>
+                <Route index element={<UserProfile />} />
+                <Route path="profile" element={<UserProfile />} />
                 <Route path="profile/edit" element={<UpdateProfile />} />
-              <Route path="orders" element={<UserOrders />}/>
+                <Route path="orders" element={<UserOrders />} />
+              </Route>
             </Route>
-          </Route>
 
-          {/* DASHBOARD --> ADMIN */}
-          <Route path="/dashboard" element={<AdminCheck />}>
-            <Route path="admin" element={<AdminDashboard />}>
-              <Route index element={<AdminPanel/>} />
-              <Route path="dashboard" element={<AdminPanel/>} />
-              <Route path="createcategory" element={<CreateCategory />} />
-              <Route path="addproduct" element={<AddProducts/>} />
-              <Route path="showusers" element={<ShowUsers/>} />
-              <Route path="orders" element={<AdminOrders />} />
-              <Route path="orders/:id" element={<SingleOrderComponent />} />
-              <Route path="showallproducts" element={<ShowAllProducts />} />
-              <Route path="updateproductdetails/:id" element={<UpdateProductDetails header={"UPDATE PRODUCT DETAILS"}/>} />
+            {/* DASHBOARD --> ADMIN */}
+            <Route path="/dashboard" element={<AdminCheck />}>
+              <Route path="admin" element={<AdminDashboard />}>
+                <Route index element={<AdminPanel />} />
+                <Route path="dashboard" element={<AdminPanel />} />
+                <Route path="createcategory" element={<CreateCategory />} />
+                <Route path="addproduct" element={<AddProducts />} />
+                <Route path="showusers" element={<ShowUsers />} />
+                <Route path="orders" element={<AdminOrders />} />
+                <Route path="orders/:id" element={<SingleOrderComponent />} />
+                <Route path="showallproducts" element={<ShowAllProducts />} />
+                <Route
+                  path="updateproductdetails/:id"
+                  element={
+                    <UpdateProductDetails header={"UPDATE PRODUCT DETAILS"} />
+                  }
+                />
+              </Route>
             </Route>
-          </Route>
+          </Routes>
+        </div>
 
-        </Routes>
-      </div>
-        
-      <Footer/>
-    </Router>
- </ThemeProvider>
-  )
-    
+        <Footer />
+      </Router>
+    </ThemeProvider>
+  );
 };
 
 export default App;

@@ -12,7 +12,7 @@ const UserCheck = () => {
 
     useEffect(()=>{
         const authCheck = async () => {
-            await axios.get(`${import.meta.env.VITE_ROOT_API}/auth/user-auth`)
+            await axios.get(`/api/v1/auth/user-auth`)
             .then((res) => {
                 // console.log(res.data);
                 res.data.ok? setOk(true) : setOk(false);

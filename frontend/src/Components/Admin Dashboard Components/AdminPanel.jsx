@@ -45,15 +45,11 @@ function AdminPanel() {
 
   products &&
     products.forEach((item) => {
-      // console.log(item);
       if (item.stock === 0) {
         outOfStock += 1;
       }
     });
-
-    // console.log(products);
-
-  // const set = new Set();
+    
   const lineState = {
     labels: ["Initial Amount", "Amount Earned"],
     datasets: [
@@ -80,50 +76,56 @@ function AdminPanel() {
 
   return (
     <Main className='main-container'>
-        <div className='main-cards'>
 
-            <div className='card'>
-                <div className='card-inner'>
-                    <h3>PRODUCTS</h3>
-                    <BsFillArchiveFill className='card_icon'/>
-                </div>
-                <p>{products.length}</p>
-            </div>
 
-            <div className='card'>
-                <div className='card-inner'>
-                    <h3>CATEGORIES</h3>
-                    <BsFillGrid3X3GapFill className='card_icon'/>
-                </div>
-                <p>{categories.length}</p>
-            </div>
+      <div className='main-cards'>
 
-            <div className='card'>
-                <div className='card-inner'>
-                    <h3>CUSTOMERS</h3>
-                    <BsPeopleFill className='card_icon'/>
-                </div>
-                <p>{allUsers.length}</p>
-            </div>
-
-            <div className='card'>
-                <div className='card-inner'>
-                    <h3>ORDERS</h3>
-                    <BsFillBellFill className='card_icon'/>
-                </div>
-                <p>{allOrderData.length}</p>
-            </div>
+        <div className='card'>
+          <div className='card-inner'>
+            <h3>PRODUCTS</h3>
+            <BsFillArchiveFill className='card_icon'/>
+          </div>
+          <p>{products.length}</p>
         </div>
 
-        <div className="charts">
-          <div className="lineChart">
-            <Line data={lineState} />
+        <div className='card'>
+          <div className='card-inner'>
+            <h3>CATEGORIES</h3>
+            <BsFillGrid3X3GapFill className='card_icon'/>
           </div>
-          
-          <div className="doughnutChart">
-            <Doughnut data={doughnutState} />
-          </div>
+          <p>{categories.length}</p>
         </div>
+
+        <div className='card'>
+          <div className='card-inner'>
+            <h3>CUSTOMERS</h3>
+            <BsPeopleFill className='card_icon'/>
+          </div>
+          <p>{allUsers.length}</p>
+        </div>
+
+        <div className='card'>
+          <div className='card-inner'>
+            <h3>ORDERS</h3>
+            <BsFillBellFill className='card_icon'/>
+          </div>
+          <p>{allOrderData.length}</p>
+        </div>
+
+      </div>
+
+
+      <div className="charts">
+        <div className="lineChart">
+          <Line data={lineState} />
+        </div>
+        
+        <div className="doughnutChart">
+          <Doughnut data={doughnutState} />
+        </div>
+      </div>
+
+
     </Main>
   )
 }
@@ -195,7 +197,6 @@ p{
 
 .doughnutChart, .linechart{
   width: 100%;
-  /* height: 80rem; */
 }
   
 @media screen and (max-width: 992px) {

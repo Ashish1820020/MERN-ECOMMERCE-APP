@@ -17,7 +17,6 @@ const SingleProduct = () => {
 // Used to access the parameters of the current Route
   let {id} = useParams();
 
-  // console.log(id);
 
 
 
@@ -27,7 +26,7 @@ const SingleProduct = () => {
     // console.log(id);
     dispatch(isSingleLoading());
     try {
-        const res = await axios.get(`${import.meta.env.VITE_ROOT_API}/products/productlist/${id}`);
+        const res = await axios.get(`/api/v1/products/productlist/${id}`);
         const singleProduct = await res.data;
         // console.log(singleProduct);
 

@@ -1,95 +1,102 @@
-import React from 'react'
-import Star from '../Utility Components/Star'
-import FormatPrice from '../helper/FormatPrice'
-import styled from 'styled-components'
-import ProductAmountButton from '../Utility Components/ProductAmountButton'
-import { useDispatch } from 'react-redux'
-import {removeFromCart, setIncrease, setDecrease} from '../../Store/Slices/CartSlice'
-import { addToWishlist } from '../../Store/Slices/WishlistSlice'
+import React from "react";
+import Star from "../Utility Components/Star";
+import FormatPrice from "../helper/FormatPrice";
+import styled from "styled-components";
+import ProductAmountButton from "../Utility Components/ProductAmountButton";
+import { useDispatch } from "react-redux";
+import {
+  removeFromCart,
+  setIncrease,
+  setDecrease,
+} from "../../Store/Slices/CartSlice";
+import { addToWishlist } from "../../Store/Slices/WishlistSlice";
 
-const CartProduct = ({currentElement}) => {
-  const {_id, name, price, image, color, amount, discount, rating, stock} = currentElement;
+const CartProduct = ({ currentElement }) => {
+  const { _id, name, price, image, color, amount, discount, rating, stock } =
+    currentElement;
   const dispatch = useDispatch();
 
   const toWishlist = () => {
-    dispatch(removeFromCart({_id, color}));
-    dispatch(addToWishlist({...currentElement}));
-  }
+    dispatch(removeFromCart({ _id, color }));
+    dispatch(addToWishlist({ ...currentElement }));
+  };
 
   return (
-    <Wrapper className='product-card'>
+    <Wrapper className="product-card">
       <div className="product-card-inside">
-
-
         {/* Left Portion */}
         <div className="left">
           <div className="left-top">
             <figure>
-              <img
-                  src={image}
-                  alt="Hero"
-                  className="img-style"
-              />
+              <img src={image} alt="Hero" className="img-style" />
             </figure>
           </div>
 
           <div className="left-bottom">
             <div className="amount-toggle">
-              <ProductAmountButton {...{_id, color,  setIncrease, setDecrease, amount}} />
+              <ProductAmountButton
+                {...{ _id, color, setIncrease, setDecrease, amount }}
+              />
             </div>
           </div>
-        </div>   
-
+        </div>
 
         {/* Center Section */}
         <div className="center">
           <div className="product-details">
             <h2>{name}</h2>
-            <Star rating={rating}/>
+            <Star rating={rating} />
 
-            <div className='color'>
+            <div className="color">
               <p>Color: </p>
-              <div style={{backgroundColor: `${color}`}} />
+              <div style={{ backgroundColor: `${color}` }} />
             </div>
 
             <div className="product-price-data">
-              <p> Special Price:   
-                <span><FormatPrice className ="price" price={price} discount={discount}/></span>
-                <del>{<FormatPrice className ="price" price={price}/>}</del>
-              </p> 
+              <p>
+                {" "}
+                Special Price:
+                <span>
+                  <FormatPrice
+                    className="price"
+                    price={price}
+                    discount={discount}
+                  />
+                </span>
+                <del>{<FormatPrice className="price" price={price} />}</del>
+              </p>
             </div>
           </div>
 
           <div className="center-bottom">
-            <button onClick={() => dispatch(removeFromCart({_id, color}))}>Remove</button>      
-            <button onClick={() => dispatch(() => toWishlist())}>Move to Wishlist</button>      
+            <button onClick={() => dispatch(removeFromCart({ _id, color }))}>
+              Remove
+            </button>
+            <button onClick={() => dispatch(() => toWishlist())}>
+              Move to Wishlist
+            </button>
           </div>
         </div>
-
-
       </div>
     </Wrapper>
   );
 };
 
 const Wrapper = styled.div`
-  background-color: rgba(256, 256, 256, .88);
+  background-color: rgba(256, 256, 256, 0.88);
 
-  .product-card-inside{
+  .product-card-inside {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    height: 20rem; //17
+    height: 20rem;
     background-color: #f5f5f500;
-    padding: .5rem 1.5rem;
+    padding: 0.5rem 1.5rem;
     box-shadow: 0px 0px 2px 0px black;
   }
 
-
-
-  
-  // ----Left Section----
-  .left{
+  // <----Left Section---->
+  .left {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -97,15 +104,14 @@ const Wrapper = styled.div`
     width: 28%;
     padding: 5px;
     cursor: pointer;
-    .left-top{
-      height: 70%; //60
-      figure{
+    .left-top {
+      height: 70%;
+      figure {
         height: 100%;
         width: 100%;
-        /* margin: 5px; */
         padding: 0 2.5rem;
-        
-        img{
+
+        img {
           height: 100%;
           width: 100%;
           object-fit: contain;
@@ -114,7 +120,7 @@ const Wrapper = styled.div`
     }
 
     //-----left-bottom-----
-    .left-bottom{
+    .left-bottom {
       display: flex;
       justify-content: center;
       align-items: center;
@@ -122,81 +128,77 @@ const Wrapper = styled.div`
     }
   }
 
-  
-  // ----Center Section-----
-  .center{
+  // <----Center Section---->
+  .center {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     width: 61%;
     height: 100%;
-    padding: .5rem 1rem;
+    padding: 0.5rem 1rem;
 
-    h2{
+    h2 {
       text-transform: capitalize;
     }
-    
-    
-    .product-details{
+
+    .product-details {
       height: 80%;
 
-      .stars{
-        margin: .2rem 0;
+      .stars {
+        margin: 0.2rem 0;
       }
-      .color{
+      .color {
         margin: 0.3rem 0;
       }
 
-      .product-price-data{
-        p{
+      .product-price-data {
+        p {
           color: green;
           font-size: 1.2rem;
           font-weight: 600;
         }
-        span{
+        span {
           margin-left: 1rem;
           color: black;
           font-weight: 800;
           margin-right: 1.2rem;
         }
-        del{
+        del {
           color: black;
           font-size: 1.2rem;
         }
       }
     }
-    .center-bottom{
+    .center-bottom {
       display: flex;
       align-items: center;
       gap: 2rem;
       height: 20%;
-      
-      button{
-        padding: .5rem 0;
+
+      button {
+        padding: 0.5rem 0;
         background-color: white;
         font-weight: bolder;
         font-size: 1.4rem;
         text-transform: uppercase;
         border: none;
-        &:hover{
+        &:hover {
           color: #6c77f3;
         }
       }
     }
   }
 
-
-
   /* FOR COLOR CONTENT */
-  .color{
+  .color {
     display: flex;
     align-items: center;
     gap: 1.5rem;
     margin-top: 1rem;
-    p{
+    p {
       font-size: 1.25rem;
     }
-    div{
+    div {
       border: 1px solid gray;
       display: inline-block;
       height: 1.2rem;
@@ -204,28 +206,22 @@ const Wrapper = styled.div`
     }
   }
 
-
-
-  @media (max-width:  950px) {
-    .product-card-inside{
+  @media (max-width: 950px) {
+    .product-card-inside {
       height: 18rem;
     }
-    .left{
+    .left {
       width: 38%;
     }
   }
-  
+
   @media (max-width: 544px) {
-    
   }
   @media (max-width: 420px) {
-    .product-card-inside{
+    .product-card-inside {
       padding: 1rem 0;
     }
-    right{
-      /* width: ;  */
-    } 
-    .left > .left-top > figure{
+    .left > .left-top > figure {
       padding: 0 1rem;
     }
   }

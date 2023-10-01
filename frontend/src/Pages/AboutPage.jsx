@@ -66,7 +66,6 @@ let Wrapper = styled.section`
 }
 
 .aboutSectionContainer > h1 {
-  /* font: 400 3vmax "Roboto"; */
   color: tomato;
   margin: 2vmax;
   border-bottom: 1px solid red;
@@ -99,7 +98,6 @@ img{
 
 .aboutSectionContainer > div > div > p {
   color: rgba(0, 0, 0, 0.623);
-  /* font: 100 1vmax "Roboto"; */
 }
 
 .aboutSectionContainer > div > div > button {
@@ -119,7 +117,6 @@ img{
 
 .aboutSectionContainer2 > h2 {
   color: rgba(0, 0, 0, 0.623);
-  /* font: 100 2vmax "Roboto"; */
   margin: 2vmax;
 }
 
@@ -128,7 +125,6 @@ img{
 }
 
 .aboutSectionContainer2 > div{
-  /* font: 100 2vmax "Roboto"; */
   gap: 2rem;
   display: flex;
 }
@@ -147,16 +143,10 @@ img{
   }
 
   .aboutSectionContainer > h1 {
-    /* font: 400 5vmax "Roboto"; */
     margin: 3vmax;
   }
 
-  .aboutSectionContainer > div > div > p {
-    /* font: 100 2vmax "Roboto"; */
-  }
-
   .aboutSectionContainer > div > div > span {
-    /* font: 100 1.4vmax "Roboto"; */
     width: 70%;
   }
 
@@ -165,7 +155,6 @@ img{
   }
 
   .aboutSectionContainer2 > h2 {
-    /* font: 100 3vmax "Roboto"; */
     margin: 2vmax;
   }
 

@@ -17,7 +17,7 @@ const AdminCheck = () => {
 
     useEffect(()=>{
         const authCheck = async () => {
-            await axios.get(`${import.meta.env.VITE_ROOT_API}/auth/admin-auth`)
+            await axios.get(`/api/v1/auth/admin-auth`)
             .then((res) => {
                 // console.log(res.data);
                 res.data.ok? setOk(true) : setOk(false);

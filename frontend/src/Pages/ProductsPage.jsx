@@ -1,89 +1,89 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import Sort from '../Components/Products Page/Sort'
-import ProductList from '../Components/Products Page/ProductList'
-import FilterSection from '../Components/Products Page/FilterSection'
+import Sort from "../Components/Products Page/Sort";
+import ProductList from "../Components/Products Page/ProductList";
+import FilterSection from "../Components/Products Page/FilterSection";
 import axios from "axios";
-import { updateCategories, updateFilters } from "../Store/Slices/FilterTypeSlice";
 import { useDispatch } from "react-redux";
-import { CgMenu } from "react-icons/cg";
 import { HiFilter } from "react-icons/hi";
+import {
+  updateCategories,
+  updateFilters,
+} from "../Store/Slices/FilterTypeSlice";
 
 const Products = () => {
-  const [state,  setState] = useState();
+  const [state, setState] = useState();
   const [sidebar, setSidebar] = useState(false);
   const dispatch = useDispatch();
 
   const getAllCategories = async () => {
-    await axios.get(`${import.meta.env.VITE_ROOT_API}/categories`)
-    .then((res) => {
-      const data = res.data;
-      // console.log(data);
-      dispatch(updateCategories(data.categoryList)); 
+    await axios
+      .get(`/api/v1/categories`)
+      .then((res) => {
+        const data = res.data;
+        dispatch(updateCategories(data.categoryList));
+      })
+      .catch((error) => {
+      });
+  };
 
-    })
-    .catch((error)=>{
-      // console.log(error);
-    })
-  }
-
-  const getCompanyAndColors = async() => {
-    await axios.get(`${import.meta.env.VITE_ROOT_API}/companyandcolor`)
-    .then((res) => {
-      const data = res.data;
-      // console.log(data);
-      dispatch(updateFilters(data)); 
-    })
-    .catch((error)=>{
-      // console.log(error);
-    })
-  }
+  const getCompanyAndColors = async () => {
+    await axios
+      .get(`/api/v1/companyandcolor`)
+      .then((res) => {
+        const data = res.data;
+        dispatch(updateFilters(data));
+      })
+      .catch((error) => {
+      });
+  };
 
   useEffect(() => {
     getAllCategories();
     getCompanyAndColors();
-  },[]);
+  }, []);
 
   return (
     <Wrapper className="container flex">
-
-
-      <div className={sidebar? 'products-page-left sidebar-active' : 'products-page-left' }>
-        <FilterSection {...{sidebar, setSidebar, state}} />
+      <div
+        className={
+          sidebar ? "products-page-left sidebar-active" : "products-page-left"
+        }
+      >
+        <FilterSection {...{ sidebar, setSidebar, state }} />
       </div>
 
-    
       <div className="products-page-right flex">
-        <Sort {...{sidebar, setSidebar}} />
+        <Sort {...{ sidebar, setSidebar }} />
 
         <div className="products-page-bottom">
           <ProductList />
         </div>
       </div>
 
-      <HiFilter name='menu-outline' className='mobile-nav-icon' onClick={()=>setSidebar(!sidebar)} />
-
-
-
+      <HiFilter
+        name="menu-outline"
+        className="mobile-nav-icon"
+        onClick={() => setSidebar(!sidebar)}
+      />
     </Wrapper>
-  )
+  );
 };
 
 const Wrapper = styled.section`
   align-items: flex-start;
   gap: 4rem;
   margin: 2rem auto;
-  /* width: 136rem; */
-    
-  .products-page-left{
+
+  .products-page-left {
     width: 24%;
     padding: 2rem 1rem;
     border-radius: 12px;
     background-color: #ffffff;
     box-shadow: 0px 0px 2px 0px black;
   }
-  
-  .products-page-right{
+
+  .products-page-right {
     width: 73%;
     flex-direction: column;
     justify-content: start;
@@ -91,8 +91,7 @@ const Wrapper = styled.section`
     gap: 2rem;
   }
 
-
-  .mobile-nav-icon{
+  .mobile-nav-icon {
     position: absolute;
     display: none;
     background-color: transparent;
@@ -100,21 +99,18 @@ const Wrapper = styled.section`
     border: none;
   }
 
-
-
-  
   @media (max-width: 770px) {
     padding: 0;
 
-    .products-page-left{
+    .products-page-left {
       position: absolute;
       left: -100rem;
       visibility: hidden;
       opacity: 0;
     }
 
-    .sidebar-active{
-      transition: all .5s ease;
+    .sidebar-active {
+      transition: all 0.5s ease;
       z-index: 1000;
       border-radius: 0%;
       position: fixed;
@@ -127,14 +123,14 @@ const Wrapper = styled.section`
       opacity: 1;
     }
 
-    .products-page-right{
+    .products-page-right {
       min-width: 90dvw;
       width: 99%;
       margin: 0 auto;
     }
-    .mobile-nav-icon{
+    .mobile-nav-icon {
       position: fixed;
-      background-color: rgba(0, 0, 0, .9);
+      background-color: rgba(0, 0, 0, 0.9);
       border-radius: 50%;
       display: inline-block;
       color: white;
@@ -144,7 +140,6 @@ const Wrapper = styled.section`
       right: 2rem;
     }
   }
-  
 `;
-  
+
 export default Products;

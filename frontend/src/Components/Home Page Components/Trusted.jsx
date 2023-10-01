@@ -73,7 +73,6 @@ border-radius: 1rem;
       margin-top: 3.2rem;
       display: grid;
       grid-template-columns: 1fr 1fr;
-      /* background-color: red; */
       text-align: center;
     }
   }

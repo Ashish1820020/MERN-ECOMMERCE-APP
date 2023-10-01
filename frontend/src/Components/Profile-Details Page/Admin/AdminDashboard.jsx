@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Outlet } from "react-router-dom";
 import styled from "styled-components";
 import AdminMenu from "../../Admin Dashboard Components/AdminMenu";
 import { CgMenu } from "react-icons/cg";
@@ -26,26 +25,23 @@ const Dashboard = () => {
   
   // GET ALL CATEGORIES
   const getAllCategories = async () => {
-    await axios.get(`${import.meta.env.VITE_ROOT_API}/categories`)
+    await axios.get(`/api/v1/categories`)
     .then((res) => {
       const data = res.data;
-      // console.log(data);
       dispatch(updateCategories(data.categoryList)); 
     })
     .catch((error)=>{
-      // console.log(error);
     })
   }
 
 
   const getOrders = async () => {
     dispatch(setIsLoading());
+
     try {
-      const { data } = await axios.get(`${import.meta.env.VITE_ROOT_API}/orders/all-orders`);
-      // console.log(data);
+      const { data } = await axios.get(`/api/v1/orders/all-orders`);
       dispatch(addAllOrders(data.allOrders));
     } catch (error) {
-      // console.log(error);
       dispatch(setIsError());
     }
   };
@@ -53,13 +49,12 @@ const Dashboard = () => {
   const getAllProducts = async () => {
     dispatch(isLoading());
 
-    await axios.get(`${import.meta.env.VITE_ROOT_API}/products/productlist`)
+    await axios.get(`/api/v1/products/productlist`)
     .then((res) => {
       const data = res.data;
       dispatch(updateProductList(data.result)); 
     })
     .catch((err) => {
-      // console.log(err);
       dispatch(isError());
     })
   }
@@ -67,13 +62,11 @@ const Dashboard = () => {
 
   const getAllUsers = async () => {
     try{
-      const res = await axios.get(`${import.meta.env.VITE_ROOT_API}/auth/allusers`);
+      const res = await axios.get(`/api/v1/auth/allusers`);
       const data = await res.data;
-      // console.log(data);
       dispatch(setAllUsers(data.allUserData)); 
     }
     catch(error){
-      // console.log(error);
     }
   }
   
@@ -124,7 +117,6 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 5rem;
-  /* width: 80dvw; */
 
   .header{
     margin-top: 2rem;
@@ -142,11 +134,6 @@ const Wrapper = styled.div`
     visibility: hidden;
   }
 
-  /* .icon{
-    height: 2.2rem;
-    width: 2.2rem;
-  } */
-
   .icon-container{
     .icon{
       box-shadow: 0px 1px 0px 1px #ccc;
@@ -154,7 +141,6 @@ const Wrapper = styled.div`
   }
   h1{
     margin: 0 auto;
-    /* border-bottom: 1px solid black; */
   }
 
   .main-section{
@@ -256,4 +242,6 @@ const Wrapper = styled.div`
   }
 }
 `;
+
+
 export default Dashboard;

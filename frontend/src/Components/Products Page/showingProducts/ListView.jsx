@@ -61,12 +61,6 @@ const ListView = ({filteredProducts}) => {
                           </ul>
                         </div>
                       </div>
-
-                      <div className='hide'>
-                        {/* <NavLink to={`/singleproduct/${_id}`}>
-                          <button className='btn'>READ MORE</button>
-                        </NavLink> */}
-                      </div>
                     </div>
                     </NavLink>
 
@@ -105,7 +99,6 @@ const Wrapper = styled.section`
   
   /* PRODUCTS LIST VIEW CARD */
   .list-card{
-    /* display: flex; */
     width: 100%;
     margin: auto;
     min-height: 240px;
@@ -127,7 +120,6 @@ const Wrapper = styled.section`
   .card-image {
     .left-inside{
       height: 100%;
-      /* margin: 2rem 0; */
       .figure{
         height: 100%;
           &::after {

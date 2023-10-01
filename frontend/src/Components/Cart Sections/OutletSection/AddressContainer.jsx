@@ -1,80 +1,89 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { styled } from 'styled-components';
-import { useSelector } from 'react-redux';
-import { AiFillPlusSquare } from 'react-icons/ai';
-import AddressForm from './AddressForm';
+import React, { useEffect, useRef, useState } from "react";
+import { styled } from "styled-components";
+import { useSelector } from "react-redux";
+import { AiFillPlusSquare } from "react-icons/ai";
+import AddressForm from "./AddressForm";
 
-const ConfirmAddress = ({deliveryAddress,  setDeliveryAddress}) => {
-  
-  const { userData } = useSelector(state => state.auth);
+const ConfirmAddress = ({ setDeliveryAddress }) => {
+  const { userData } = useSelector((state) => state.auth);
   const address = userData.address;
   const [addAddress, setAddAddress] = useState(false);
   const refOne = useRef(null);
 
   const addressSelection = async (currentAddress) => {
-    setDeliveryAddress(currentAddress); 
+    setDeliveryAddress(currentAddress);
     const data = Array.from(document.getElementsByClassName("radio"));
     data.forEach((elem) => {
       elem.checked = false;
     });
     document.getElementById(currentAddress._id).checked = true;
-  }
-  
+  };
+
   useEffect(() => {
-    function handleClick (e){
-      if(refOne!=null && !refOne?.current?.contains(e.target)){
+    function handleClick(e) {
+      if (refOne != null && !refOne?.current?.contains(e.target)) {
         setAddAddress(false);
       }
     }
-    document.addEventListener("mousedown", handleClick)
-  }, [addAddress])
+    document.addEventListener("mousedown", handleClick);
+  }, [addAddress]);
 
   return (
     <Wrapper>
+      <div>
+        <button
+          className="AddressCard_addAddressBtn__CwUtP"
+          onClick={() => setAddAddress(true)}
+        >
+          <AiFillPlusSquare />
+          <span>Add new address</span>
+        </button>
 
-        <div>
-          <button className="AddressCard_addAddressBtn__CwUtP" onClick={() => setAddAddress(true)}>
-            <AiFillPlusSquare />
-            <span>Add new address</span>
-          </button>
-
-          <div className="address-container">
-            {
-              address.length > 0 &&
-              address.map((currentAddress, index) => {
-                return (
-                  <div className="address-card" key={index} onClick={() => addressSelection(currentAddress)} >
-                    <div className="address-card-left"><input type='radio' className='radio' id={currentAddress._id}/></div>
-                      <div className="address-card-right">
-
-                        <div className="right-top">
-                            <h2>{currentAddress.name}</h2>
-                            <p>Mobile: <span>{currentAddress.phoneNo}</span></p>
-                        </div>
-
-                        <div className="right-bottom">
-                          <p>{currentAddress.locality}, {currentAddress.landmark}, {currentAddress.address}, {currentAddress.state} - {currentAddress.pinCode}</p>
-                        </div>
-
-                      </div>
+        <div className="address-container">
+          {address &&
+            address.length > 0 &&
+            address.map((currentAddress, index) => {
+              return (
+                <div
+                  className="address-card"
+                  key={index}
+                  onClick={() => addressSelection(currentAddress)}
+                >
+                  <div className="address-card-left">
+                    <input
+                      type="radio"
+                      className="radio"
+                      id={currentAddress._id}
+                    />
                   </div>
-                )
-              })
-            }
-          </div>
-        </div>
-        <div className={addAddress? "address_form show" : "address_form"} >
-          <AddressForm {...{addAddress, setAddAddress, refOne}} />
+                  <div className="address-card-right">
+                    <div className="right-top">
+                      <h2>{currentAddress.name}</h2>
+                      <p>
+                        Mobile: <span>{currentAddress.phoneNo}</span>
+                      </p>
+                    </div>
 
+                    <div className="right-bottom">
+                      <p>
+                        {currentAddress.locality}, {currentAddress.landmark},{" "}
+                        {currentAddress.address}, {currentAddress.state} -{" "}
+                        {currentAddress.pinCode}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
         </div>
+      </div>
 
-      {/* <div className="address-header">
-        <h2>Delivery Address</h2>
-      </div> */}
-      {/* <NavLink to="/cart/checkout/addaddress"><button>Add New Address</button></NavLink> */}
+      <div className={addAddress ? "address_form show" : "address_form"}>
+        <AddressForm {...{ addAddress, setAddAddress, refOne }} />
+      </div>
     </Wrapper>
-  )
-}
+  );
+};
 
 const Wrapper = styled.div`
   box-sizing: border-box;
@@ -86,66 +95,64 @@ const Wrapper = styled.div`
     border: 1px solid;
     cursor: pointer;
     display: flex;
-    font-size: .85rem;
+    font-size: 0.85rem;
     gap: 0 1rem;
     justify-content: flex-start;
     min-width: 250px;
     padding: 2rem;
-    background-color: rgba(255,255,255,.2);
+    background-color: rgba(255, 255, 255, 0.2);
     width: calc(100% - 4rem);
-    span{
+    span {
       font-size: 2rem;
       color: #627d98;
     }
-    svg{
+    svg {
       font-size: 3rem;
     }
-}
+  }
 
-  .address-container{
+  .address-container {
     border-radius: 5px;
     min-width: 250px;
-    .address-card{
+    .address-card {
       display: flex;
       gap: 2rem;
       padding: 1rem;
       border-radius: 5px;
-      margin-bottom: .5rem;
+      margin-bottom: 0.5rem;
       box-shadow: 0px 0px 2px 0px #000000;
 
-      .address-card-right{
+      .address-card-right {
         display: flex;
         flex-direction: column;
         gap: 1rem;
-        .right-top{
+        .right-top {
           display: flex;
           flex-direction: column;
-          gap: .5rem;
-          p{
+          gap: 0.5rem;
+          p {
             font-size: 1.2rem;
             font-weight: 700;
-            span{
+            span {
               font-weight: 400;
             }
           }
-
         }
-        .right-bottom{
+        .right-bottom {
           width: 70%;
         }
       }
     }
   }
 
-  button{
+  button {
     color: #6262e4;
     background-color: white;
     border: none;
     margin: 1rem 0;
   }
 
-
-  .address_form{
+  .address_form {
     display: none;
     position: absolute;
     top: -200rem;
@@ -155,10 +162,10 @@ const Wrapper = styled.div`
     height: 100%;
     width: 100%;
     background-color: white;
-    background-color: rgba(0, 0, 0, .3);
-    transition: all .5s ease-in-out;
+    background-color: rgba(0, 0, 0, 0.3);
+    transition: all 0.5s ease-in-out;
   }
-  .show{
+  .show {
     display: flex;
     align-items: center;
     justify-content: center;

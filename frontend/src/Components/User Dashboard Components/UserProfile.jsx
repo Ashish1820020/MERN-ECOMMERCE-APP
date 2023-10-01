@@ -22,28 +22,32 @@ const UserProfile = () => {
     <Fragment>
 
 
-        <div className="profile-top">
-          <img src={avatar} alt={userData.name} />
-          <NavLink to="/dashboard/user/profile/edit">Edit Profile</NavLink>
+      <div className="profile-top">
+        <img src={avatar} alt={userData.name} />
+        <NavLink to="/dashboard/user/profile/edit">Edit Profile</NavLink>
+      </div>
+
+
+      <div className="profile-mid">
+        <div>
+          <h3>Full Name: </h3>
+          <p>{userData.name}</p>
         </div>
 
 
-        <div className="profile-mid">
-          <div>
-            <h3>Full Name: </h3>
-            <p>{userData.name}</p>
-          </div>
-
-          <div>
-            <h3>Email: </h3>
-            <p>{userData.email}</p>
-          </div>
-
-          <div>
-            <h3>Joined On: </h3>
-            <p>{String(userData.createdAt).substr(0, 10)}</p>
-          </div>
+        <div>
+          <h3>Email: </h3>
+          <p>{userData.email}</p>
         </div>
+
+
+        <div>
+          <h3>Joined On: </h3>
+          <p>{String(userData.createdAt).substr(0, 10)}</p>
+        </div>
+      </div>
+
+
     </Fragment>
   );
 };
@@ -94,7 +98,6 @@ const Fragment = styled.div`
   .profile-mid{
     display: flex;
     flex-direction: column;
-    /* width: 28%; */
     background-color: white;
     gap: 2rem; 
     &>div{

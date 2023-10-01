@@ -18,7 +18,7 @@ const ResetPassword = () => {
 const handleSubmit = async (e) => {
   e.preventDefault();
 
-  await axios.put(`${import.meta.env.VITE_ROOT_API}/auth/password/reset/${token}`, {password, confirmPassword})
+  await axios.put(`/api/v1/auth/password/reset/${token}`, {password, confirmPassword})
   .then(async (res)=>{
     const data = res.data;
     // console.log(data);

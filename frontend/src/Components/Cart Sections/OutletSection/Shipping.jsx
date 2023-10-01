@@ -28,19 +28,17 @@ const Shipping = ({addAddress, setActiveStep}) => {
     e.preventDefault();
 
     const formData = {id: userData._id, name, phoneNo, pinCode, locality, address, district, state, landmark, altNo};
-    const newAddress = {name, phoneNo, pinCode, locality, address, district, state, landmark, altNo};
-    // console.log(newAddress);
 
-      await axios.post(`${import.meta.env.VITE_ROOT_API}/auth/addaddress`, formData)
+      await axios.post(`/api/v1/auth/addaddress`, formData)
       .then((res)=>{
         const data = res.data;
-        // console.log(data);
+        console.log(data);
         localStorage.setItem("userData", JSON.stringify(data.userData));
         dispatch(addAddress(res.data.userData));
         navigate("/cart/checkout");
       })
       .catch((err) => {
-        // console.log(err);
+        console.log(err);
       });
   };
 
@@ -52,6 +50,8 @@ const Shipping = ({addAddress, setActiveStep}) => {
           <h2 className="shippingHeading">Shipping Details</h2>
 
           <form className="shippingForm" onSubmit={shippingSubmit}>
+
+
             {/* ADDRESS TOP */}
             <div className="address-top">
               <div className="input-container">
@@ -98,18 +98,22 @@ const Shipping = ({addAddress, setActiveStep}) => {
               </div>
 
               <div className="input-container">
-                  <select required value={state} onChange={(e) => setState(e.target.value)} placeholder="State">
-                      {
-                        State.getStatesOfCountry("IN").map((item) => <option key={item.isoCode} value={item.name}>{item.name}</option>)
-                      }
-                  </select>
+                <select required value={state} onChange={(e) => setState(e.target.value)} placeholder="State">
+                  {
+                    State.getStatesOfCountry("IN").map((item) => <option key={item.isoCode} value={item.name}>{item.name}</option>)
+                  }
+                </select>
               </div>
 
               <div className="input-container">
                 <BiSolidCity className="icon" />
                 <input type="text" placeholder="Alternative No" value={altNo} onChange={(e) => setAltNo(e.target.value)}/>
               </div>
+
+
               <input type="submit" value="Continue" className="shippingBtn" style={{float: "right"}}/>
+
+
             </div>
           </form>
 
@@ -202,8 +206,6 @@ const Fragment =  styled.div`
       }
     }
   }
-
-
 
   .shippingBtn {
       border: none;

@@ -14,11 +14,11 @@ if (process.env.NODE_ENV !== "PRODUCTION") {
 
 // MIDDLEWARES
 app.use(express.json())
-app.use(cors({origin: 'http://localhost:5173', credentials: true}));
 app.use(cookieParser());
 app.use(bodyParser.json(), bodyParser.urlencoded({ extended: true }));
 
 
+// app.use(cors({origin: '*', credentials: true}));
 // ACCESS CONTROL SETUPS
 // app.use((req, res, next) => {
 //     // Access-Control-Allow-Credentials : true

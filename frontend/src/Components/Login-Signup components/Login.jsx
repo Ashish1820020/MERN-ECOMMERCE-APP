@@ -23,7 +23,7 @@ const Login = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     
-      await axios.post(`${import.meta.env.VITE_ROOT_API}/auth/login`, value)
+      await axios.post(`/api/v1/auth/login`, value)
       .then(async(res) => {
         const data = res.data;
         // console.log(data);
@@ -47,7 +47,7 @@ const Login = () => {
   const getDataFromDb = async () => {
 
     try {
-      await axios.get(`${import.meta.env.VITE_ROOT_API}/user/getcartandwishlist`)
+      await axios.get(`/api/v1/user/getcartandwishlist`)
       .then((res) => {
         const data = res.data;
         dispatch(addFromDb(data.userCart));

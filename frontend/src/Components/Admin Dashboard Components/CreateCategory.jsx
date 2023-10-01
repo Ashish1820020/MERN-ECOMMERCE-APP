@@ -14,7 +14,7 @@ const CreateCategory = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await axios.post(`http://localhost:5000/api/v1/createcategory`, value)
+    await axios.post(`/api/v1/createcategory`, value)
     .then((res) => {
         toast.success(res.data.msg);
         dispatch(addCategory(res.data.newCategory))

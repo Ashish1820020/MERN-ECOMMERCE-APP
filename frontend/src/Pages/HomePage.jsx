@@ -31,7 +31,7 @@ const Home = () => {
   const getFeaturedProducts = async () => {
     dispatch(isLoading());
     try{
-      const res = await axios.get(`${import.meta.env.VITE_ROOT_API}/products/productlist?featured=true`);
+      const res = await axios.get(`/products/productlist?featured=true`);
       const data = await res.data;
       // console.log(data);
       dispatch(updateFeaturedProducts(data.result)); 
@@ -47,7 +47,7 @@ const Home = () => {
   const getTopRatedProducts = async () => {
     dispatch(isLoading());
     
-    await axios.get(`${import.meta.env.VITE_ROOT_API}/products/productlist?rating=4`)
+    await axios.get(`products/productlist?rating=4`)
     .then((res) => {
       const data = res.data;
       // console.log(data);

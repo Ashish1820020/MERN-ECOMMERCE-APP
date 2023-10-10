@@ -6,7 +6,7 @@ import { RiCustomerService2Fill, RiSecurePaymentLine } from "react-icons/ri";
 
 const Services = () => {
   return (
-    <Wrapper className="container ">
+    <Wrapper className="container services-container">
       <div className="services flex-row">
 
         <div className="service">
@@ -57,7 +57,6 @@ const Services = () => {
 
 const Wrapper = styled.section`
   padding: 5rem 2rem;
-  min-height: 30rem;
   
   .service{
     display: flex;

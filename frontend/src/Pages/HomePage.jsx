@@ -91,7 +91,9 @@ const Home = () => {
 }
 
 const Wrapper = styled.div`
-
+  .services-container{
+    min-height: 30rem;
+  }
 `;
 
 

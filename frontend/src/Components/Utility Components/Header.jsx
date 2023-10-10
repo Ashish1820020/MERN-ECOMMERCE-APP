@@ -35,7 +35,7 @@ const Header = () => {
             {" "}
             <img
               className="logo"
-              src="../../images/logos.png"
+              src='https://res.cloudinary.com/dz9ezveb9/image/upload/v1696933114/logos_ka9ekv.png'
               alt="logo"
             />{" "}
           </NavLink>

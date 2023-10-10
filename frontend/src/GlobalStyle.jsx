@@ -44,6 +44,7 @@ h2,
 h3,
 h4 {
    font-family: "Work Sans", sans-serif;
+   color: black;
 }
 
 h1 {
@@ -113,9 +114,8 @@ li {
 
 .react-multiple-carousel__arrow{
   border-radius: 50%;
-  /* height: 10rem; */
+  z-index: 1;
   padding: 0;
-  /* background-color: white; */
   &::before{
     font-size: 2rem;
   }
@@ -349,31 +349,11 @@ button{
     }
   }
 
-input, textarea{
-    max-width: 50rem;
-    color: ${({ theme }) => theme.colors.black};
-    padding: 1.6rem 2.4rem;
-    border: 1px solid ${({ theme }) => theme.colors.border};
-    // text-transform: uppercase;
-   box-shadow: ${({ theme }) => theme.colors.shadowSupport};
-}
-input[type="submit"]{
-  max-width: 16rem;
-  margin-top: 2rem;
-  background-color: ${({ theme }) => theme.colors.btn};
-  color: ${({ theme }) => theme.colors.white};
-  padding: 1.4rem 2.2rem;
-  border-style: solid;
-  border-width: .1rem;
-  text-transform: uppercase;
-  font-size: 1.8rem;
-  cursor: pointer;
-}
+
 
 .stars{
   display: flex;
   align-items: center;
-  /* margin-top: 1.2rem; */
   gap: .1rem;
   p{
     display: inline-block;
@@ -428,6 +408,7 @@ input[type="submit"]{
   font-size: 1.6rem;
   font-weight: bolder;
   border: 1px solid black;
+  color: black;
   width: 3rem;
   height: 1.2rem;
   padding: .9rem 2rem ;
@@ -466,8 +447,7 @@ input[type="submit"]{
   justify-content: space-between;
 }
 .container {
-  /* min-width: 978px; */
-  min-height: 41vh;
+  min-height: 74vh;
   max-width: 1680px;
   width: 79.6dvw;
   margin: 2rem auto;
@@ -532,15 +512,45 @@ input[type="submit"]{
 }
 
 
+input, textarea{
+  max-width: 50rem;
+  color: ${({ theme }) => theme.colors.black};
+  padding: 1.6rem 2.4rem;
+  border: 1px solid rgba(98, 84, 243, 0.5);
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+input{
+  color: #5959ec;
+}
+textarea{
+  font-size: 1.56rem;
+}
+input[type="submit"]{
+  max-width: 16rem;
+  margin-top: 2rem;
+  background-color: ${({ theme }) => theme.colors.btn};
+  color: ${({ theme }) => theme.colors.white};
+  padding: 1.4rem 2.2rem;
+  border-style: solid;
+  border-width: .1rem;
+  text-transform: uppercase;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
 
+label{
+  color: black;
+}
 
 
 
 tbody > tr >td{
+  color: black;
   font-size: 1.8rem; 
   text-align: center;
 }
 thead > tr > td{
+  color: black;
   font-size: 2rem;
   text-align: center;
 }

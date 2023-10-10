@@ -205,6 +205,7 @@ const Wrapper = styled.div`
     width: 100%;
     input {
       width: 100%;
+      color: rgba(40, 116, 240, 1);
     }
   }
 

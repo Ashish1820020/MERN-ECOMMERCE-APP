@@ -100,19 +100,22 @@ const Wrapper = styled.div`
   }
 
   @media (max-width: 1470px) {
-    .items-container{
-      justify-content: space-between;
-    }
-    .wishlist-card{
-      width: 380px;
-    }
-  }
-  @media (max-width: 950px) {
     .wishlist-card{
       width: 300px;
     }
   }
-  @media (max-width: 700px) {
+  @media (max-width: 950px) {
+    
+    .wishlist-card{
+      width:270px;
+    }
+  }
+  @media (max-width: 620px) {
+    margin-bottom: 10rem;
+    
+    .items-container{
+      justify-content: center;
+    }
     .wishlist-card{
       width: 340px;
     }

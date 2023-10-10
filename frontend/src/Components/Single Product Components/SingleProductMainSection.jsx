@@ -8,11 +8,11 @@ import { TbTruckDelivery, TbReplace } from "react-icons/tb";
 import { FaTag, FaCheck } from "react-icons/fa";
 import ProductAmountButton from "../Utility Components/ProductAmountButton";
 import { Button } from "../../styles/Button";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { addToCart } from "../../Store/Slices/CartSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { isPresent } from "../../utils/checks";
-import { removeFromWishlist } from "../../Store/Slices/WishlistSlice";
+import { addToWishlist, removeFromWishlist } from "../../Store/Slices/WishlistSlice";
 
 const SingleProductMainSection = ({ singleProduct, id }) => {
   const paymentArray = [
@@ -21,6 +21,9 @@ const SingleProductMainSection = ({ singleProduct, id }) => {
     "EMI starting from ₹458/month",
     "Net banking & Credit/ Debit/ ATM card",
   ];
+
+  
+  const { isLoggedIn } = useSelector((state) => state.auth);
 
   const {
     _id,
@@ -35,6 +38,9 @@ const SingleProductMainSection = ({ singleProduct, id }) => {
     discount,
     colors,
   } = singleProduct;
+
+  const navigate = useNavigate();
+
   const toCart = {
     _id,
     name,
@@ -46,7 +52,9 @@ const SingleProductMainSection = ({ singleProduct, id }) => {
   };
   const [amount, setAmount] = useState(1);
   const [color, setColor] = useState(colors[0]);
-
+  
+  console.log(singleProduct);
+  console.log(amount);
   const [item, setItem] = useState({
     item: bulletHighlights,
     active: "Highlights",
@@ -93,6 +101,7 @@ const SingleProductMainSection = ({ singleProduct, id }) => {
       dispatch(removeFromWishlist({ _id: singleProduct._id, color }));
   };
 
+
   return (
     <Wrapper className="container flex">
       {/*----Image Container----*/}
@@ -129,12 +138,17 @@ const SingleProductMainSection = ({ singleProduct, id }) => {
         </div>
 
         {/* Offer Section */}
-        <div className="offer-section p-20">
+
+        <div className="description-section flex p-20">
+          {/* <h3>Description:</h3> */}
+          <p>{description}</p>
+        </div>
+        {/* <div className="offer-section p-20">
           <h3>Available offers</h3>
           <div>
             <p>
               <FaTag className="icon" />
-              Eligible for Flipkart Pay Later?
+              Eligible for Pay Later Option?
             </p>
             <p>
               <FaTag className="icon" />
@@ -152,7 +166,7 @@ const SingleProductMainSection = ({ singleProduct, id }) => {
               orders of ₹50,000 and aboveT&C
             </p>
           </div>
-        </div>
+        </div> */}
 
         {/* Highlight and Offer Section */}
         <div className="item-section flex-column p-20">
@@ -266,10 +280,10 @@ const SingleProductMainSection = ({ singleProduct, id }) => {
         <hr />
 
         {/* Description Section */}
-        <div className="description-section flex p-20">
+        {/* <div className="description-section flex p-20">
           <h3>Description:</h3>
           <p>{description}</p>
-        </div>
+        </div> */}
 
         {/* Add to cart  Section*/}
         <div className="cart-section padding">
@@ -298,7 +312,7 @@ const SingleProductMainSection = ({ singleProduct, id }) => {
           {condition ? (
             <div className="amount-button">
               {/* for product amount button */}
-              <div className="amount-toggle p-10">
+              <div className="amount-toggle p-5">
                 <ProductAmountButton
                   {...{
                     amount,
@@ -311,16 +325,50 @@ const SingleProductMainSection = ({ singleProduct, id }) => {
                 />
               </div>
 
-              {/* Add to cart button */}
-              <div className="add-button p-10">
-                <NavLink to={"/cart"}>
-                  <Button
-                    className="btn"
-                    onClick={() => handleAddToCart(toCart, amount, color)}
-                  >
-                    ADD TO CART
-                  </Button>
-                </NavLink>
+              <div className="button-container">
+
+                {/* Add to cart button */}
+                <div className="add-button p-5">
+                  <NavLink to={"/cart"}>
+                    <Button
+                      className="btn"
+                      onClick={() => handleAddToCart(toCart, amount, color)}
+                      >
+                      ADD TO CART
+                    </Button>
+                  </NavLink>
+                </div>
+
+                {/* Add to wishlist button */}
+                <div className="add-button p-5">
+                   {
+                    isPresent(wishlistProducts, _id, color) ?
+                      <NavLink to={"/wishlist"}>
+                        <Button
+                          className="btn"
+                          style={{backgroundColor: 'white', border: '1px solid black', color: 'red'}}
+                          >
+                          checkout wishlist
+                        </Button>
+                      </NavLink>
+                  :
+                     <Button
+                     className="btn"
+                     onClick={() => 
+                       isLoggedIn?
+                         dispatch(addToWishlist({
+                         _id, name, image: images[0], price, rating, discount, 
+                         color, company, stock, amount: 1
+                         }))
+                       : 
+                         navigate("/loginsignup")
+                     }
+                     >
+                     ADD TO Wishlist
+                   </Button>
+                   }
+                </div>
+
               </div>
             </div>
           ) : (
@@ -516,10 +564,14 @@ const Wrapper = styled.section`
         height: 3.8rem;
         padding: 1rem 2rem;
       }
+
+      .button-container{
+        display: flex;
+      }
     }
 
     .btn {
-      padding: 1rem 2rem;
+      padding: 1rem 1rem;
       background-color: rgba(40, 116, 240, 255);
     }
   }
@@ -533,6 +585,7 @@ const Wrapper = styled.section`
     margin: 1rem 0;
     li {
       list-style: circle;
+      color: black;
     }
   }
   .ul {
@@ -544,6 +597,10 @@ const Wrapper = styled.section`
 
   .p-10 {
     padding: 0rem 2rem;
+  }
+
+  .p-5 {
+    padding: 0rem 1rem;
   }
   .p-40 {
     padding: 0rem 4rem;
@@ -569,6 +626,12 @@ const Wrapper = styled.section`
       width: 96%;
     }
   }
+  @media (max-width: 800px) {
+    .button-container{
+      flex-direction: column;
+      gap: 1rem;
+    }
+  }
 
   @media (max-width: 550px) {
     gap: 4rem;
@@ -590,12 +653,19 @@ const Wrapper = styled.section`
     .p-40 {
       padding: 0 20px;
     }
+    
+    .button-container{
+      flex-direction: row;
+    }
   }
 
   @media (max-width: 380px) {
-    .amount-button {
-      flex-direction: column;
-      gap: 2rem;
+    .cart-section{
+      .amount-button {
+        flex-direction: column;
+        gap: 2rem;
+        align-items: flex-start;
+      }
     }
   }
 `;

@@ -72,18 +72,18 @@ const Home = () => {
     // className='container'
     <Wrapper >
       <BannerSection text='Anand Stores' />
-      <Services />
 
       {
         isProductLoading? 
-          <Spinner />
-          :
-          <div className="container">
+        <Spinner />
+        :
+        <div className="container">
             <FeatureProducts />
             <TopRatedProducts />
           </div>
       }
 
+      <Services />
       <Trusted /> 
     </Wrapper>
   

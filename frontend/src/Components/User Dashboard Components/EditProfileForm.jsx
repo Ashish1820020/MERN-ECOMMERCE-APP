@@ -4,17 +4,16 @@ import { AiOutlineMobile } from "react-icons/ai";
 import { MdOutlineFace6 } from "react-icons/md";
 import { CgPassword } from "react-icons/cg";
 import { useDispatch, useSelector } from "react-redux";
-import { useCookies } from "react-cookie";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
-import { addUserData, updateUserData } from "../../Store/Slices/AuthSlice";
+import { updateUserData } from "../../Store/Slices/AuthSlice";
 
 const UpdateProfile = () => {
   const dispatch = useDispatch();
   const { userData } = useSelector((state) => state.auth);
   const navigate = useNavigate();
-
+console.log(userData);
   // STATES
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
@@ -52,6 +51,8 @@ const UpdateProfile = () => {
   };
 
   useEffect(() => {
+    setName(userData.name);
+    setMobile(userData.phoneNumber);
     if (userData && userData?.avatar) {
       setAvatarPreview(userData.avatar);
     } else {

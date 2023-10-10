@@ -358,9 +358,9 @@ const UpdateProductDetails = ({ header }) => {
 
           <div className="form-mid flex-column">
             <label htmlFor="">Images:(Maximum 4 possible)(only jpg, jpeg or png format is accepted) </label>
-            <div className="form-mid flex-row flex-wrap">
+            <div className="form-mid flex-row flex-wrap product-photo-container">
               <div className="w-50 flex-column" >
-                <div id="update-profile-image">
+                <div id="update-product-image">
                   <input
                     type="file"
                     id="image-input"
@@ -518,6 +518,8 @@ const Wrapper = styled.div`
   .buttons {
     display: flex;
     gap: 3rem;
+    border: none;
+    outline: none;
     button {
       font-size: 1rem;
       color: white;
@@ -585,11 +587,36 @@ const Wrapper = styled.div`
     box-shadow: 0 0 0 0 black;
   }
 
-  #image-input{
-    width: 120px;
-    height: 40px;
-    overflow: hidden;
+  #update-product-image > input{
+    display: flex;
+    padding: 0%;
+    height: 100%;
   }
+  #update-product-image > input::file-selector-button{
+    cursor: pointer;
+    width: 100%;
+    z-index: 2;
+    height: 5vh;
+    border: none;
+    margin: 0%;
+    font: 400 1.5rem cursive;
+    transition: all 0.5s;
+    padding: 0 1vmax;
+    color: rgba(0, 0, 0, 0.623);
+    background-color: rgb(255, 255, 255);
+  }
+  #update-product-image > input::file-selector-button:hover {
+    background-color: rgb(235, 235, 235);
+  }
+
+  .product-photo-container{
+    align-items: center;
+    justify-content: center;
+  }
+
+
+
+
   @media (max-width: 560px) {
     .form-mid {
       gap: 2rem;

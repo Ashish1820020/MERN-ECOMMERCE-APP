@@ -160,6 +160,7 @@ const Wrapper = styled.section`
         margin-right: 0.6rem;
         padding: 0.5rem;
         box-shadow: 0 0 1px 1.5px #ffffff;
+        color: white;
         border-radius: 50%;
         cursor: pointer;
       }

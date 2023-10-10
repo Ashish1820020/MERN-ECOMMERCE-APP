@@ -95,7 +95,9 @@ const Signup = () => {
       </div>
 
       <button type="submit" value="submit" className='btn' disabled={!check} 
-        style={{backgroundColor: check? 'rgba(40,116,240,255)' : "rgba(0,0,0,.5)"}}>Signup</button>
+        style={{backgroundColor: check? 'rgba(40,116,240,255)' : "rgba(0,0,0,.5)"}}>
+          Signup
+      </button>
 
     </form>
     </Wrapper>
@@ -126,12 +128,12 @@ const Wrapper = styled.div`
     .update-profile-input > input {
       color: #5959ec;
       padding: 1vmax 1.4vmax;
-      padding-right: 1vmax;
+      padding-right: 2vmax;
       width: 100%;
       box-sizing: border-box;
       border: 1px solid rgba(0, 0, 0, 0.267);
       border-radius: 4px;
-      font: 300 0.9vmax cursive;
+      font: 300 cursive;
       outline: none;
       border: none;
       box-shadow: none;
@@ -153,6 +155,10 @@ const Wrapper = styled.div`
     gap: 1rem;
   }
 
+  #update-profile-image{
+    align-items: center;
+    justify-content: center;
+  }
   #update-profile-image > img {
     width: 3vmax;
     height: 3vmax;
@@ -173,7 +179,7 @@ const Wrapper = styled.div`
     height: 5vh;
     border: none;
     margin: 0%;
-    font: 400 1rem cursive;
+    font: 400 1.5rem cursive;
     transition: all 0.5s;
     padding: 0 1vmax;
     color: rgba(0, 0, 0, 0.623);

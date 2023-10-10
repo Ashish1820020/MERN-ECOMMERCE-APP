@@ -121,6 +121,7 @@ const Wrapper = styled.div`
   .header{
     margin-top: 2rem;
     display: flex;
+    align-items: center;
   }
 
 
@@ -132,6 +133,7 @@ const Wrapper = styled.div`
     z-index: 0;
     opacity: 0;
     visibility: hidden;
+    color: black;
   }
 
   .icon-container{

@@ -25,7 +25,7 @@ const responsive = {
     partialVisibilityGutter: 30,
   },
   mobile: {
-    breakpoint: { max: 464, min: 0 },
+    breakpoint: { max: 460, min: 0 },
     items: 1,
     partialVisibilityGutter: 30,
   },
@@ -36,8 +36,7 @@ const ProductSlider = ({ featureProducts, text }) => {
     <Wrapper className="carousel-slider">
       <h3>{text}</h3>
       <Carousel
-        // partialVisible={true}
-        autoPlay={true}
+        // autoPlay={true}
         responsive={responsive}
         swipeable={true}
         draggable={true}
@@ -72,6 +71,11 @@ const Wrapper = styled.section`
     font-weight: 800;
     font-size: 3rem;
     margin-bottom: 3rem;
+  }
+  @media (max-width: 460px) {
+    .card{
+      width: 300px;
+    }
   }
 
   @media (max-width: 410px) {

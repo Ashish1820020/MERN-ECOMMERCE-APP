@@ -1,9 +1,8 @@
-import React, { useState } from 'react'
+import React from 'react'
 import styled from 'styled-components'
-import {BsFillGridFill, BsFilterSquareFill, BsList} from 'react-icons/bs'
+import {BsFillGridFill, BsList} from 'react-icons/bs'
 import { useDispatch, useSelector } from 'react-redux'
 import { setListView, setGridView, setSortingType } from '../../Store/Slices/FilterAndPageSlice';
-import { CgClose, CgMenu } from 'react-icons/cg';
 
 const Sort = ({sidebar, setSidebar}) => {
   
@@ -20,13 +19,8 @@ const Sort = ({sidebar, setSidebar}) => {
       
       {/* 1st column  */}
       <div className="sort-left flex">
-        <button className={gridView? "view-type" :  "view-type active"} onClick={() => dispatch(setListView())} >
-          <BsList className='icon'/>
-        </button>
-
-        <button className={gridView? "view-type active" : "view-type"} onClick={ () => dispatch(setGridView())}>
-          <BsFillGridFill className= 'icon' />
-        </button>
+        <BsList className={gridView? "icon" :  "icon active"} onClick={() => dispatch(setListView())} />
+        <BsFillGridFill className={gridView? "icon active" : "icon"} onClick={ () => dispatch(setGridView())} />
       </div>
 
       {/* 2nd column  */}
@@ -63,27 +57,22 @@ const Wrapper = styled.div`
   border-radius: 12px;
   background-color: #ffffff;
   box-shadow: 0px 0px 2px 0px black;
-
-
+  
+  
   .sort-left {
     gap: 2rem;
-
-    .view-type{
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 4rem;
-      width: 4rem;
+    
+    .icon{
+      height: 3rem;
+      width: 3rem;
+      padding: 0.5rem;
       border: none;
-      padding: 0;
-    }
-    .icon {
-      height: 2.5rem;
-      width: 2.5rem;
+      border-radius: 5px;
+      box-shadow: 0px 0px 2px 0px black;
     }
     .active {
-      background-color: ${({ theme }) => theme.colors.black};
       color: #fff;
+      background-color: black;
     }
   }
 
@@ -160,12 +149,7 @@ const Wrapper = styled.div`
   .sort-left {
     
 
-    .view-type{
-      height: 3rem;
-      width: 3rem;
-      padding: 0.5rem;
-      border: none;
-    }
+   
   }
     
     .sort-mid{

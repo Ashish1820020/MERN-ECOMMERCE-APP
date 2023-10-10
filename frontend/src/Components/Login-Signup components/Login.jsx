@@ -125,7 +125,7 @@ const Wrapper = styled.div`
       box-sizing: border-box;
       border: 1px solid rgba(0, 0, 0, 0.267);
       border-radius: 4px;
-      font: 300 1rem cursive;
+      font: 300 cursive;
       outline: none;
       border: none;
       box-shadow: none;

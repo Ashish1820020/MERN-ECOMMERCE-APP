@@ -34,9 +34,12 @@ const LogInPage = () => {
 }
 
 const Wrapper = styled.div`
-  
+/* display: flex;
+align-items: center; */
+  margin-top: 14vh;
   .wrapper-inside{
     display: flex;
+    /* margin: 20vh auto 0; */
     margin: 0 auto;
     flex-direction: column;
     align-items: center;
@@ -46,6 +49,7 @@ const Wrapper = styled.div`
     border-radius: 15px;
     box-shadow: 0px 0px 2px 0px black;
     padding: 2rem;
+    /* width: 50rem; */
     max-width: 50rem;
     min-width: 30rem;
   }

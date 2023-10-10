@@ -13,6 +13,8 @@ const ProductAmountButton = ({
 }) => {
   const dispatch = useDispatch();
 
+  console.log(amount);
+
   return (
     <>
       <button

@@ -68,9 +68,19 @@ const Wrapper = styled.section`
       width: 275px;
     }
   }
-  @media (max-width: 600px) {
+  @media (max-width: 620px) {
     .card{
-      width: 420px;
+      width: 220px;
+    }
+  }
+  @media (max-width: 500px) {
+    .card{
+      width: 200px;
+    }
+  }
+  @media (max-width: 460px) {
+    .card{
+      width: 320px;
     }
   }
 `;

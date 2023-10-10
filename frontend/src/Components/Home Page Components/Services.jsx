@@ -57,6 +57,7 @@ const Services = () => {
 
 const Wrapper = styled.section`
   padding: 5rem 2rem;
+  min-height: 30rem;
   
   .service{
     display: flex;

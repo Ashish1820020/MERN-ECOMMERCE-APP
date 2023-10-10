@@ -27,18 +27,21 @@ const Slider = () => {
       name: "banner1.png",
       bannerHeader: "The best Watches collection sale",
       bannerText: "upto 40% off in selective products",
+      color: 'rgba(111, 111, 111)'
     },
     {
       id: 2,
       name: "banner2.png",
       bannerHeader: "The best Tablet collection",
       bannerText: "upto 20% off in selective products",
+      color: 'rgba(111, 111, 111)'
     },
     {
       id: 3,
       name: "banner3.png",
       bannerHeader: "The best Headphones collection",
       bannerText: "upto 60% off in selective products",
+      color: 'rgb(249, 249, 249, .8)'
     },
 
     {
@@ -46,6 +49,7 @@ const Slider = () => {
       name: "banner4.png",
       bannerHeader: "The best Headphones collection",
       bannerText: "upto 60% off in selective products",
+      color: 'rgb(249, 249, 249, .8)'
     },
   ];
 
@@ -71,7 +75,7 @@ const Slider = () => {
                   <div className="col">
                     <div className="slider-text-info  slider-content-left  slider-text-left">
                       <span
-                        style={{ color: " #6f6f6f" }}
+                        style={{ color: `${banner.color}` }}
                         className="subtitle e1"
                       >
                         Get 35% off new tablet

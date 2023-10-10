@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const Trusted = () => {
   return (
-    <Wrapper className="brand-section">
+    <Wrapper className="brand-section container">
       <div >
         <h3>Trusted By 1000+ Companies</h3>
         <div className="brand-section-slider">

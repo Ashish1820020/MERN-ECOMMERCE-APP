@@ -210,7 +210,7 @@ const Wrapper = styled.div`
     
     .mobile-navbar-btn{
       position: static;
-      z-index: 100;
+      z-index: 2;
       opacity: 1;
       visibility: visible;
     }
@@ -237,7 +237,16 @@ const Wrapper = styled.div`
     }
   }
 }
+@media (max-width: 470px) {
+  .mobile-navbar-btn{
+    .icon{
+      height: 2rem;
+      width: 2rem;
+    }
+  }
+}
 @media (max-width: 370px) {
+  
   .right-inside{
     padding-left: 0;
     padding-right: 0;

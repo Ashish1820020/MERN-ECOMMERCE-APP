@@ -32,7 +32,6 @@ const CreateCategory = () => {
       <div className="category-top">
         <h2>Existing Categories: </h2>
        {
-        // categories.length ==0? 
          <div className="list">
           { categories.map((currElem, index) =><button onClick={() => setValue({ ...value, name: currElem.name})} className="list-item" key={index}>{currElem.name}</button>) }
          </div>
@@ -42,7 +41,7 @@ const CreateCategory = () => {
       <div className="category-bottom">
         <h2>Add New Categories: </h2>
         <form className='form' onSubmit={handleSubmit}>
-          <input type="text" name='category' value={value.name} placeholder='Category' onChange={(e) => setValue({...value, name: e.target.value})}/>
+          <input type="text" name='category' required value={value.name} placeholder='Category' onChange={(e) => setValue({...value, name: e.target.value})}/>
           <textarea type="text" name='description' value={value.description} placeholder='Description' onChange={(e) => setValue({...value, description: e.target.value})}/>
           <button type='submit' className='submit'>Add</button>
         </form>

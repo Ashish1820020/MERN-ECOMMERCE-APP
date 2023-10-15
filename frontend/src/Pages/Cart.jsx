@@ -18,7 +18,6 @@ const Cart = () => {
     localStorage.setItem("cartProducts", JSON.stringify(cartProducts));
   }, [cartProducts]);
 
-  // console.log(cartProducts);
 
 
   return (
@@ -49,7 +48,9 @@ const Cart = () => {
 
 const Wrapper = styled.section`
   margin: 10rem auto 5rem;
+  position: relative;
   .cart{
+    /* position: relative !important; */
     max-width: 1300px;
     margin: 4rem auto;
     gap: 4rem;
@@ -65,8 +66,9 @@ const Wrapper = styled.section`
   
   /* SECTION PRICE */
   .section-price{
-    position: sticky;
-    top: 5rem;
+    /* position: fixed;
+    right: 10rem;
+    top: 6.5rem; */
     box-shadow: 0px 0px 2px 0px black;
     background-color: #ffffff;
     width: 34%;

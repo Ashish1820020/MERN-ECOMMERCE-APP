@@ -21,10 +21,9 @@ const orderSchema = new mongoose.Schema({
         default: "Not Processed",
         enum: ["Not Processed", "Processing", "Dispatched", "Cancelled", "Delivered"],
     },
-    paymentInfo: {
-        id: {type: String},
-        status: {type: String},
-        COD: {type: Boolean,  default: false}
+    paymentMethod: {
+        type: String,
+        required: true
     },
     totalPrice: {
         type: Number, 

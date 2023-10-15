@@ -415,6 +415,7 @@ const Wrapper = styled.section`
     .product-data-real-price {
       color: ${({ theme }) => theme.colors.btn};
       span {
+        margin-left: 1rem;
         font-size: 1.8rem;
       }
       h3 {

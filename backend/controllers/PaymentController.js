@@ -30,8 +30,10 @@ const getPaymentToken = catchAsyncError(async (req, res, next) => {
 // Create new Order
 const brainTreePaymentController = catchAsyncError(async (req, res, next) => {
     try {
-        const { nonce, cartProducts, deliveryAddress } = req.body;
-        // console.log(req.body);
+        const { nonce, cartProducts, deliveryAddress, method } = req.body;
+        
+        console.log(req.body);
+        
         let total = 0;
         const cartProduct = cartProducts.map((elem) => {
           total += elem.price * elem.amount;
@@ -41,26 +43,40 @@ const brainTreePaymentController = catchAsyncError(async (req, res, next) => {
           }
         });
 
-        let newTransaction = gateway.transaction.sale(
-          {
-            amount: total,
-            paymentMethodNonce: nonce,
-            options: {
-              submitForSettlement: true,
+        if(method === 'cod'){
+          const order = new OrderData({ orderedItems: cartProduct, paymentMethod: method, totalPrice: total,
+                                        buyer: new ObjectId(req.body.id), address: deliveryAddress});
+          await order.save();
+          cartData.findOneAndDelete({user: new ObjectId(req.body.id)});
+          res.json({ ok: true });
+        }
+        else{
+          
+          let newTransaction = gateway.transaction.sale(
+            {
+              amount: total,
+              paymentMethodNonce: nonce,
+              options: {
+                submitForSettlement: true,
+              }
+            },
+            async function(error, result) {
+              if (result) {
+                console.log(result);
+                const order = new OrderData({ orderedItems: cartProduct, payment: result, paymentMethod: method, totalPrice: total,
+                                              buyer: new ObjectId(req.body.id), address: deliveryAddress});
+                await order.save();
+                cartData.findOneAndDelete({user: new ObjectId(req.body.id)});
+                res.json({ ok: true });
+              } else {
+                res.status(500).send(error);
+              }
             }
-          },
-          async function(error, result) {
-            if (result) {
-              const order = new OrderData({ orderedItems: cartProduct, payment: result, totalPrice: total,
-                                            buyer: new ObjectId(req.body.id), address: deliveryAddress});
-              await order.save();
-              cartData.findOneAndDelete({user: new ObjectId(req.body.id)});
-              res.json({ ok: true });
-            } else {
-              res.status(500).send(error);
-            }
-          }
-        );
+          );
+        }
+
+
+
       } catch (error) {
         return next(new ErrorHandler("Internal Error Occurred", 500));
       }

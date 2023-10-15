@@ -41,7 +41,7 @@ const Header = () => {
           </NavLink>
         </div>
 
-        {location.pathname.includes("/password/reset") ? (
+        {location.pathname.includes("/password/reset") || location.pathname.includes("/checkout") ? (
           <></>
         ) : (
           <>

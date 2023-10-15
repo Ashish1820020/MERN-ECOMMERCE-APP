@@ -1,42 +1,31 @@
 import styled from "styled-components";
 
 const Trusted = () => {
+  const images = [
+    'https://res.cloudinary.com/dz9ezveb9/image/upload/v1697300455/image2_xakryf.png',
+    'https://res.cloudinary.com/dz9ezveb9/image/upload/v1697300455/image3_lalvlt.png',
+    'https://res.cloudinary.com/dz9ezveb9/image/upload/v1697300455/image4_iepnxe.png',
+    'https://res.cloudinary.com/dz9ezveb9/image/upload/v1697300455/image6_clzjg8.png',
+    'https://res.cloudinary.com/dz9ezveb9/image/upload/v1697300455/image8_i8tsfr.png'
+  ]
   return (
-    <Wrapper className="brand-section container">
+    <Wrapper className="container brand-section">
       <div >
         <h3>Trusted By 1000+ Companies</h3>
         <div className="brand-section-slider">
           {/* my 1st img  */}
-          <div className="slide">
-            <img
-              src="https://raw.githubusercontent.com/solodev/infinite-logo-carousel/master/images/image2.png"
-              alt="trusted-brands"
-            />
-          </div>
-          <div className="slide">
-            <img
-              src="https://raw.githubusercontent.com/solodev/infinite-logo-carousel/master/images/image3.png"
-              alt="trusted-brands"
-            />
-          </div>
-          <div className="slide">
-            <img
-              src="https://raw.githubusercontent.com/solodev/infinite-logo-carousel/master/images/image4.png"
-              alt="trusted-brands"
-            />
-          </div>
-          <div className="slide">
-            <img
-              src="https://raw.githubusercontent.com/solodev/infinite-logo-carousel/master/images/image6.png"
-              alt="trusted-brands"
-            />
-          </div>
-          <div className="slide">
-            <img
-              src="https://raw.githubusercontent.com/solodev/infinite-logo-carousel/master/images/image8.png"
-              alt="trusted-brands"
-            />
-          </div>
+          {
+            images.map((image, index) => {
+              return (
+                <div className="slide" key={index}>
+                  <img
+                    src={image}
+                    alt="trusted-brands"
+                  />
+                </div>
+              )
+            })
+          }
         </div>
       </div>
     </Wrapper>
@@ -44,9 +33,10 @@ const Trusted = () => {
 };
 
 const Wrapper = styled.section`
-border-radius: 1rem;
+  border-radius: 1rem;
   padding: 9rem 4rem;
   background-color: ${({ theme }) => theme.colors.bg};
+  min-height: 30vh !important;
   h3 {
     text-align: center;
     text-transform: capitalize;

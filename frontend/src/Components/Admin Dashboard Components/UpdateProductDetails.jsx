@@ -599,7 +599,7 @@ const Wrapper = styled.div`
     height: 5vh;
     border: none;
     margin: 0%;
-    font: 400 1.5rem cursive;
+    font: 400 1.5rem;
     transition: all 0.5s;
     padding: 0 1vmax;
     color: rgba(0, 0, 0, 0.623);

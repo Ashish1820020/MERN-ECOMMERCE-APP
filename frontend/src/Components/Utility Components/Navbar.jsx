@@ -339,7 +339,6 @@ const Nav = styled.nav`
   .mobile-navbar-list > div:last-child {
     height: 86%;
     width: 100%;
-    /* border: 1px solid black; */
     ul {
       width: 40%;
       text-align: center;

@@ -132,7 +132,6 @@ const Fragment = styled.div`
       background: #4a154b;
       height: 4px;
       width: calc(${({ width }) => width} - 55px);
-      /* z-index: -1; */
       top: 40%;
       transition: 0.4s ease;
       transform: translateY(-50%);

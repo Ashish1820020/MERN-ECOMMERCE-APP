@@ -101,7 +101,7 @@ const Wrapper = styled.section`
   .list-card{
     width: 100%;
     margin: auto;
-    min-height: 240px;
+    min-height: 200px;
     background-color: #ffffff;
     box-shadow: 0px 0px 2px 0px black;
     border-radius: 1.3rem;

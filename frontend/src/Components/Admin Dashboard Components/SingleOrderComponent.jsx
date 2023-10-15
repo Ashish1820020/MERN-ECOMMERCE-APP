@@ -65,7 +65,7 @@ const SingleOrderComponent = () => {
         <div className="single-order-card">
           <h3>Payment</h3>
           <div className="single-order-card-inside" style={{color: "white"}}>
-            <h4 style={{color: "green", fontWeight: "bolder", fontSize: "2rem"}}>{singleOrderData.paymentInfo.COD? "" : "PAID"}</h4>
+            <h4 style={{color: "green", fontWeight: "bolder", fontSize: "2rem"}}>{singleOrderData?.paymentMethod && singleOrderData.paymentMethod === 'cod'? "Cash On Delivery" : "PAID"}</h4>
             <p>Amount: <span><FormatPrice price={singleOrderData.totalPrice} /></span></p>
           </div>
         </div>

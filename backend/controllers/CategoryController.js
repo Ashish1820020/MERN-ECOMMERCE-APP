@@ -1,6 +1,8 @@
 const CategoryData = require("../models/categoryModel");
 const ProductsData = require("../models/productModel");
 const catchAsyncError = require('../middleware/catchAsyncError');
+const cloudinary = require("../helper/CloudinaryConfig");
+
 
 const getUniqueData = (allProducts, prop) => {
     
@@ -19,8 +21,13 @@ const getUniqueData = (allProducts, prop) => {
 const createCategory = catchAsyncError(async (req, res, next) => {
 
     try {
-        const {name, description} = req.body;
+        const {name} = req.body;
+        const categoryImg = req.file;
         const queryObj = {};
+
+
+        // console.log(req.body);
+        // console.log(req.file);
 
         if(!name){
             return res.status(401).json({
@@ -29,9 +36,13 @@ const createCategory = catchAsyncError(async (req, res, next) => {
         }
         queryObj.name = name;
 
-        if(description){
-            queryObj.description = description;
+        if (categoryImg) {
+            const upload = await cloudinary.uploader.upload(categoryImg.path);
+            console.log(upload);
+            queryObj.categoryImg = upload.secure_url;
         }
+
+        // console.log(queryObj);
 
         const exist = await CategoryData.findOne({name: queryObj.name});
 

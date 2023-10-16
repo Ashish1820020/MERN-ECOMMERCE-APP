@@ -4,8 +4,9 @@ import ListView from './showingProducts/ListView'
 import axios from 'axios';
 import Spinner from '../Utility Components/Spinner'
 import ReactPaginate from 'react-paginate'
-import { setCurrentPage, isLoading, isError, updateFilteredProducts } from '../../Store/Slices/FilterAndPageSlice'
+import { setCurrentPage, isLoading, isError, updateFilteredProducts } from '../../Store/Slices/FilterAndPageSlice';
 import { useDispatch, useSelector } from 'react-redux'
+// import { getFilteredProducts } from '../../Store/API Calls Helper/ProductApiCallsHelper';
 
 const ProductList = () => {
 
@@ -53,10 +54,12 @@ const ProductList = () => {
       dispatch(isError());  
     }
   }
+
+  
   useEffect(() => {
     getFilteredProducts(filters, gridView, currentPage, sortingType);
     window.scrollTo({top: 0});
-  }, [gridView, currentPage, filters, sortingType]);
+  }, [dispatch, gridView, currentPage, filters, sortingType]);
 
   const handlePageClick = (e) => {
     dispatch(setCurrentPage(e.selected + 1))

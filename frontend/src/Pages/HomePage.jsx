@@ -10,6 +10,7 @@ import Services from "../Components/Home Page Components/Services";
 import Trusted from "../Components/Home Page Components/Trusted";
 import { useCookies } from "react-cookie";
 import Spinner from "../Components/Utility Components/Spinner";
+import Categories from "../Components/Home Page Components/Categories";
 
 
 const localUserAccessToken = () => {
@@ -33,11 +34,9 @@ const Home = () => {
     try{
       const res = await axios.get(`/api/v1/products/productlist?featured=true`);
       const data = await res.data;
-      // console.log(data);
       dispatch(updateFeaturedProducts(data.result)); 
     }
     catch(error){
-      // console.log(error);
       dispatch(isError()); 
     }
   }
@@ -50,12 +49,10 @@ const Home = () => {
     await axios.get(`/api/v1/products/productlist?rating=4`)
     .then((res) => {
       const data = res.data;
-      // console.log(data);
       
       dispatch(updateTopRatedProducts(data.result)); 
     })
     .catch((err) => {
-      // console.log(err);
       dispatch(isError());
     })
   }
@@ -69,9 +66,9 @@ const Home = () => {
 
 
   return (
-    // className='container'
     <Wrapper >
       <BannerSection text='Anand Stores' />
+      <Categories />
 
       {
         isProductLoading? 

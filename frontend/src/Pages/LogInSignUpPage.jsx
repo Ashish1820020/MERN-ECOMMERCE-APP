@@ -36,7 +36,7 @@ const LogInPage = () => {
 const Wrapper = styled.div`
 /* display: flex;
 align-items: center; */
-  margin-top: 14vh;
+  margin-top: 14vh !important;
   .wrapper-inside{
     display: flex;
     /* margin: 20vh auto 0; */

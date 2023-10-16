@@ -8,13 +8,20 @@ import { useDispatch, useSelector } from 'react-redux';
 const CreateCategory = () => {
 
   const { categories } = useSelector(state => state.filterType);
-  const [value, setValue] = useState({name: "", description: ""});
+  const [ name, setName] = useState("");
+  const [ categoryImg, setCategoryImg ] =useState("");
+  const [imgPreview, setImgPreview] = useState("");
   const dispatch =  useDispatch();
 
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await axios.post(`/api/v1/createcategory`, value)
+
+    const myForm = new FormData();
+    myForm.append("name", name);
+    myForm.append("categoryImg", categoryImg);
+
+    await axios.post(`/api/v1/createcategory`, myForm)
     .then((res) => {
         toast.success(res.data.msg);
         dispatch(addCategory(res.data.newCategory))
@@ -24,6 +31,11 @@ const CreateCategory = () => {
         console.log(err);
     });
   }
+
+  const updateCategoryImg = (e) => {
+    setCategoryImg(e.target.files[0]);
+    setImgPreview(URL.createObjectURL(e.target.files[0]));
+  };
 
 
 
@@ -40,9 +52,12 @@ const CreateCategory = () => {
 
       <div className="category-bottom">
         <h2>Add New Categories: </h2>
-        <form className='form' onSubmit={handleSubmit}>
-          <input type="text" name='category' required value={value.name} placeholder='Category' onChange={(e) => setValue({...value, name: e.target.value})}/>
-          <textarea type="text" name='description' value={value.description} placeholder='Description' onChange={(e) => setValue({...value, description: e.target.value})}/>
+        <form className='form' encType="multipart/form-data" onSubmit={handleSubmit}>
+          <input type="text" name='category' required value={name} placeholder='Category' onChange={(e) => setName(e.target.value)}/>
+          <div id='file-input-container'>
+            <img src={imgPreview} alt="img" />
+            <input type="file" name="categoryImg" accept="image/*" onChange={updateCategoryImg}/>
+          </div>
           <button type='submit' className='submit'>Add</button>
         </form>
       </div>
@@ -85,14 +100,55 @@ const Wrapper = styled.div`
     align-items: center;
     width: 80%;
     flex-direction: column;
-    input, textarea{
+    input { 
+      color: #5959ec;
+      padding: 1vmax 2vmax;
+      padding-right: 1vmax;
       width: 80%;
+      height: 80%;
+      box-sizing: border-box;
+      border: 1px solid rgba(0, 0, 0, 0.267);
+      border-radius: 4px;
+      outline: none;
     }
-    textarea{
-      height: 10rem;
+    #file-input-container{
+      width: 80%;
+      display: flex;
+      margin: 0 auto;
+      max-width: 50rem;
+      justify-content: space-between;
+      align-items: center;
     }
+    #file-input-container > img{
+      width: 4rem;
+      height: 4rem;
+      border-radius: 50%;
+    }
+    #file-input-container > input{
+      width: 70%;
+      padding: 0%;
+    }
+    #file-input-container > input::file-selector-button {
+      cursor: pointer;
+      width: 100%;
+      z-index: 2;
+      height: 5vh;
+      border: none;
+      margin: 0%;
+      font: 400 1.5rem;
+      transition: all 0.5s;
+      padding: 0 1vmax;
+      color: rgba(0, 0, 0, 0.623);
+      background-color: rgb(255, 255, 255);
+    }
+
+    #file-input.container > input::file-selector-button:hover {
+      background-color: rgb(235, 235, 235);
+    }
+    
     button{
       padding: 1rem 6rem;
+      border: none;
     }
   }
 
@@ -106,4 +162,4 @@ const Wrapper = styled.div`
 
 `;
 
-export default CreateCategory
+export default CreateCategory;

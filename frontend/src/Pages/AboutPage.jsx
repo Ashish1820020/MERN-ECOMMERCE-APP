@@ -1,11 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
 // import "./aboutSection.css";
-import { FaYoutube } from "react-icons/fa";
+import { FaGithubSquare, FaLinkedin } from "react-icons/fa";
 import { AiOutlineInstagram } from "react-icons/ai";
 const About = () => {
-  const visitInstagram = () => {
-    window.location = "";
+  const visitLinkedin = () => {
+    window.location = "https://www.linkedin.com/in/ashish-bhattacharyya-574172204/";
   };
 
 
@@ -23,8 +23,8 @@ const About = () => {
           <div>
           
             <h2>Ashish Bhattacharyya</h2>
-            <button onClick={visitInstagram} color="primary">
-              Visit Instagram
+            <button onClick={visitLinkedin} color="primary">
+              Visit Linkedin
             </button>
             <span>
               This is a sample website made by Ashish Bhattacharyya with MERN stack Only for learning purposes.
@@ -33,12 +33,12 @@ const About = () => {
           <div className="aboutSectionContainer2">
             <h2>Our Brands</h2>
             <div>
-              <a href="" target="blank">
-                <FaYoutube className="youtubeSvgIcon" />
+              <a href="https://github.com/Ashish1820020" target="blank">
+                <FaGithubSquare className="githubSvgIcon" />
               </a>
 
-              <a href="" target="blank">
-                <AiOutlineInstagram className="instagramSvgIcon" />
+              <a href="https://www.linkedin.com/in/ashish-bhattacharyya-574172204/" target="blank">
+                <FaLinkedin className="linkedinSvgIcon" />
               </a>
             </div>
           </div>
@@ -129,12 +129,13 @@ img{
   display: flex;
 }
 
-.youtubeSvgIcon {
-  color: tomato;
+.githubSvgIcon {
+  color: black;
 }
 
-.instagramSvgIcon {
-  color: rgb(144, 81, 202);
+.linkedinSvgIcon {
+  background-color: white(255, 255, 255);
+  color: #136cc4;
 }
 
 @media screen and (max-width: 600px) {

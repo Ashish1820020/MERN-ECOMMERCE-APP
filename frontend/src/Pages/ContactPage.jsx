@@ -3,7 +3,7 @@ import styled from "styled-components";
 const Contact = () => {
   return (
     <Wrapper>
-      <h2>Contact Page</h2>
+      <h1>Contact Page</h1>
       {/* Map Integration */}
       <iframe
         title="hello"
@@ -55,8 +55,10 @@ const Contact = () => {
 };
 
 const Wrapper = styled.section`
-  padding: 9rem 0 5rem 0;
   text-align: center;
+  h1{
+    margin-bottom: 5rem;
+  }
 
   .container {
     margin-top: 6rem;

@@ -183,7 +183,7 @@ const Fragment = styled.div`
     box-sizing: border-box;
     border: 1px solid rgba(0, 0, 0, 0.267);
     border-radius: 4px;
-    font: 300 0.9vmax cursive;
+    font: 300 0.9vmax;
     outline: none;
   }
   #image-input {

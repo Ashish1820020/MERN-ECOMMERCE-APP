@@ -81,10 +81,10 @@ const Login = () => {
         </div>
 
         <div className="text">
-          <div className='text-check'>
+          {/* <div className='text-check'>
             <input type="checkbox" name="checkbox" value={value.check} onChange={(e) => setValue({...value, check: e.target.value})}/>
             <p>Remember me</p>
-          </div>
+          </div> */}
          <button className='forgot-btn' onClick={() => navigate("/password/forgotpassword")}>Forgot password?</button>
         </div>
 
@@ -175,6 +175,8 @@ const Wrapper = styled.div`
   outline: none;
   background: none;
   border: none;
+  margin-left: auto;
+  padding-right: 0;
   &:hover{
     color: rgba(0, 0, 0, 0.6);
   }

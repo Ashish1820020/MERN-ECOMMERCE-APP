@@ -12,18 +12,11 @@ const SingleProduct = () => {
   const dispatch = useDispatch();
   const productsData = useSelector(state => state.product); 
   const {singleProduct} = productsData;
-  // console.log(singleProduct);
 
-// Used to access the parameters of the current Route
+  // Used to access the parameters of the current Route
   let {id} = useParams();
 
-
-
-
-
   const getSingleProduct = async(id) => {
-    
-    // console.log(id);
     dispatch(isSingleLoading());
     try {
         const res = await axios.get(`/api/v1/products/productlist/${id}`);
@@ -33,7 +26,6 @@ const SingleProduct = () => {
         dispatch(updateSingleProductData(singleProduct.product));
     } catch (error) {
       dispatch(isError());
-      // console.log(error);
     }
   }
   
@@ -42,6 +34,10 @@ const SingleProduct = () => {
     dispatch(clearSingleProductData());
     getSingleProduct(id);
   }, [id]);
+
+
+
+
   
   if(Object.keys(singleProduct).length === 0){
     return <Spinner />

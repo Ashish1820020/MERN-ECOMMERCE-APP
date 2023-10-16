@@ -113,7 +113,7 @@ const Wrapper = styled.div`
             border: 1px solid rgba(0, 0, 0, 0.267);
             border-radius: 4px;
             outline: none;
-            font: 300 1rem cursive;
+            font: 300 1rem;
             border: none;
             box-shadow: none;
         }

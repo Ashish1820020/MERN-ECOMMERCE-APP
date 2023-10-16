@@ -10,11 +10,13 @@ import {
   setDecrease,
 } from "../../Store/Slices/CartSlice";
 import { addToWishlist } from "../../Store/Slices/WishlistSlice";
+import { useLocation } from "react-router-dom";
 
 const CartProduct = ({ currentElement }) => {
   const { _id, name, price, image, color, amount, discount, rating, stock } =
     currentElement;
   const dispatch = useDispatch();
+  const location = useLocation()
 
   const toWishlist = () => {
     dispatch(removeFromCart({ _id, color }));
@@ -68,14 +70,19 @@ const CartProduct = ({ currentElement }) => {
             </div>
           </div>
 
-          <div className="center-bottom">
-            <button onClick={() => dispatch(removeFromCart({ _id, color }))}>
-              Remove
-            </button>
-            <button onClick={() => dispatch(() => toWishlist())}>
-              Move to Wishlist
-            </button>
-          </div>
+          {
+            location.pathname.includes('/cart')?
+              <div className="center-bottom">
+                <button onClick={() => dispatch(removeFromCart({ _id, color }))}>
+                  Remove
+                </button>
+                <button onClick={() => dispatch(() => toWishlist())}>
+                  Move to Wishlist
+                </button>
+              </div>
+            :
+              null
+          }
         </div>
       </div>
     </Wrapper>

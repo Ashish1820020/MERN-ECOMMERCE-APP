@@ -134,6 +134,11 @@ const Suggestions = styled.div`
     background-color: rgba(40, 116, 240, 1);
     border-radius: 20px;
   }
+
+  .spinner-container{
+    margin: 0;
+    height: 10rem;
+  }
 `;
 
 export default SearchSuggestions;

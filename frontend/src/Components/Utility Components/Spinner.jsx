@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const Spinner = () => {
   return (
-    <Wrapper className="">
+    <Wrapper className="spinner-container">
       <FaSpinner className="icon" />
     </Wrapper>
   );

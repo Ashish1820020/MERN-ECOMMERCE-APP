@@ -82,7 +82,12 @@ const Navbar = ({ icon, setIcon, searchBarActive, setSearchBarActive }) => {
           </NavLink>
         </li>
         <li className="navbar-list-item hide">
-          <NavLink to="/products" onClick={() => setIcon(false)}>
+          <NavLink to="/products" onClick={
+            () =>{
+                setIcon(false)
+                // dispatch(clearFilters()) 
+              }
+            }>
             PRODUCTS
           </NavLink>
         </li>

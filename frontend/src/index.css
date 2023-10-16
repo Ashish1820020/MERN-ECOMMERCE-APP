@@ -44,11 +44,12 @@ input{
   font-size: 1.56rem;
 }
 .main-content-holder{
+  /* background-color: #eff6ff; */
   margin-top: 80px;
 }
 body {
   margin: 0;
-  background-color: white;
+  background-color: rgb(249, 251, 255);
   place-items: center;
   min-width: 320px;
   min-height: 100vh;

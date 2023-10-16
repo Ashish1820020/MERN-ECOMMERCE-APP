@@ -6,9 +6,8 @@ name: {
     required: true,
 },
 
-description: {
-    type: String,
-    default: "",
+categoryImg: {
+    type: String
 },
 
 createdAt: {

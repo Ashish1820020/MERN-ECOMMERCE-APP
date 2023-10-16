@@ -16,13 +16,10 @@ const signUp = catchAsyncError(async (req, res, next) => {
   const avatar = req.file;
   let queryObj = {};
 
+
   if (avatar) {
-    queryObj.avatar = {
-      data: fs.readFileSync(
-        path.join(__dirname, "../uploads/", req.file.filename)
-      ),
-      contentType: "image/png",
-    };
+    const upload = await cloudinary.uploader.upload(avatar.path);
+    queryObj.avatar = upload.secure_url;
   }
   queryObj.name = name;
   queryObj.email = email;

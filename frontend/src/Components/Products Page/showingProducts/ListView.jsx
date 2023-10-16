@@ -33,7 +33,7 @@ const ListView = ({filteredProducts}) => {
           const singleProduct = { _id, name, image:images[0], price, stock, discount, rating };
 
           return (
-            <div className="list-card" key={_id}>
+            <div className={"list-card"} key={_id}>
               <div className='list-card-inside'>
 
 
@@ -66,17 +66,24 @@ const ListView = ({filteredProducts}) => {
 
 
                     <div className="card-data-right">
-                      <p>Availability: <span>{stock} In Stock</span></p>
-                      <ul>
-                        <li><FormatPrice price={discountedPrice}/></li>
-                        <li><del><FormatPrice price={price} /></del></li>
-                      </ul>
-                      <NavLink className='cart-link' to={'/cart'}>
-                        <Button className='btn' 
-                          onClick={() => handleAddToCart(singleProduct, colors)}
-                          >ADD TO CART
-                        </Button>
-                        </NavLink>
+                      {
+                        stock === 0?
+                          <h2 className='out-of-stock-button'>Out of Stock</h2>
+                        :
+                        <>
+                          <p>Availability: <span>{stock} In Stock</span></p>
+                          <ul>
+                            <li><FormatPrice price={discountedPrice}/></li>
+                            <li><del><FormatPrice price={price} /></del></li>
+                          </ul>
+                          <NavLink className='cart-link' to={'/cart'}>
+                            <Button className='btn' 
+                            onClick={() => handleAddToCart(singleProduct, colors)}>
+                                ADD TO CART
+                            </Button>
+                          </NavLink>
+                        </>
+                      }
                     </div>
                   </div>
 
@@ -200,6 +207,12 @@ const Wrapper = styled.section`
       margin-top: .5rem;
       font-size: 1.6rem;
     }
+  }
+
+  .out-of-stock-button{
+    border: none;
+    color: red;
+    background-color: white;
   }
 
 

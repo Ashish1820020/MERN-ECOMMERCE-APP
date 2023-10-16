@@ -36,13 +36,13 @@ const ProductSlider = ({ featureProducts, text }) => {
     <Wrapper className="carousel-slider">
       <h3>{text}</h3>
       <Carousel
-        // autoPlay={true}
+        autoPlay={true}
         responsive={responsive}
         swipeable={true}
         draggable={true}
         ssr={true}
         infinite={true}
-        autoPlaySpeed={2000}
+        autoPlaySpeed={3000}
         keyBoardControl={true}
         transitionDuration={1000}
         removeArrowOnDeviceType={["tablet", "mobile"]}

@@ -76,13 +76,13 @@ const App = () => {
 
   axios.defaults.withCredentials = true;
 
-  // addEventListener("contextmenu", (e) => e.preventDefault());
+  addEventListener("contextmenu", (e) => e.preventDefault());
 
   return (
     <ThemeProvider theme={theme}>
       <ToastContainer
         position="top-center"
-        autoClose={2000}
+        autoClose={4000}
         hideProgressBar={false}
         closeOnClick={true}
         pauseOnHover={false}

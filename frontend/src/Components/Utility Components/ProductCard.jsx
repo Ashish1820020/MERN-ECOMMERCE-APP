@@ -41,7 +41,7 @@ const ProductCard = ({
   };
 
   return (
-    <div className="card">
+    <div className={stock === 0? "card out-of-stock" : "card"}>
       <div className="card-inside">
         <NavLink className="link" to={`/singleproduct/${_id}`}>
           <div className="figure-container">

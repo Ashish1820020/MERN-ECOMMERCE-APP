@@ -13,7 +13,6 @@ export const GlobalStyle = createGlobalStyle`
 html {
   font-size: 62.5%;
   scroll-behavior: smooth;
-  /* 1rem = 10px */
   overflow-x: hidden;
 }
 
@@ -94,7 +93,7 @@ li {
 
 
 
-/* -------------------------MAIN SECTION------------------- */
+/* ---------MAIN SECTION--------  */
 .main-section{
   min-height: 80vh;
   width: 150rem;
@@ -224,6 +223,29 @@ li {
       }
     }
   }
+}
+
+
+.out-of-stock{
+  position: relative;
+}
+.out-of-stock:before {
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    color: white;
+    content: "Out of Stock";
+    cursor: not-allowed;
+    display: grid;
+    font-size: 2.3rem;
+    font-weight: 800;
+    height: 100%;
+    left: 0;
+    letter-spacing: 1.5px;
+    place-items: center;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 2;
 }
 
 

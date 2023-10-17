@@ -229,6 +229,7 @@ li {
 
 .out-of-stock{
   position: relative;
+  opacity: .6;
 }
 .out-of-stock:before {
     background: rgba(0, 0, 0, 0.4);

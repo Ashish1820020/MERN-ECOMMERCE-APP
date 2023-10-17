@@ -9,7 +9,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { addUserData } from "../../../Store/Slices/AuthSlice";
 
-const AddressForm = ({ addAddress, setAddAddress, refOne }) => {
+const AddressForm = ({ setAddAddress, refOne }) => {
   const dispatch = useDispatch();
   const { userData } = useSelector((state) => state.auth);
   const navigate = useNavigate();
@@ -22,6 +22,18 @@ const AddressForm = ({ addAddress, setAddAddress, refOne }) => {
 
   const [state, setState] = useState("");
   const [altNo, setAltNo] = useState("");
+
+  const clearStates = () => {
+    setName("");
+    setPhoneNo("");
+    setPinCode("");
+    setLocality("");
+    setAddress("");
+    setState("");
+    setAltNo("");
+  }
+
+
 
   const shippingSubmit = async (e) => {
     e.preventDefault();
@@ -36,18 +48,8 @@ const AddressForm = ({ addAddress, setAddAddress, refOne }) => {
       state,
       altNo,
     };
-    const newAddress = {
-      name,
-      phoneNo,
-      pinCode,
-      locality,
-      address,
-      state,
-      altNo,
-    };
 
-    await axios
-      .post(`/api/v1/auth/addaddress`, formData)
+    await axios.post(`/api/v1/auth/addaddress`, formData)
       .then((res) => {
         const data = res.data;
         console.log(data);
@@ -55,6 +57,7 @@ const AddressForm = ({ addAddress, setAddAddress, refOne }) => {
         dispatch(addUserData(res.data.userData));
         setAddAddress(false);
         navigate("/cart/checkout");
+        clearStates();
       })
       .catch((err) => {
         console.log(err);
@@ -205,7 +208,7 @@ const Fragment = styled.div`
     border: 1px solid black;
     width: 100%;
     border-radius: 5px;
-    background-color: #eff6ff;
+    background-color: #ffffff;
     height: 40px;
     .icon {
       height: 2rem;
@@ -227,7 +230,7 @@ const Fragment = styled.div`
     border: none;
     outline: none;
     box-shadow: none;
-    background-color: #eff6ff;
+    background-color: #ffffff;
   }
 
   input {

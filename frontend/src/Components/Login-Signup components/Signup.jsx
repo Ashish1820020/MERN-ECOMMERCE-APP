@@ -36,8 +36,8 @@ const Signup = () => {
 
     await axios.post(`/api/v1/auth/signup`, myForm)
     .then((res)=>{
-      // console.log(res);
-      toast.success(res.data.msg);
+      console.log(res);
+      toast.success("Account Created Successfully");
       navigate("/loginsignup/login");
       setCurrent("login");
     })

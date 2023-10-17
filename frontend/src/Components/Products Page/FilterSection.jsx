@@ -268,6 +268,7 @@ const Wrapper = styled.div`
       background-color: rgba(82, 95, 225);
       color: white;
       padding: 1rem 3rem;
+      border: none;
 
       &:hover {
         background-color: rgba(82, 95, 225, 0.9);

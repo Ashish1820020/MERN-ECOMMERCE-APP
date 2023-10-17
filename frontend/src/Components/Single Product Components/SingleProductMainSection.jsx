@@ -47,28 +47,44 @@ const Wrapper = styled.section`
   .product-data {
     display: flex;
     flex-direction: column;
-    gap: 3rem;
+    gap: 2rem;
     align-items: flex-start;
     width: 66%;
     h2 {
       font-size: 2.6rem;
+      margin-bottom: 1rem;
     }
   }
 
   /* Price Section */
   .price-section {
-    .product-data-price {
+    color: black;
+    ul{
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+    }
+    li{
+      list-style: none;
+    }
+    ul > li:first-child{
+      font-size: 2rem;
       font-weight: bold;
     }
-    .product-data-real-price {
-      color: ${({ theme }) => theme.colors.btn};
-      span {
-        margin-left: 1rem;
-        font-size: 1.8rem;
-      }
-      h3 {
-        font-weight: bolder;
-      }
+    ul > li:last-child{
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      margin-top: .5rem;
+    }
+    ul > li:last-child > del{
+      font-size: 1.5rem;
+      color: #969292;
+    }
+    ul > li:last-child > p{
+      font-weight: bold;
+      font-size: 1.5rem;
+      color: #34ab4d;
     }
   }
 

@@ -76,7 +76,7 @@ const App = () => {
 
   axios.defaults.withCredentials = true;
 
-  addEventListener("contextmenu", (e) => e.preventDefault());
+  // addEventListener("contextmenu", (e) => e.preventDefault());
 
   return (
     <ThemeProvider theme={theme}>

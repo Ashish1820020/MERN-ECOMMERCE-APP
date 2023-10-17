@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Button } from '../../../styles/Button';
 import { isPresent } from '../../../utils/checks'
 import { removeFromWishlist } from '../../../Store/Slices/WishlistSlice'
+import RatingComponent from '../../Utility Components/RatingComponent'
 
 const ListView = ({filteredProducts}) => {
 
@@ -51,6 +52,9 @@ const ListView = ({filteredProducts}) => {
                     <div className="card-data-left flex-column">
                       <div>
                         <h2>{name}</h2>
+                        <div className="rating-section">
+                          <RatingComponent rating={rating}/>
+                        </div>
                         <div className='description'>
                           <ul>
                             {bulletHighlights.map((currentBullet, index) => {
@@ -71,11 +75,14 @@ const ListView = ({filteredProducts}) => {
                           <h2 className='out-of-stock-button'>Out of Stock</h2>
                         :
                         <>
-                          <p>Availability: <span>{stock} In Stock</span></p>
                           <ul>
                             <li><FormatPrice price={discountedPrice}/></li>
-                            <li><del><FormatPrice price={price} /></del></li>
+                            <li>
+                              <del><FormatPrice price={price} /></del> 
+                              <p>{discount}% off</p>
+                            </li>
                           </ul>
+                          <p>Availability: <span>{stock} In Stock</span></p>
                           <NavLink className='cart-link' to={'/cart'}>
                             <Button className='btn' 
                             onClick={() => handleAddToCart(singleProduct, colors)}>
@@ -146,10 +153,10 @@ const Wrapper = styled.section`
   }
 
   .card-data-left > div:first-child {
-    h3{
+    h2{
       color: ${({ theme }) => theme.colors.text};
       text-transform: capitalize;
-      font-weight: bolder;
+      /* font-weight: bolder; */
     }
     .description{
       margin-top: 1rem;
@@ -186,6 +193,7 @@ const Wrapper = styled.section`
     flex-direction: column;
     width: 33%;
     padding: 2rem 0rem 2rem 1rem;
+    gap: .5rem;
     justify-content: space-around;
     p{
       span{
@@ -194,18 +202,29 @@ const Wrapper = styled.section`
     }
     ul{
       display: flex;
-      align-items: center;
-      gap: 2rem;
+      flex-direction: column;
     }
   }
   .card-data-right{
+    color: black;
     ul > li:first-child{
       font-size: 2rem;
       font-weight: bold;
     }
     ul > li:last-child{
+      display: flex;
+      align-items: center;
+      gap: 1.6rem;
       margin-top: .5rem;
-      font-size: 1.6rem;
+    }
+    ul > li:last-child > del{
+      font-size: 1.3rem;
+      color: #aeacac;
+    }
+    ul > li:last-child > p{
+      font-weight: bold;
+      font-size: 1.5rem;
+      color: #34ab4d;
     }
   }
 
@@ -214,6 +233,20 @@ const Wrapper = styled.section`
     color: red;
     background-color: white;
   }
+
+  /* .rating-section{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    p{
+      color: #aeacac;
+      font-weight: 600;
+      font-size: 14px;
+    }
+    span{
+      margin-left: .5rem;
+    }
+  } */
 
 
   @media (max-width: 1050px) {
@@ -236,31 +269,32 @@ const Wrapper = styled.section`
       gap: 0;
     }
   }
-
-
-  @media (max-width: 800px) {
+  
+  
+  @media (max-width: 810px) {
     .list-card{
       min-height: 200px;
     }
     .btn{
       font-size: 1rem;
     }
-    .card-data-right ul{
-      flex-direction: row;
-      gap: 0;
-    }
   }
   @media (max-width: 580px) {
     .card-data-right{
       ul{
+        padding: 0;
+        flex-direction: row;
+        align-items: center;
         gap: 1rem;
       }
       ul > li:first-child{
         font-size: 1.6rem;
       }
       ul > li:last-child{
-        margin-top: .5rem;
-        font-size: 1.2rem;
+        margin-top: 0;
+        p{
+          font-size: 1.2rem;
+        }
       }
     }
     .hide{
@@ -293,8 +327,6 @@ const Wrapper = styled.section`
       width: 100%;
     }
   }
-
-
 `;
 
 export default ListView;

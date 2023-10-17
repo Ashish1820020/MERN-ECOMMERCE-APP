@@ -1,5 +1,5 @@
 import React from "react";
-import Star from "../Utility Components/Star";
+import RatingComponent from "../Utility Components/RatingComponent";
 import FormatPrice from "../helper/FormatPrice";
 import styled from "styled-components";
 import ProductAmountButton from "../Utility Components/ProductAmountButton";
@@ -47,7 +47,7 @@ const CartProduct = ({ currentElement }) => {
         <div className="center">
           <div className="product-details">
             <h2>{name}</h2>
-            <Star rating={rating} />
+            <RatingComponent rating={rating} />
 
             <div className="color">
               <p>Color: </p>
@@ -71,7 +71,9 @@ const CartProduct = ({ currentElement }) => {
           </div>
 
           {
-            location.pathname.includes('/cart')?
+            location.pathname.includes('/checkout')?
+              null
+            :
               <div className="center-bottom">
                 <button onClick={() => dispatch(removeFromCart({ _id, color }))}>
                   Remove
@@ -80,8 +82,6 @@ const CartProduct = ({ currentElement }) => {
                   Move to Wishlist
                 </button>
               </div>
-            :
-              null
           }
         </div>
       </div>
@@ -223,13 +223,22 @@ const Wrapper = styled.div`
   }
 
   @media (max-width: 544px) {
+    .center{
+      padding-right: 0;
+    }
   }
-  @media (max-width: 420px) {
+  @media (max-width: 450px) {
     .product-card-inside {
       padding: 1rem 0;
     }
     .left > .left-top > figure {
       padding: 0 1rem;
+    }
+    .center .center-bottom{
+      gap: 1rem;
+    }
+    .center .center-bottom button{
+      font-size: 1.1rem;
     }
   }
 `;

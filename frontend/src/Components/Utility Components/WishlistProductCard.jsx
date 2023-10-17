@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import FormatPrice from "../helper/FormatPrice";
-import Star from "../Utility Components/Star";
+import RatingComponent from "../Utility Components/RatingComponent";
 import { AiTwotoneHeart } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
 import { removeFromWishlist } from "../../Store/Slices/WishlistSlice";
@@ -44,7 +44,7 @@ const WishlistProductCard = ({
             <div>
               <h3>{company}</h3>
               <p>{name}</p>
-              <Star rating={rating} />
+              <RatingComponent rating={rating} />
             </div>
           </NavLink>
 

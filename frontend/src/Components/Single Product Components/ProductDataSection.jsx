@@ -1,7 +1,7 @@
 
 import FormatPrice from "../helper/FormatPrice";
 import { NavLink, useNavigate } from "react-router-dom";
-import Star from "../Utility Components/Star";
+import RatingComponent from "../Utility Components/RatingComponent";
 import { MdSecurity } from "react-icons/md";
 import { TbTruckDelivery, TbReplace } from "react-icons/tb";
 import { isPresent } from "../../utils/checks";
@@ -32,8 +32,8 @@ const ProductDataSection = ({ singleProduct }) => {
     
       
     
-    const { _id, name, company, images, price, colors, 
-        description, stock, rating, bulletHighlights, discount,
+    const { _id, name, company, images, price, colors, discountedPrice,
+        description, stock, rating, bulletHighlights, discount
     } = singleProduct;
 
 
@@ -91,27 +91,18 @@ const ProductDataSection = ({ singleProduct }) => {
         {/* Header Section */}
         <div className="header-section p-20">
           <h2>{name}</h2>
-          <Star rating={rating} />
+          <RatingComponent rating={rating}/>
         </div>
 
         {/* Price Section */}
         <div className="price-section p-10">
-          <p className="product-data-price">
-            MRP:{" "}
-            <del>
-              <FormatPrice price={price} />
-            </del>
-          </p>
-          <h3 className="product-data-price product-data-real-price">
-            Deal of the Day:
-            <span>
-              <FormatPrice
-                className="price"
-                price={price}
-                discount={discount}
-              />
-            </span>
-          </h3>
+          <ul>
+            <li><FormatPrice price={discountedPrice}/></li>
+            <li>
+              <del><FormatPrice price={price} /></del> 
+              <p>{discount}% off</p>
+            </li>
+          </ul>
         </div>
 
         {/* Offer Section */}

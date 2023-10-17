@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import { FaDiscord, FaInstagram, FaYoutube } from "react-icons/fa";
+import { FaGithubSquare, FaLinkedinIn } from "react-icons/fa";
+// import {  } from "react-icons/ai";
 import { FiMail } from "react-icons/fi";
 import { MdOutlineLocationOn } from "react-icons/md";
-import { Button } from "../../styles/Button";
 import { NavLink } from "react-router-dom";
 
 const Footer = () => {
@@ -18,13 +18,14 @@ const Footer = () => {
             <p>Anand Stores Quality is Superior to price</p>
             <ul>
               <li>
-                <FaDiscord className="icon" />
+                <a href="https://github.com/Ashish1820020" target="blank">
+                  <FaGithubSquare className=" icons githubSvgIcon" />
+                </a>
               </li>
               <li>
-                <FaInstagram className="icon" />
-              </li>
-              <li>
-                <FaYoutube className="icon" />
+                <a href="https://www.linkedin.com/in/ashish-bhattacharyya-574172204/" target="blank">
+                  <FaLinkedinIn className="icons linkedinSvgIcon" />
+                </a>
               </li>
             </ul>
           </div>
@@ -33,12 +34,12 @@ const Footer = () => {
             <h2>Pages</h2>
             <ul>
               <li>
-                <NavLink className="navbar-link" to="/about">
+                <NavLink className="footer-link" to="/about">
                   ABOUT
                 </NavLink>
               </li>
               <li>
-                <NavLink className="navbar-link" to="/contact">
+                <NavLink className="footer-link" to="/contact">
                   CONTACT
                 </NavLink>
               </li>
@@ -109,7 +110,30 @@ const Wrapper = styled.section`
   }
 
   li > a {
+    display: flex;
+    align-items: center;
     font-size: 1.6rem;
+    height: 4rem;
+    width: 4rem;
+  }
+  
+  .icons{
+    height: 3rem;
+    width: 3rem;
+    margin: .1rem;
+    cursor: pointer;
+  }
+  .githubSvgIcon {
+    color: white;
+  }
+
+  .linkedinSvgIcon {
+    background-color: #136cc4;
+    color: #ffffff;
+    padding: 5px;
+    border-radius: 5px;
+    height: 2.8rem;
+    width: 2.8rem;
   }
 
   .footer-main {
@@ -144,6 +168,7 @@ const Wrapper = styled.section`
     width: 40%;
     figure {
       width: 50%;
+      cursor: pointer;
       img {
         width: 14rem;
       }
@@ -154,6 +179,7 @@ const Wrapper = styled.section`
 
     ul {
       display: flex;
+      gap: .5rem;
       .icon {
         position: relative;
         font-size: 2.4rem;
@@ -179,9 +205,8 @@ const Wrapper = styled.section`
       flex-direction: column;
       margin-top: 1rem;
       li {
-        margin-left: 2rem;
-        list-style: circle;
-        margin-top: 0.5rem;
+        margin-left: 1rem;
+        list-style: none;
         &:hover {
           text-decoration: underline;
         }

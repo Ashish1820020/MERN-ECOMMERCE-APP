@@ -104,7 +104,7 @@ const Navbar = ({ icon, setIcon, searchBarActive, setSearchBarActive }) => {
         </li>
 
         <li className="navbar-list-item">
-          <NavLink className="cart-wishlist-icon-container" to="/wishlist">
+          <NavLink className="cart-wishlist-icon-container" to={isLoggedIn? "/wishlist" : "/loginsignup"}>
             <AiOutlineHeart className="cart-wishlist-icon" />
             <span className="cart-wishlist-icon-float">
               {wishlist.totalItems}

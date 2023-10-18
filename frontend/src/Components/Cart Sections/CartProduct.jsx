@@ -3,20 +3,23 @@ import RatingComponent from "../Utility Components/RatingComponent";
 import FormatPrice from "../helper/FormatPrice";
 import styled from "styled-components";
 import ProductAmountButton from "../Utility Components/ProductAmountButton";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import {
   removeFromCart,
   setIncrease,
   setDecrease,
 } from "../../Store/Slices/CartSlice";
 import { addToWishlist } from "../../Store/Slices/WishlistSlice";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const CartProduct = ({ currentElement }) => {
-  const { _id, name, price, image, color, amount, discount, rating, stock } =
-    currentElement;
+  const { _id, name, price, image, color, amount, discount, rating, stock } = currentElement;
+
+    
+  const { isLoggedIn } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
-  const location = useLocation()
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const toWishlist = () => {
     dispatch(removeFromCart({ _id, color }));
@@ -78,7 +81,7 @@ const CartProduct = ({ currentElement }) => {
                 <button onClick={() => dispatch(removeFromCart({ _id, color }))}>
                   Remove
                 </button>
-                <button onClick={() => dispatch(() => toWishlist())}>
+                <button onClick={() => isLoggedIn? toWishlist() : navigate('/loginsignup')}>
                   Move to Wishlist
                 </button>
               </div>

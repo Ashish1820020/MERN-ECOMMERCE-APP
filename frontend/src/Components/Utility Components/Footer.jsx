@@ -13,7 +13,7 @@ const Footer = () => {
         <div className="footer-main">
           <div className="footer-left">
             <figure>
-              <img src="../../images/logos.png" alt="" />
+              <img src="https://res.cloudinary.com/dz9ezveb9/image/upload/v1696933114/logos_ka9ekv.png" alt="logo" />
             </figure>
             <p>Anand Stores Quality is Superior to price</p>
             <ul>

@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import CartProduct from "./CartProduct";
-import { NavLink } from "react-router-dom";
+import { redirect } from "react-router-dom";
 
 const CartProductSection = () => {
   const cartData = useSelector((state) => state.cart);
@@ -14,9 +14,7 @@ const CartProductSection = () => {
         <CartProduct key={index} currentElement={currentElement} />
       ))}
       <div className="order-btn">
-        <NavLink to={isLoggedIn ? "/cart/checkout" : "/loginsignup"}>
-          <button>Place Order</button>
-        </NavLink>
+          <button onClick={()=> redirect(isLoggedIn ? "/cart/checkout" : "/loginsignup")}>Place Order</button>
       </div>
     </>
   );

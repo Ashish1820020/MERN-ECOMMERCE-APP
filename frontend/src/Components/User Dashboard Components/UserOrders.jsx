@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addOrders, setIsError, setIsLoading } from '../../Store/Slices/OrderSlice';
 import styled from "styled-components";
 import Spinner from '../Utility Components/Spinner';
+import EmptyCart from '../Utility Components/EmptyCart';
 
 const UserOrders = () => {
   const dispatch = useDispatch();
@@ -33,37 +34,43 @@ const UserOrders = () => {
     return <Spinner/>
   }
   else{
-    return (
-      <Wrapper>
-        <table>
+    if(orderData.length == 0){
+      return <EmptyCart text={'Order Box'}/>
+    }
+    else{
 
-
-          <tbody>
-            {
-              orderData.map(element => {
-                return element.orderedItems.map((order, index)=>{
-                  return(
-                    <tr key={index} >
-                      <td><figure><img src={order.image} alt="" /></figure></td>
-                      <td>{order.name}</td>
-                      <td>{order.amount}</td>
-                      <td style={{color: element.orderStatus === "Delivered"? "green" : "red", fontWeight: "bolder"}}>{element.orderStatus}</td>  
-                    </tr>
-                  )
+      return (
+        <Wrapper>
+          <table>
+  
+  
+            <tbody>
+              {
+                orderData.map(element => {
+                  return element.orderedItems.map((order, index)=>{
+                    return(
+                      <tr key={index} >
+                        <td><figure><img src={order.image} alt="" /></figure></td>
+                        <td>{order.name}</td>
+                        <td>{order.amount}</td>
+                        <td style={{color: element.orderStatus === "Delivered"? "green" : "red", fontWeight: "bolder"}}>{element.orderStatus}</td>  
+                      </tr>
+                    )
+                  })
                 })
-              })
-            }
-          </tbody>
-
-
-        </table>
-      </Wrapper>
-    )
+              }
+            </tbody>
+  
+  
+          </table>
+        </Wrapper>
+      )
+    }
   }
 }
 
 const Wrapper = styled.div`
-   display: flex;
+  display: flex;
   flex-direction: column;
   min-height: 10rem;
   gap: .5rem;
@@ -87,6 +94,13 @@ const Wrapper = styled.div`
     &:hover{
       background-color: #eaeded;
     }
+  }
+
+  .empty-cart{
+    padding: 0 !important;
+  }
+  .empty-cart-inside{
+    padding: 0 !important;
   }
 `
 

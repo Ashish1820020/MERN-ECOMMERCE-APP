@@ -39,6 +39,15 @@ const UserProfile = () => {
           <h3>Email: </h3>
           <p>{userData.email}</p>
         </div>
+        {
+          userData.phoneNumber?
+            <div>
+              <h3>Phone Number: </h3>
+              <p>{userData.phoneNumber}</p>
+            </div>
+            :
+            null
+        }
 
 
         <div>
@@ -59,6 +68,9 @@ const Fragment = styled.div`
     gap: 4rem;
     border: 1px solid black;
     padding-bottom: 2rem;
+    h3{
+      width: 15rem;
+    }
 
 
   .profile-top{
@@ -98,16 +110,14 @@ const Fragment = styled.div`
   .profile-mid{
     display: flex;
     flex-direction: column;
-    background-color: white;
+    margin-left: 8%;
+    /* background-color: white; */
     gap: 2rem; 
     &>div{
       display: flex;
       align-items: center;
-      gap: 3rem;
-      margin-left: 1rem;
-      &:nth-child(2n+0){
-        gap: 6.8rem;
-      }
+      /* gap: 3rem; */
+      /* margin-left: 1rem; */
     }
   }
   @media screen and (max-width: 600px) {

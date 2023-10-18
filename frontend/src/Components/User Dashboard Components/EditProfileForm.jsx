@@ -37,7 +37,7 @@ console.log(userData);
       .then((res) => {
         toast.success(res.data.msg);
         dispatch(updateUserData(res.data.userData));
-        navigate("/");
+        navigate("/dashboard/user");
       })
       .catch((err) => {
         toast.error(err.response?.data.msg);

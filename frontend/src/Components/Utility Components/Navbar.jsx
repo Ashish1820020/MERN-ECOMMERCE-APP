@@ -103,13 +103,13 @@ const Navbar = ({ icon, setIcon, searchBarActive, setSearchBarActive }) => {
           )}
         </li>
 
-        <li className="navbar-list-item">
-          <NavLink className="cart-wishlist-icon-container" to={isLoggedIn? "/wishlist" : "/loginsignup"}>
+        <li className="navbar-list-item" onClick={() => navigate(isLoggedIn? "/wishlist" : "/loginsignup/login", {state: location.pathname})}>
+          <div className="cart-wishlist-icon-container">
             <AiOutlineHeart className="cart-wishlist-icon" />
             <span className="cart-wishlist-icon-float">
               {wishlist.totalItems}
             </span>
-          </NavLink>
+          </div>
         </li>
 
         {isLoggedIn ? (
@@ -254,7 +254,6 @@ const Nav = styled.nav`
       border: none;
     }
     .img {
-      height: 3rem;
       width: 3rem;
     }
   }
@@ -271,6 +270,8 @@ const Nav = styled.nav`
     .cart-wishlist-icon-float {
       width: 2rem;
       height: 2rem;
+      font-size: 1.2rem;
+      font-weight: bold;
       position: absolute;
       background-color: #000;
       color: #000;

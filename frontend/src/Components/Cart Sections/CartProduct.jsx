@@ -81,7 +81,7 @@ const CartProduct = ({ currentElement }) => {
                 <button onClick={() => dispatch(removeFromCart({ _id, color }))}>
                   Remove
                 </button>
-                <button onClick={() => isLoggedIn? toWishlist() : navigate('/loginsignup')}>
+                <button onClick={() => isLoggedIn? toWishlist() : navigate('/loginsignup', {state: location.pathname})}>
                   Move to Wishlist
                 </button>
               </div>

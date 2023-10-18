@@ -9,6 +9,7 @@ const SearchSuggestions = ({
   searchText,
   isResultLoading,
   setSuggestionBar,
+  setSearchText
 }) => {
   if (searchText.length === 0) {
     return (
@@ -47,7 +48,11 @@ const SearchSuggestions = ({
               <NavLink to={`/singleproduct/${product._id}`} key={product._id}>
                 <div
                   className="search-result-card"
-                  onClick={() => setSuggestionBar(false)}
+                  onClick={() => {
+                    setSuggestionBar(false)
+                    setSearchText("")
+                  }
+                  }
                 >
                   <img src={product.images[0]} alt="" />
                   <p>{product.name}</p>

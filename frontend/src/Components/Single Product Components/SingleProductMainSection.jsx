@@ -178,6 +178,12 @@ const Wrapper = styled.section`
     }
   }
 
+  .info-section{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
   .cart-section {
     display: flex;
     flex-direction: column;

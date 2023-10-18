@@ -64,6 +64,7 @@ const Header = () => {
                   {...{
                     products,
                     searchText,
+                    setSearchText,
                     isResultLoading,
                     setSuggestionBar,
                   }}

@@ -2,11 +2,7 @@ import React, { useEffect } from "react";
 import styled from "styled-components";
 import { BsSearch } from "react-icons/bs";
 import axios from "axios";
-import {
-  isError,
-  isLoading,
-  updateProductList,
-} from "../../Store/Slices/ProductsSlice";
+import { isError, isLoading, updateProductList } from "../../Store/Slices/ProductsSlice";
 import { useDispatch } from "react-redux";
 
 const SearchBar = ({
@@ -22,9 +18,7 @@ const SearchBar = ({
     setIsResultLoading(true);
 
     try {
-      const res = await axios.get(
-        `/api/v1/products/searchresult?search=${searchText}`
-      );
+      const res = await axios.get(`/api/v1/products/searchresult?search=${searchText}`);
       const data = await res.data;
       dispatch(updateProductList(data.result));
       setIsResultLoading(false);

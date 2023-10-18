@@ -97,7 +97,7 @@ const Wrapper = styled.section`
       transition: var(--transition);
       }
       .cp-brand-category-home:hover{
-        transform: scale(.9);
+        transform: scale(.92);
       }
 
     a{

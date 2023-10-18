@@ -221,6 +221,14 @@ const ProductDataSection = ({ singleProduct }) => {
               {company}{" "}
             </span>
           </h3>
+
+          <h3>
+            Stock:{" "}
+            <span style={{ fontWeight: "bolder" }}>
+              {" "}
+              {stock}{" "}
+            </span>
+          </h3>
         </div>
         <hr />
 
@@ -268,39 +276,39 @@ const ProductDataSection = ({ singleProduct }) => {
 
                         {/* Add to cart button */}
                         <div className="add-button p-5">
-                        <NavLink to={"/cart"}>
+                          <NavLink to={"/cart"}>
                             <Button
                             className="btn"
                             onClick={() => handleAddToCart(toCart, amount, color)}
                             >
-                            ADD TO CART
+                              ADD TO CART
                             </Button>
-                        </NavLink>
+                          </NavLink>
                         </div>
 
                         {/* Add to wishlist button */}
                         <div className="add-button p-5">
                         {
-                            isPresent(wishlistProducts, _id, color) ?
-                            <NavLink to={"/wishlist"}>
-                                <Button
-                                className="btn"
-                                style={{backgroundColor: 'white', border: '1px solid black', color: 'red'}}
-                                >
-                                checkout wishlist
-                                </Button>
-                            </NavLink>
+                          isPresent(wishlistProducts, _id, color) ?
+                          <NavLink to={"/wishlist"}>
+                              <Button
+                              className="btn"
+                              style={{backgroundColor: 'white', border: '1px solid black', color: 'red'}}
+                              >
+                              checkout wishlist
+                              </Button>
+                          </NavLink>
                         :
-                            <Button
-                            className="btn"
-                            onClick={() => 
-                            isLoggedIn?
-                                dispatch(addToWishlist({
-                                    _id, name, image: images[0], price, rating, discount, 
-                                    color, company, stock, amount: 1
-                                }))
+                          <Button
+                          className="btn"
+                          onClick={() => 
+                          isLoggedIn?
+                              dispatch(addToWishlist({
+                                  _id, name, image: images[0], price, rating, discount, 
+                                  color, company, stock, amount: 1
+                              }))
                             : 
-                                navigate("/loginsignup")
+                              navigate("/loginsignup")
                             }
                             >
                             ADD TO Wishlist

@@ -55,7 +55,12 @@ const CreateCategory = () => {
         <form className='form' encType="multipart/form-data" onSubmit={handleSubmit}>
           <input type="text" name='category' required value={name} placeholder='Category' onChange={(e) => setName(e.target.value)}/>
           <div id='file-input-container'>
-            <img src={imgPreview} alt="img" />
+            {
+              imgPreview === ''?
+              <></>
+              :
+              <img src={imgPreview} alt="img" />
+            }
             <input type="file" name="categoryImg" accept="image/*" onChange={updateCategoryImg}/>
           </div>
           <button type='submit' className='submit'>Add</button>
@@ -114,6 +119,7 @@ const Wrapper = styled.div`
     #file-input-container{
       width: 80%;
       display: flex;
+      gap: 2rem;
       margin: 0 auto;
       max-width: 50rem;
       justify-content: space-between;
@@ -125,7 +131,7 @@ const Wrapper = styled.div`
       border-radius: 50%;
     }
     #file-input-container > input{
-      width: 70%;
+      width: 100%;
       padding: 0%;
     }
     #file-input-container > input::file-selector-button {

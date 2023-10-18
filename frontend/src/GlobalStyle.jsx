@@ -324,7 +324,7 @@ button{
     width: 100%;
   }
   &:hover img {
-    transform: scale(1.12);
+    transform: scale(1.2);
   }
   img {
     max-width: 90%;

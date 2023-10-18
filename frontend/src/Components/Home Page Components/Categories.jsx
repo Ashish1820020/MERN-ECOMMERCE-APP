@@ -80,22 +80,25 @@ const Wrapper = styled.section`
     }
 
     .cp-brand-category-home{
-        border-radius: 5px;
-        box-shadow: 0 0 2px 0 black;
-        color: white;
-        cursor: pointer;
-        display: grid;
-        font-size: 1.25rem;
-        font-weight: 700;
-        height: 290px;
-        width: 100%;
-        letter-spacing: var(--letterSpacing);
-        overflow: hidden;
-        place-items: center;
-        position: relative;
-        text-transform: capitalize;
-        transition: var(--transition);
-    }
+      border-radius: 5px;
+      box-shadow: 0 0 2px 0 black;
+      color: white;
+      cursor: pointer;
+      display: grid;
+      font-size: 1.25rem;
+      font-weight: 700;
+      height: 290px;
+      width: 100%;
+      letter-spacing: var(--letterSpacing);
+      overflow: hidden;
+      place-items: center;
+      position: relative;
+      text-transform: capitalize;
+      transition: var(--transition);
+      }
+      .cp-brand-category-home:hover{
+        transform: scale(.9);
+      }
 
     a{
         width: 100%;
